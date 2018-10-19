@@ -10,8 +10,9 @@ export function setTokenHeader(token) {
 
 export function apiCall(method, path, data) {
   return new Promise((resolve, reject) => {
+    console.log("NODE_ENV is: ", process.env.NODE_ENV)
     if(process.env.NODE_ENV==='development'){
-      return axios[method.toLowerCase()](path, data)
+      return axios[method.toLowerCase()]('http://localhost:4000' + path, data)
         .then(res => {
           return resolve(res.data);
         })
