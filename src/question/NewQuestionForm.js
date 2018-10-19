@@ -99,6 +99,7 @@ class NewQuestionForm extends Component{
           />
         </label>
         {/* TODO: Implement tags */}
+        { process.env.NODE_ENV ==='development' &&
         <label> Tags:
           <input
             type='text'
@@ -107,7 +108,7 @@ class NewQuestionForm extends Component{
             value='Not Implemented yet'
             onChange = {this.handleChange}
           />
-        </label>
+        </label> }
         <label> Number of Answers:
           <input
             type='number'

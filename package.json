@@ -5,6 +5,9 @@
   "dependencies": {
     "axios": "^0.18.0",
     "d3": "^5.7.0",
+    "eslint": "^5.7.0",
+    "eslint-config-react-app": "^3.0.4",
+    "eslint-plugin-import": "^2.14.0",
     "jwt-decode": "^2.2.0",
     "moment": "^2.22.2",
     "mongoose": "^5.2.17",
@@ -23,6 +26,7 @@
     "npm": "5.6.0",
     "node": "8.11.3"
   },
+  "proxy": "http://localhost:4000",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
