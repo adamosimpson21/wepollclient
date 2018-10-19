@@ -23,7 +23,7 @@
     "npm": "5.6.0",
     "node": "8.11.3"
   },
-  "proxy": "http://wepollapi.herokuapp.com",
+  "proxy": "http://wepollapi.herokuapp.com/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
