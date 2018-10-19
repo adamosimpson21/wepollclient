@@ -1,0 +1,35 @@
+.buttonHOCLG{
+    background: linear-gradient(to bottom right, #6d99f8, #4b58f4);
+    width:90%;
+    min-width:150px;
+    border: 2px solid #5162f6;
+    color: #dddddd;
+    text-shadow: 2px 1px 1px rgba(100, 100, 100, 0.8);
+    padding: 8px 16px;
+    border-radius:24px;
+    font-size:28px;
+    margin:6px;
+    cursor: pointer;
+}
+
+.buttonHOCLG:active{
+    transform: translate(0px, 2px) ;
+    border: 2px solid #2a2e68;
+    background: linear-gradient(to bottom right, #323269, #262d69);
+}
+
+.pressed {
+    color: rgba( 221, 221, 221, 0.7);
+    transform: translate(0px, 2px) ;
+    border: 2px solid #2a2e68;
+    background: linear-gradient(to bottom right, #323269, #262d69);
+}
+
+
+@media screen and (max-width: 800px) {
+    .buttonHOCLG{
+        width:auto;
+        min-width:auto;
+        font-size:14px;
+    }
+}

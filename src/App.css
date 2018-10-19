@@ -1,0 +1,26 @@
+#root{
+  height:100%;
+  width:100%;
+  background-color: #abc5e6;
+}
+
+.App {
+  text-align: center;
+  height:100%;
+  /*color:#cccccc;*/
+  color:black;
+  font-size:16px;
+}
+
+@media screen and (max-width: 700px){
+  html, body{
+    margin:0;
+    width:100%;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .App{
+    font-size:14px;
+  }
+}

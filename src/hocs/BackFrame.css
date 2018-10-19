@@ -1,0 +1,17 @@
+.backFrame{
+    background-color: rgba(253, 253, 253, 0.8);
+    border: 2px solid #4b4b4b;
+    border-radius:15px;
+    display:inline-flex;
+    padding:8px;
+    margin:4px;
+}
+
+@media screen and (max-width: 800px) {
+    .backFrame {
+        display: block;
+        width:fit-content;
+        margin: 0 auto;
+        padding:0;
+    }
+}

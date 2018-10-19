@@ -1,0 +1,14 @@
+.landingTitle{
+    border: 2px solid black;
+    background-color:lightgreen;
+    border-radius:8px;
+    margin: 24px auto;
+    padding:32px;
+    width:60%;
+    color:black;
+}
+
+.landingButtons{
+    width:40%;
+    margin-left:20%;
+}

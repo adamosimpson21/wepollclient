@@ -1,0 +1,96 @@
+header {
+    background-color: #6caadd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+    opacity: 0.75;
+}
+
+
+.fullNavbar{
+    display:contents;
+}
+
+/* Mobile Navbar */
+header .smallMenu svg{
+    margin-top:16px;
+}
+
+.smallMenu nav{
+    display:block;
+}
+
+.smallMenu li{
+    padding:8px;
+}
+
+.navSmallMenuRow{
+    display:inline-flex;
+}
+
+.smallMenu .navSmallMenuRow a{
+    padding:2px;
+}
+
+.headerCloseButton{
+    margin-bottom:0;
+}
+
+.navbarAccess{
+    background-color: #6caadd;
+    fill:white;
+    opacity: 0.75
+}
+
+header h1 {
+    text-align: center;
+}
+
+header h2{
+    margin: 4px;
+    width:fit-content;
+}
+
+header li {
+    list-style: none;
+    padding:15px;
+    color:black;
+}
+
+/* End Mobile Navbar */
+header a {
+    text-decoration: none;
+    color: #eee;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+header a:hover {
+    opacity: 1;
+}
+
+header nav {
+    display: flex;
+}
+
+header nav li {
+    margin: 0 4px;
+    padding: 0 15px;
+    color:black;
+}
+
+.activeNavLink li{
+    background-color:green;
+}
+
+@media screen and (max-width: 700px) {
+    header{
+        flex-direction: column;
+        width:100%;
+    }
+
+    header h2{
+        margin-bottom: 15px;
+    }
+}

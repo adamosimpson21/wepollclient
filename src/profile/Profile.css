@@ -1,0 +1,17 @@
+.avatar-image{
+    width:64px;
+}
+
+.user-aside{
+    width:30vw;
+    float:left;
+    display: block;
+}
+
+.profile-main, .profile-demographics{
+    display:block;
+    width:60vw;
+    border: 2px solid gray;
+    background-color:lime;
+    font-size:24px;
+}
