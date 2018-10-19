@@ -99,7 +99,7 @@ class NewQuestionForm extends Component{
           />
         </label>
         {/* TODO: Implement tags */}
-        { process.env.NODE_ENV ==='development' &&
+        { process.env.REACT_APP_ENV_TYPE ==='development' &&
         <label> Tags:
           <input
             type='text'
