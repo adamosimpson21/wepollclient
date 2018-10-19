@@ -10,8 +10,8 @@ export function setTokenHeader(token) {
 
 export function apiCall(method, path, data) {
   return new Promise((resolve, reject) => {
-    console.log("NODE_ENV is: ", process.env.NODE_ENV)
-    if(process.env.NODE_ENV==='development'){
+    console.log("ENV_TYPE is: ", process.env.ENV_TYPE)
+    if(process.env.ENV_TYPE==='development'){
       return axios[method.toLowerCase()]('http://localhost:4000' + path, data)
         .then(res => {
           return resolve(res.data);
@@ -19,7 +19,7 @@ export function apiCall(method, path, data) {
         .catch(err => {
           return reject(err.response.data.error);
         });
-    } else if(process.env.NODE_ENV==='production'){
+    } else if(process.env.ENV_TYPE==='production'){
       return axios[method.toLowerCase()]('https://wepollapi.herokuapp.com' + path, data)
         .then(res => {
           return resolve(res.data);
