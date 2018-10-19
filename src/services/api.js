@@ -10,7 +10,7 @@ export function setTokenHeader(token) {
 
 export function apiCall(method, path, data) {
   return new Promise((resolve, reject) => {
-    return axios[method.toLowerCase()]('https://wepollapi.herokuapp.com/' + path, data)
+    return axios[method.toLowerCase()]('https://wepollapi.herokuapp.com' + path, data)
       .then(res => {
         return resolve(res.data);
       })
