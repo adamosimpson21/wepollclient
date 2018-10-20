@@ -27,10 +27,9 @@ export const updateQuestion = question => ({
   question
 })
 
-export const answerQuestion = (question, answer) => ({
+export const answerQuestion = response => ({
   type: ANSWER_QUESTION,
-  question,
-  answer
+  ...response
 })
 
 export const getAllQuestions = () => {

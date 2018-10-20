@@ -1,4 +1,11 @@
-import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION } from "../actionTypes";
+import {
+  GET_QUESTIONS,
+  CREATE_QUESTION,
+  GET_ONE_QUESTION,
+  UPDATE_QUESTION,
+  DELETE_QUESTION,
+  ANSWER_QUESTION
+} from "../actionTypes";
 
 const DEFAULT_STATE = {
   questions: []
@@ -17,6 +24,11 @@ export default (state = DEFAULT_STATE, action) => {
       return [...state, action.question]
     case DELETE_QUESTION:
       return [...state.filter(question => question._id !== action.id)]
+    case ANSWER_QUESTION:
+      console.log("action is: ",action);
+      action.question.results.push(action.result)
+      console.log("action.question is: ",action.question);
+      return [action.question];
     default:
       return state;
   }

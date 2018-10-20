@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './Footer.css'
 import connect from 'react-redux/es/connect/connect'
 import {levelProgress, checkLevel} from '../helper/experience'
+import withRouter from "react-router/es/withRouter";
 
 class Footer extends Component{
    render(){
@@ -31,4 +32,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Footer);
+export default withRouter(connect(mapStateToProps)(Footer));

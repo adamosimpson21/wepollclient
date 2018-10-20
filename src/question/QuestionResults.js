@@ -25,7 +25,7 @@ class QuestionResults extends Component{
 
   render() {
     if(this.props.questions[0]){
-      const { questionContent, description, title, author, education, results, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
+      const { questionContent, description, title, author, education, results, createdAt, rating, answers } = this.props.questions[0]
       const { isAuthenticated, user } = this.props.currentUser
       let resultsObj = this.countResults(answers, results);
       const answerDisplays = answers.map(answer => (

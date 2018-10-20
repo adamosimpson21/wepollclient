@@ -5,6 +5,7 @@ import Icon from "./Icon";
 import ResponsiveMenu from 'react-responsive-navbar';
 import { logout } from "../store/actions/auth";
 import connect from 'react-redux/es/connect/connect';
+import withRouter from "react-router/es/withRouter";
 
 class NavBar extends Component{
   logout = e => {
@@ -63,4 +64,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { logout })(NavBar);
+export default withRouter(connect(mapStateToProps, { logout })(NavBar));
