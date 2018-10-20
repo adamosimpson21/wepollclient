@@ -3,11 +3,9 @@ import './QuestionResults.css';
 import connect from 'react-redux/es/connect/connect'
 import { loadOneQuestionAction, removeQuestionAction } from '../store/actions/questions'
 import withRouter from 'react-router/es/withRouter'
-import Link from 'react-router-dom/es/Link'
 
 class QuestionResults extends Component{
   componentDidMount(){
-    console.log("component did mount")
     this.props.loadOneQuestionAction(this.props.match.params.questionId)
   }
 

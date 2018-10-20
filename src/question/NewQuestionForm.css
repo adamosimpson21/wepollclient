@@ -1,0 +1,34 @@
+.new-question-form{
+    display:inline-grid;
+    width:60vw;
+    font-size: 1.3rem;
+}
+
+.new-question-form Button{
+    margin:auto auto;
+}
+
+.new-question-form label{
+    border: 2px solid black;
+    border-radius:16px;
+    background: #ebebeb;
+    margin:12px;
+    padding: 4px;
+}
+
+.new-question-form input{
+    background-color:inherit;
+    border:none;
+    border-bottom: 1px solid black;
+    width:80%;
+    font-size:1.3rem;
+}
+
+#question-form-number-of-answers{
+    margin:auto auto;
+    width:40%;
+}
+
+#question-form-number-of-answers input{
+    width:64px;
+}

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './NewQuestionForm.css'
 import { postQuestion } from '../store/actions/questions'
 import connect from 'react-redux/es/connect/connect'
+import Button from "../hocs/Button";
 
 class NewQuestionForm extends Component{
   constructor(props){
@@ -48,6 +49,7 @@ class NewQuestionForm extends Component{
            //TODO: understand and research the implications of setState on states that weren't in the initial constructor
           name={`answer${index+1}`}
           aria-label={`Answer #${index+1}`}
+          title={`Answer #${index+1}`}
           value={this.state.answers}
           onChange = {this.handleChange}
           required
@@ -56,13 +58,14 @@ class NewQuestionForm extends Component{
     }
 
 
-    return(<div className='new-question-form'>
-      <form onSubmit={this.handleSubmit}>
+    return(<div>
+      <form onSubmit={this.handleSubmit} className='new-question-form'>
         <label> Question:
           <input
             type='text'
             name='questionContent'
             aria-label='Your Question'
+            title='Your Question'
             value={this.state.questionContent}
             onChange = {this.handleChange}
             required
@@ -73,6 +76,7 @@ class NewQuestionForm extends Component{
             type='text'
             name='title'
             aria-label='Short title'
+            title='Short title'
             value={this.state.title}
             onChange = {this.handleChange}
             required
@@ -83,6 +87,7 @@ class NewQuestionForm extends Component{
             type='text'
             name='description'
             aria-label='Detailed Description'
+            title='Detailed Description'
             value={this.state.description}
             onChange = {this.handleChange}
             required
@@ -93,6 +98,7 @@ class NewQuestionForm extends Component{
             type='text'
             name='education'
             aria-label='An Educational Resource to teach others about possible answers'
+            title='An Educational Resource to teach others about possible answers'
             value={this.state.education}
             onChange = {this.handleChange}
             required
@@ -105,23 +111,24 @@ class NewQuestionForm extends Component{
             type='text'
             name='tags'
             aria-label='Keywords to search for'
+            title='Keywords to search for'
             value='Not Implemented yet'
             onChange = {this.handleChange}
           />
         </label> }
-        <label> Number of Answers:
+        <label id='question-form-number-of-answers'> Number of Answers:
           <input
             type='number'
             name='numAnswers'
-            aria-label='An Educational Resource to teach others about possible answers'
+            aria-label='Number of Answers'
+            title='Number of Answers'
             value={this.state.numAnswers}
             onChange = {this.handleChange}
             required
           />
         </label>
-        <br />
         {answerInputs}
-        <button type="submit">Create this Question</button>
+        <Button label='Create this Question' type="submit" />
       </form>
     </div>)
   }

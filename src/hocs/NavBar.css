@@ -80,8 +80,18 @@ header nav li {
     color:black;
 }
 
+header nav a {
+    border-right: 2px solid aqua;
+}
+
+header nav li a{
+    border-right:none;
+}
+
 .activeNavLink li{
-    background-color:green;
+    border: 2px solid #2473ac;
+    border-radius:8px;
+    background-color: #2473ac;
 }
 
 @media screen and (max-width: 700px) {

@@ -60,7 +60,6 @@ export const removeQuestionAction = question_id => (dispatch, getState) => {
 export const loadOneQuestionAction = question_id => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  console.log("id is: ", id)
   return apiCall("get", `/api/questions/${id}/${question_id}`)
     .then(res => dispatch(loadOneQuestion(res)))
     .catch(err => addError(err.message));
@@ -78,7 +77,6 @@ export const updateQuestionAction = question_id => (dispatch, getState) => {
 export const answerQuestionAction = (question_id, answer) => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  console.log("in action, answer is: ", answer)
   return apiCall("post", `/api/questions/${id}/${question_id}`, {answer})
     .then(res => dispatch(answerQuestion(res)))
     .catch(err => addError(err.message));

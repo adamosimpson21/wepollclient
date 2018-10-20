@@ -4,6 +4,8 @@ import { loadOneQuestionAction, removeQuestionAction, answerQuestionAction } fro
 import connect from 'react-redux/es/connect/connect'
 import withRouter from 'react-router/es/withRouter'
 import Link from 'react-router-dom/es/Link'
+import BackFrame from "../hocs/BackFrame";
+import moment from 'moment';
 
 class QuestionDetails extends Component{
   componentDidMount(){
@@ -34,15 +36,15 @@ class QuestionDetails extends Component{
       const answerDisplays = answers.map(answer => (
         <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>
       ))
-      return(<div>
+      return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
-        <div className='question-title'>{questionContent}</div>
-        <div className='question-title'>{education}</div>
-        <div className='question-title'>{description}</div>
+        <div className='question-content'>{questionContent}</div>
+        <div className='question-education'>{education}</div>
+        <div className='question-description'>{description}</div>
         {answerDisplays}
         {process.env.REACT_APP_ENV_TYPE==='development' && <div><Link to={'/question/'+_id + '/results'}>Go to results page (for development)</Link></div>}
-        <div className='question-title'>Answer this Question to get {xpReward} experience</div>
-        <div className='question-title'>This question has a {rating} rating and was created at {createdAt} by {author.username}</div>
+        <div className='question-xpReward'>Answer this Question to get {xpReward} experience</div>
+        <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
           <div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
             {process.env.REACT_APP_ENV_TYPE==='development' &&  <button onClick={this.handleEdit}>Edit this Question (Not Implemented)</button>}
@@ -64,4 +66,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction})(withRouter(QuestionDetails));
+export default connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction})(withRouter(BackFrame(QuestionDetails)));
