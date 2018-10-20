@@ -31,7 +31,7 @@ class QuestionDetails extends Component{
 
   render(){
     if(this.props.questions[0]){
-      const { questionContent, description, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
+      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
       const { isAuthenticated, user } = this.props.currentUser
       const answerDisplays = answers.map(answer => (
         <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>
@@ -40,7 +40,6 @@ class QuestionDetails extends Component{
         <div className='question-title'>{title}</div>
         <div className='question-content'>{questionContent}</div>
         <div className='question-education'>{education}</div>
-        <div className='question-description'>{description}</div>
         {answerDisplays}
         {process.env.REACT_APP_ENV_TYPE==='development' && <div><Link to={'/question/'+_id + '/results'}>Go to results page (for development)</Link></div>}
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience</div>
@@ -48,7 +47,7 @@ class QuestionDetails extends Component{
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
           <div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
             {process.env.REACT_APP_ENV_TYPE==='development' &&  <button onClick={this.handleEdit}>Edit this Question (Not Implemented)</button>}
-            <button onClick={this.handleDelete}>Delete this Question</button>
+            <button className='question-delete' onClick={this.handleDelete}>Delete this Question</button>
           </div>
         )}
       </div>)
