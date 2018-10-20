@@ -1,14 +1,16 @@
 import React, {Component} from 'react'
 import './LogIn.css'
-import ErrorDisplay from '../hocs/ErrorDisplay'
 import connect from 'react-redux/es/connect/connect'
 import { authUser} from '../store/actions/auth'
 
 class LogIn extends Component{
-  state={
+  constructor(props){
+    super(props)
+    this.state={
       username:'',
       password:''
     }
+  }
 
   handleChange = e => {
     this.setState({
@@ -30,7 +32,6 @@ class LogIn extends Component{
     return(<div>
       <form onSubmit = {this.handleSubmit}>
         <h1>Log In!</h1>
-        <ErrorDisplay />
         <label>Username
           <input
             autoComplete="off"

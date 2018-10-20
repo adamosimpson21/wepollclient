@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
-import './Register.css'
-import ErrorDisplay from '../hocs/ErrorDisplay'
-import connect from 'react-redux/es/connect/connect'
-import { authUser } from '../store/actions/auth'
+import './Register.css';
+import connect from 'react-redux/es/connect/connect';
+import { authUser } from '../store/actions/auth';
 
 class Register extends Component{
-  state={
-    username:'',
-    password:''
+  constructor(props){
+    super(props)
+    this.state={
+      username:'',
+      password:''
+    }
   }
 
   handleChange = e => {
@@ -31,7 +33,6 @@ class Register extends Component{
     return(<div>
       <form onSubmit = {this.handleSubmit}>
         <h1>Register Here</h1>
-        <ErrorDisplay />
         <label>Username
           <input
             autoComplete="off"

@@ -15,11 +15,13 @@ import Footer from "./hocs/Footer";
 import NewQuestionForm from './question/NewQuestionForm'
 import QuestionDetails from './question/QuestionDetails'
 import QuestionResults from './question/QuestionResults'
+import ErrorDisplay from "./hocs/ErrorDisplay";
 
 const App = () => {
   return(
       <div className='App'>
         <NavBar/>
+        <ErrorDisplay />
         <Switch>
           <Route exact path='/landing' component={Landing}/>
           <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>

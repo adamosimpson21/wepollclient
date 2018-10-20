@@ -1,0 +1,35 @@
+.question-results{
+    font-size:1.2rem;
+    width:60vw;
+}
+
+.question-results .question-content{
+    font-size:2rem;
+    margin: 24px 0;
+}
+
+.question-results .question-education{
+    width:60%;
+    margin: 0 auto 24px auto;
+}
+
+.question-results .answer-display{
+    font-size:1.2rem;
+    width:40%;
+    padding: 2px;
+    margin: 4px auto;
+    border-radius: 8px;
+}
+
+.question-results .question-xpReward{
+    margin-top:24px;
+}
+
+.question-results .question-delete{
+    background-color: #e15a61;
+    margin:4px;
+    padding:4px;
+    color:white;
+    border: 2px solid #e15a61;
+    border-radius: 8px;
+}
