@@ -1,20 +1,22 @@
 import React, {Component} from 'react'
-import './ItemPlacard.css'
+import './ItemPlacard.css';
+import BackFrame from '../hocs/BackFrame'
+import Button from "../hocs/Button";
 
 class ItemPlacard extends Component{
   render(){
-    const {name, stack, cost, image, removeItem, addToInventory} = this.props
+    const {name, stack, cost, image, removeItem, addToInventory, currentUser} = this.props
     return(
-      <div>
-        <p>Item name is {name}</p>
+      <div className='shop-item-placard'>
+        <img className='shop-item-image' alt={name} src={image} />
+        <p>{name}</p>
         <p>Item stack is {stack}</p>
-        <p>Item cost is {cost}</p>
-        <img className='item-image' alt={name} src={image} />
-        <button onClick={addToInventory}>Buy This Item</button>
-        <span onClick={removeItem}> X </span>
+        <p>Cost: {cost} coins</p>
+        <Button onClick={addToInventory} label='Buy This Item' />
+        {currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder' && <div><button onClick={removeItem} className='shop-remove-item'> Remove This Item from the Game (founders and admins only) </button></div>}
       </div>
     )
   }
 }
 
-export default ItemPlacard;
+export default BackFrame(ItemPlacard);

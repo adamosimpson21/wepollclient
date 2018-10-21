@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import {addError} from '../store/actions/errors'
 
 export default function withAuth(ComponentToBeRendered) {
   class Authenticate extends Component {
     componentWillMount() {
       if (this.props.isAuthenticated === false) {
-        this.props.history.push("/signin");
+        this.props.addError("You have to Log in to do that")
+        this.props.history.push("/logIn");
       }
     }
     componentWillUpdate(nextProps) {
       if (nextProps.isAuthenticated === false) {
-        this.props.history.push("/signin");
+        this.props.addError("You have to Log in to do that")
+        this.props.history.push("/logIn");
       }
     }
     render() {
@@ -22,5 +25,5 @@ export default function withAuth(ComponentToBeRendered) {
     return { isAuthenticated: state.currentUser.isAuthenticated };
   }
 
-  return connect(mapStateToProps)(Authenticate);
+  return connect(mapStateToProps, { addError })(Authenticate);
 }

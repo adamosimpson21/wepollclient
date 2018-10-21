@@ -37,8 +37,8 @@ class NavBar extends Component{
                   <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user" />Profile</li></NavLink>
                 </span>
                 <span className='navSmallMenuRow'>
-                  <NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" />Party</li></NavLink>
-                  <NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" />Settings</li></NavLink>
+                  {/*<NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" />Party</li></NavLink>*/}
+                  {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" />Settings</li></NavLink>*/}
                   <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark" />About</li></NavLink>
                   {this.props.currentUser.isAuthenticated ? (
                       <li><a onClick={this.logout}><Icon icon="logOut" />Log out</a></li>

@@ -5,16 +5,16 @@ import withRouter from 'react-router/es/withRouter'
 import { removeError } from '../store/actions/errors'
 
 class ErrorDisplay extends Component{
+  removeError = () => {
+    this.props.removeError()
+  }
   render(){
-    const { errors, history, removeError } = this.props
-
-    if(errors.message){
-      history.listen(() => {
-        removeError();
-      });
+    const { errors} = this.props
+    if(errors.message!==null){
       return(
         <div className='error-display'>
           {errors.message}
+          <button onClick={this.removeError} className='error-display-remove'><strong>X</strong></button>
         </div>
       )
     } else {

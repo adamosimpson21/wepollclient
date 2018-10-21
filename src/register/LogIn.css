@@ -1,0 +1,27 @@
+.login-page{
+    font-size:1.3rem;
+}
+
+.login-form{
+    display:inline-grid;
+}
+
+.login-form label{
+    border: 2px solid black;
+    border-radius:16px;
+    background: #ebebeb;
+    margin:12px;
+    padding: 4px;
+}
+
+.login-form input{
+    background-color:inherit;
+    border:none;
+    border-bottom: 1px solid black;
+    width:80%;
+    font-size:1.3rem;
+}
+
+.login-form Button{
+    margin: 4px auto 24px auto;
+}

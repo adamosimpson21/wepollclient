@@ -1,3 +1,14 @@
-.item-image{
-    width:48px;
+.shop-item-image{
+    width:96px;
+}
+
+.shop-remove-item{
+    margin-top:16px;
+    font-size:.6rem;
+    background-color:red;
+    color:white;
+}
+
+.shop-item-placard Button{
+    width:80%;
 }

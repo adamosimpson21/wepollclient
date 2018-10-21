@@ -7,7 +7,7 @@ import connect from 'react-redux/es/connect/connect'
 
 class ItemList extends Component{
   render(){
-    const { items, removeItem, addToInventory} = this.props
+    const { items, removeItem, addToInventory, currentUser} = this.props
     if(items.length>0){
       const allItems = items.map(item => (
         <ItemPlacard
@@ -15,9 +15,10 @@ class ItemList extends Component{
           {...item}
           removeItem={removeItem.bind(this, item._id)}
           addToInventory={addToInventory.bind(this, item._id)}
+          currentUser={ currentUser}
         />
       ))
-      return(<div className='itemList'>{allItems}</div>)
+      return(<div className='shop-item-list'>{allItems}</div>)
     } else {
       return(<div>Loading Items...</div>)
     }
@@ -26,7 +27,8 @@ class ItemList extends Component{
 
 function mapStateToProps(state){
   return {
-    items: state.items
+    items: state.items,
+    currentUser: state.currentUser
   }
 }
 

@@ -14,8 +14,8 @@ class Shop extends Component{
   render(){
     const { items } = this.props
     return(<div>
-      <ItemForm />
-      <UserInventory />
+      {this.props.currentUser.user.authLevel==='admin' || this.props.currentUser.user.authLevel==='founder' && <ItemForm />}
+      {this.props.currentUser.isAuthenticated ? <UserInventory /> : <div>Log In to access your inventory</div>}
       <ItemList items={items}/>
     </div>)
   }
@@ -23,7 +23,8 @@ class Shop extends Component{
 
 function mapStateToProps(state) {
   return {
-    items: state.items
+    items: state.items,
+    currentUser: state.currentUser
   };
 }
 

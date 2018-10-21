@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import './LogIn.css'
 import connect from 'react-redux/es/connect/connect'
 import { authUser} from '../store/actions/auth'
+import Button from "../hocs/Button";
+import Link from "react-router-dom/es/Link";
 
 class LogIn extends Component{
   constructor(props){
@@ -29,30 +31,37 @@ class LogIn extends Component{
 
   render(){
     const { username, password } = this.state;
-    return(<div>
-      <form onSubmit = {this.handleSubmit}>
-        <h1>Log In!</h1>
-        <label>Username
+    return(<div className='login-page'>
+      <h1>Log In!</h1>
+      <form onSubmit = {this.handleSubmit} className='login-form'>
+        <label className='login-form-username'>Username:
           <input
+            className='login-form-username-input'
             autoComplete="off"
             id="username"
             name="username"
             onChange={this.handleChange}
             type="text"
+            minLength='8'
             value={username}
+            required
           />
         </label>
-        <label>Password
+        <label className='login-form-password'>Password:
           <input
+            className='login-form-password-input'
             autoComplete="off"
             id="password"
             name="password"
             onChange={this.handleChange}
             type="password"
+            minLength='8'
             value={password}
+            required
           />
         </label>
-        <button type="submit">Log In</button>
+        <Button type="submit" label='Log In'/>
+        <Link to='/register'>Don't have an account?</Link>
       </form>
     </div>)
   }

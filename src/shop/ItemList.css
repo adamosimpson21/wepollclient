@@ -1,3 +1,4 @@
-.itemList{
+.shop-item-list{
     color:black;
+    display:inline-flex;
 }

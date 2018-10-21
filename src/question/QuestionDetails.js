@@ -6,7 +6,7 @@ import withRouter from 'react-router/es/withRouter'
 import Link from 'react-router-dom/es/Link'
 import BackFrame from "../hocs/BackFrame";
 import moment from 'moment';
-import {addErrorAction} from "../store/actions/errors";
+import {addError} from "../store/actions/errors";
 
 class QuestionDetails extends Component{
   componentDidMount(){
@@ -15,14 +15,15 @@ class QuestionDetails extends Component{
 
   handleAnswer = event => {
     event.preventDefault();
-    const { currentUser, answerQuestionAction, match, history, addErrorAction } = this.props
-    if(currentUser.isAuthenticated){
+    const { currentUser, answerQuestionAction, match, history, addError } = this.props
+    if(currentUser.isAuthenticated && !currentUser.user.questions.includes(match.params.questionId)){
       answerQuestionAction(match.params.questionId, event.target.value)
       history.push(`/question/${match.params.questionId}/results`)
-    } else if(currentUser.user.questions.some(match.params.questionId)){
-      addErrorAction("You've answered this question already")
+    } else if(currentUser.isAuthenticated){
+      addError("You've answered this question already")
+      history.push(`/question/${match.params.questionId}/results`)
     } else{
-      addErrorAction("You must be logged in to do that")
+      addError("You must be logged in to do that")
     }
   }
 
@@ -74,4 +75,4 @@ function mapStateToProps(state){
   }
 }
 
-export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addErrorAction})(BackFrame(QuestionDetails)));
+export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addError})(BackFrame(QuestionDetails)));

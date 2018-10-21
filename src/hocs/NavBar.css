@@ -61,7 +61,6 @@ header li {
 /* End Mobile Navbar */
 header a {
     text-decoration: none;
-    color: #eee;
     cursor: pointer;
     opacity: 0.9;
 }

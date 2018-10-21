@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './InventoryItem.css'
 import connect from 'react-redux/es/connect/connect'
 import { removeFromInventory } from '../store/actions/user'
+import BackFrame from "../hocs/BackFrame";
+import Button from "../hocs/Button";
 
 class InventoryItem extends Component{
   populateItem(itemId){
@@ -18,9 +20,13 @@ class InventoryItem extends Component{
     const { item, removeItem } = this.props
     let itemWithDetails = this.populateItem(item)
     return(
-      <div className='item-in-inventory'>This is an item {itemWithDetails.name}
-        <img className='item-image' alt={itemWithDetails.name} src={itemWithDetails.image} />
-        <button onClick={removeItem}>Delete Me</button>
+      <div className='item-in-inventory'>
+        <img className='shop-item-image' alt={itemWithDetails.name} src={itemWithDetails.image} />
+        <div>{itemWithDetails.name}</div>
+        <div>You have {itemWithDetails.stack} of these</div>
+        <div>Can have multiple: {itemWithDetails.canHaveMultiple ? <span>Yes</span> : <span>No</span>}</div>
+        <div>{itemWithDetails.description ? itemWithDetails.description : null}</div>
+        <Button onClick={removeItem} label='Delete Me' />
       </div>
     )
   }
@@ -32,4 +38,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { removeFromInventory })(InventoryItem);
+export default connect(mapStateToProps, { removeFromInventory })(BackFrame(InventoryItem));

@@ -12,6 +12,7 @@ class ItemForm extends Component{
   defaultState = {
     name: '',
     cost: 1,
+    description:'',
     canHaveMultiple: false,
     image: "https://images.unsplash.com/photo-1520946708818-4966701c25e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ada9b03ec040b816c353056c77eb6cd3&auto=format&fit=crop&w=1350&q=80"
   }
@@ -43,6 +44,16 @@ class ItemForm extends Component{
             required
           />
         </label>
+        <label>Item Description:
+          <input
+            type='text'
+            name='description'
+            aria-label='item description'
+            value={this.state.description}
+            onChange = {this.handleChange}
+            required
+          />
+        </label>
         <label>Item Cost:
           <input
             type='number'
@@ -53,7 +64,7 @@ class ItemForm extends Component{
             required
           />
         </label>
-        <label>Stack-able:
+        <label>Can have multiple:
           <input
             type='checkbox'
             name='canHaveMultiple'
