@@ -25,6 +25,7 @@ const App = () => {
         <ErrorDisplay />
 
           <Switch>
+            <Route exact path='/splash' component={Splash}/>
             <Route exact path='/landing' component={Landing}/>
             <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
             <Route exact path='/party' component={Party}/>
@@ -32,13 +33,13 @@ const App = () => {
             <Route exact path='/question' component={Question}/>
             <Route exact path='/settings' component={Settings}/>
             <Route exact path='/shop' component={Shop}/>
-            <Route exact path='/splash' component={Splash}/>
             <Route exact path='/register' component={Register}/>
             <Route exact path='/logIn' component={LogIn} />
             <Route exact path='/newQuestionForm' component={NewQuestionForm} />
             <Route exact path='/question/:questionId' component={QuestionDetails} />
             <Route exact path='/question/:questionId/results' component={QuestionResults} />
-            <Redirect from="/" to="/landing"/>
+            <Redirect from="/" to="/splash"/>
+            <Redirect from="*" to="/landing"/>
           </Switch>
         </div>
         <Footer/>
