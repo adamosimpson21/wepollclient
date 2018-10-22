@@ -1,6 +1,11 @@
 header {
     background-color: #6caadd;
     display: flex;
+    position: absolute;
+    left:0;
+    top:0;
+    right:0;
+    height:70px;
     justify-content: space-between;
     align-items: center;
     padding: 0 15px;
@@ -47,11 +52,6 @@ header h1 {
     text-align: center;
 }
 
-header h2{
-    margin: 4px;
-    width:fit-content;
-}
-
 header li {
     list-style: none;
     padding:15px;
@@ -59,6 +59,7 @@ header li {
 }
 
 /* End Mobile Navbar */
+
 header a {
     text-decoration: none;
     cursor: pointer;
@@ -97,9 +98,5 @@ header nav li a{
     header{
         flex-direction: column;
         width:100%;
-    }
-
-    header h2{
-        margin-bottom: 15px;
     }
 }

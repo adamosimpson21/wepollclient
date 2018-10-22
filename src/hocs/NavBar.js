@@ -6,6 +6,7 @@ import ResponsiveMenu from 'react-responsive-navbar';
 import { logout } from "../store/actions/auth";
 import connect from 'react-redux/es/connect/connect';
 import withRouter from "react-router/es/withRouter";
+import WePollBrand from "./WePollBrand";
 
 class NavBar extends Component{
   logout = e => {
@@ -28,7 +29,7 @@ class NavBar extends Component{
           <header>
             <div className="fullNavbar">
               <h2>
-                <NavLink to="/landing"><li>Main Menu</li></NavLink>
+                <NavLink to="/landing"><li><WePollBrand /></li></NavLink>
               </h2>
               <nav>
                 <span className='navSmallMenuRow'>

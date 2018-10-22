@@ -6,6 +6,7 @@ import withRouter from 'react-router/es/withRouter'
 import BackFrame from "../hocs/BackFrame";
 import moment from "moment";
 import withAuth from "../hocs/withAuth";
+import Loader from 'react-loader-spinner';
 
 class QuestionResults extends Component{
   componentDidMount(){
@@ -49,7 +50,14 @@ class QuestionResults extends Component{
         )}
       </div>)
     } else {
-      return(<div>Loading Question...</div>)
+      return(<div>
+        <Loader
+        type="Circles"
+        color="#00BFFF"
+        height={200}
+        width={100}
+        />
+      </div>)
     }
 
   }

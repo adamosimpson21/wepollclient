@@ -12,6 +12,14 @@
   font-size:16px;
 }
 
+.app-content{
+  position: absolute;
+  overflow: auto;
+  top:70px;
+  bottom: 60px;
+  width:100vw;
+}
+
 @media screen and (max-width: 700px){
   html, body{
     margin:0;

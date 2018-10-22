@@ -7,6 +7,7 @@ import Link from 'react-router-dom/es/Link'
 import BackFrame from "../hocs/BackFrame";
 import moment from 'moment';
 import {addError} from "../store/actions/errors";
+import Loader from 'react-loader-spinner';
 
 class QuestionDetails extends Component{
   componentDidMount(){
@@ -39,7 +40,7 @@ class QuestionDetails extends Component{
   }
 
   render(){
-    if(this.props.questions[0]){
+    if(this.props.questions.length === 1 && this.props.questions[0]){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
       const { isAuthenticated, user } = this.props.currentUser
       const answerDisplays = answers.map(answer => (
@@ -61,9 +62,14 @@ class QuestionDetails extends Component{
         )}
       </div>)
     } else {
-      return(<div>Question loading...</div>)
-    }
-
+      return(<div>
+        <Loader
+                    type="Circles"
+                    color="#00BFFF"
+                    height={200}
+                    width={100}
+                    />
+      </div>)}
   }
 }
 

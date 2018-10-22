@@ -4,6 +4,7 @@ import ItemPlacard from "./ItemPlacard";
 import { removeItem } from '../store/actions/items'
 import {addToInventory} from '../store/actions/user'
 import connect from 'react-redux/es/connect/connect'
+import Loader from "react-loader-spinner";
 
 class ItemList extends Component{
   render(){
@@ -20,7 +21,14 @@ class ItemList extends Component{
       ))
       return(<div className='shop-item-list'>{allItems}</div>)
     } else {
-      return(<div>Loading Items...</div>)
+      return(<div>
+        <Loader
+        type="Circles"
+        color="#00BFFF"
+        height={200}
+        width={100}
+        />
+      </div>)
     }
   }
 }

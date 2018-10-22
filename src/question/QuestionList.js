@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './QuestionList.css'
 import Link from 'react-router-dom/es/Link'
 import Button from "../hocs/Button";
+import Loader from "react-loader-spinner";
 
 class QuestionList extends Component{
   render(){
@@ -16,9 +17,18 @@ class QuestionList extends Component{
       ))
       return(<div className='question-list'>{allQuestions}</div>)
     } else {
-      return(<div>Questions Loading...</div>)
+      return(<div>
+          <Loader
+            type="Circles"
+            color="#00BFFF"
+            height={200}
+            width={100}
+          />
+      </div>)
     }
   }
 }
+
+
 
 export default QuestionList;

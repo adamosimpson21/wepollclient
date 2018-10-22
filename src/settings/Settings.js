@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import './Settings.css';
-import Loader from 'react-loader-spinner';
+// import Loader from 'react-loader-spinner';
 
 
 class Settings extends Component{

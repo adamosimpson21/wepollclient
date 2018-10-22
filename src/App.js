@@ -21,23 +21,26 @@ const App = () => {
   return(
       <div className='App'>
         <NavBar/>
+        <div className='app-content'>
         <ErrorDisplay />
-        <Switch>
-          <Route exact path='/landing' component={Landing}/>
-          <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
-          <Route exact path='/party' component={Party}/>
-          <Route exact path='/profile' component={Profile}/>
-          <Route exact path='/question' component={Question}/>
-          <Route exact path='/settings' component={Settings}/>
-          <Route exact path='/shop' component={Shop}/>
-          <Route exact path='/splash' component={Splash}/>
-          <Route exact path='/register' component={Register}/>
-          <Route exact path='/logIn' component={LogIn} />
-          <Route exact path='/newQuestionForm' component={NewQuestionForm} />
-          <Route exact path='/question/:questionId' component={QuestionDetails} />
-          <Route exact path='/question/:questionId/results' component={QuestionResults} />
-          <Redirect from="/" to="/landing"/>
-        </Switch>
+
+          <Switch>
+            <Route exact path='/landing' component={Landing}/>
+            <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
+            <Route exact path='/party' component={Party}/>
+            <Route exact path='/profile' component={Profile}/>
+            <Route exact path='/question' component={Question}/>
+            <Route exact path='/settings' component={Settings}/>
+            <Route exact path='/shop' component={Shop}/>
+            <Route exact path='/splash' component={Splash}/>
+            <Route exact path='/register' component={Register}/>
+            <Route exact path='/logIn' component={LogIn} />
+            <Route exact path='/newQuestionForm' component={NewQuestionForm} />
+            <Route exact path='/question/:questionId' component={QuestionDetails} />
+            <Route exact path='/question/:questionId/results' component={QuestionResults} />
+            <Redirect from="/" to="/landing"/>
+          </Switch>
+        </div>
         <Footer/>
       </div>
   )

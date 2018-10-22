@@ -3,6 +3,7 @@ import './NewQuestionForm.css'
 import { postQuestion } from '../store/actions/questions'
 import connect from 'react-redux/es/connect/connect'
 import Button from "../hocs/Button";
+import withRouter from "react-router/es/withRouter";
 
 class NewQuestionForm extends Component{
   constructor(props){
@@ -29,6 +30,7 @@ class NewQuestionForm extends Component{
     }
     const { questionContent, title, description, education } = this.state
     this.props.postQuestion({questionContent, title, description, education, answers})
+    this.props.history.push('/question')
   }
 
   handleChange = event => {
@@ -60,6 +62,8 @@ class NewQuestionForm extends Component{
 
     return(<div>
       <form onSubmit={this.handleSubmit} className='new-question-form'>
+        <h2>Fill out the form below to create a new question on WePoll.</h2>
+        <h4> After you successfully submit, it will appear at the bottom of the page (you may have to scroll down)</h4>
         <label> Question:
           <input
             type='text'
@@ -121,7 +125,9 @@ class NewQuestionForm extends Component{
             type='number'
             name='numAnswers'
             aria-label='Number of Answers'
-            title='Number of Answers'
+            title='Number of Answers, minimum 2, maximum 20'
+            min={2}
+            max={20}
             value={this.state.numAnswers}
             onChange = {this.handleChange}
             required
@@ -134,4 +140,4 @@ class NewQuestionForm extends Component{
   }
 }
 
-export default connect(null, {postQuestion})(NewQuestionForm);
+export default withRouter(connect(null, {postQuestion})(NewQuestionForm));

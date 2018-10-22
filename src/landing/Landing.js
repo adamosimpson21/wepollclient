@@ -14,9 +14,10 @@ class Landing extends Component{
         </div>
         <div className='landingButtons'>
           <Link to='/question'><ButtonLG label='Questions' /></Link>
-          <Link to='/party'><ButtonLG label='Party' /></Link>
+          {/*<Link to='/party'><ButtonLG label='Party' /></Link>*/}
           <Link to='/shop'><ButtonLG label='Shop' /></Link>
-          <Link to='/settings'><ButtonLG label='Settings' /></Link>
+          <Link to='/profile'><ButtonLG label='Profile' /></Link>
+          {/*<Link to='/settings'><ButtonLG label='Settings' /></Link>*/}
           <Link to='/about'><ButtonLG label='About' /></Link>
         </div>
       </div>)
