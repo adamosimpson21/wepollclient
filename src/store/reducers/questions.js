@@ -16,7 +16,7 @@ export default (state = DEFAULT_STATE, action) => {
     case GET_QUESTIONS:
       return [...action.questions]
     case CREATE_QUESTION:
-      return [...state, action.question]
+      return [...state]
     case GET_ONE_QUESTION:
       return [action.question]
     // not implemented yet

@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="20c9fa19-a015-499a-beb1-28edb1165ac4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hocs/WePollBrand.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hocs/WePollBrand.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/landing/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/landing/Landing.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/NewQuestionForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/NewQuestionForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/QuestionDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/QuestionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/QuestionResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/settings/Settings.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/settings/Settings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/ItemList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ItemList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/questions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/questions.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -44,9 +30,9 @@
           <entry key="css" value="25" />
           <entry key="development" value="2" />
           <entry key="env" value="1" />
-          <entry key="gitignore" value="2" />
+          <entry key="gitignore" value="3" />
           <entry key="html" value="3" />
-          <entry key="js" value="118" />
+          <entry key="js" value="119" />
           <entry key="json" value="5" />
           <entry key="mongod" value="1" />
         </counts>
@@ -57,8 +43,8 @@
           <entry key="CSS" value="25" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="118" />
-          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="JavaScript" value="119" />
+          <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -69,7 +55,7 @@
           <entry key="env" value="32" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="14" />
-          <entry key="js" value="5804" />
+          <entry key="js" value="5805" />
           <entry key="json" value="65" />
           <entry key="local" value="14" />
         </counts>
@@ -80,7 +66,7 @@
           <entry key="CSS" value="2900" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="65" />
-          <entry key="JavaScript" value="5804" />
+          <entry key="JavaScript" value="5805" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -94,30 +80,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="53" column="12" lean-forward="true" selection-start-line="53" selection-start-column="12" selection-end-line="58" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/shop/ItemList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="24" column="12" lean-forward="true" selection-start-line="24" selection-start-column="12" selection-end-line="29" selection-end-column="10" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -169,7 +131,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="713">
+            <state relative-caret-position="-184">
               <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
               <folding>
                 <element signature="e#0#45#0" expanded="true" />
@@ -181,11 +143,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/questions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+            <state relative-caret-position="207">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding>
                 <element signature="e#0#145#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/services/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -202,10 +173,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/landing/Landing.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
+            <state relative-caret-position="345">
               <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
@@ -222,7 +193,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/question/QuestionTitle.css" />
         <option value="$PROJECT_DIR$/src/question/QuestionList.css" />
         <option value="$PROJECT_DIR$/src/question/NewQuestionForm.css" />
         <option value="$PROJECT_DIR$/src/question/QuestionDetails.css" />
@@ -270,9 +240,10 @@
         <option value="$PROJECT_DIR$/src/shop/ItemList.js" />
         <option value="$PROJECT_DIR$/src/question/QuestionDetails.js" />
         <option value="$PROJECT_DIR$/src/settings/Settings.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/questions.js" />
         <option value="$PROJECT_DIR$/src/question/NewQuestionForm.js" />
         <option value="$PROJECT_DIR$/src/landing/Landing.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/questions.js" />
+        <option value="$PROJECT_DIR$/src/services/api.js" />
       </list>
     </option>
   </component>
@@ -295,8 +266,8 @@
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="673" />
-    <option name="height" value="496" />
+    <option name="width" value="1873" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -340,37 +311,7 @@
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
               <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="landing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="question" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="register" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="settings" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="shop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="splash" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
@@ -446,18 +387,18 @@
       <option name="presentableId" value="Default" />
       <updated>1539923955652</updated>
       <workItem from="1539923958367" duration="988000" />
-      <workItem from="1539926629117" duration="52229000" />
+      <workItem from="1539926629117" duration="53972000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53217000" />
+    <option name="totallyTimeSpent" value="54960000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959128" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24959128" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -471,7 +412,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32911393" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -484,16 +425,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/question/QuestionDetails.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/errors.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions/errors.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -819,16 +750,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/Shop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -859,26 +780,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#45#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/questions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/question/NewQuestionForm.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="428">
@@ -891,11 +792,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/landing/Landing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
+        <state relative-caret-position="345">
           <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/questions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#145#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="28" column="11" lean-forward="true" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="17" column="23" lean-forward="true" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
         </state>
       </provider>
     </entry>
