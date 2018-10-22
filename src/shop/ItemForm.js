@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import './ItemForm.css'
 import { postItem } from '../store/actions/items'
 import connect from 'react-redux/es/connect/connect'
+import Button from "../hocs/Button";
+import BackFrame from "../hocs/BackFrame";
 
 class ItemForm extends Component{
   constructor(props){
@@ -32,9 +34,10 @@ class ItemForm extends Component{
   }
 
   render(){
-    return(<div>
-      <form onSubmit={this.handleSubmit}>
-        <label>Item Name:
+    return(<div className='new-item-body'>
+      <p>Add a new item to the game. Admin and Founders only</p>
+      <form onSubmit={this.handleSubmit} className='new-item-form'>
+        <label className='new-item-name'>Item Name:
           <input
             type='text'
             name='name'
@@ -44,7 +47,7 @@ class ItemForm extends Component{
             required
           />
         </label>
-        <label>Item Description:
+        <label className='new-item-description'>Item Description:
           <input
             type='text'
             name='description'
@@ -54,7 +57,7 @@ class ItemForm extends Component{
             required
           />
         </label>
-        <label>Item Cost:
+        <label className='new-item-cost'>Item Cost:
           <input
             type='number'
             name='cost'
@@ -64,7 +67,7 @@ class ItemForm extends Component{
             required
           />
         </label>
-        <label>Can have multiple:
+        <label className='new-item-can-have-multiple'>Can have multiple:
           <input
             type='checkbox'
             name='canHaveMultiple'
@@ -73,7 +76,7 @@ class ItemForm extends Component{
             onChange={this.handleChange}
           />
         </label>
-        <label>Item Image:
+        <label className='new-item-image'>Item Image:
           <input
             type='text'
             name='image'
@@ -83,7 +86,7 @@ class ItemForm extends Component{
             required
           />
         </label>
-        <button type="submit">Add Item</button>
+        <Button type="submit" label='Add Item'/>
       </form>
     </div>)
   }
@@ -95,4 +98,4 @@ class ItemForm extends Component{
   }
  }
 
-export default connect(mapStateToProps, {postItem})(ItemForm);
+export default connect(mapStateToProps, {postItem})(BackFrame(ItemForm));

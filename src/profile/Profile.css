@@ -1,17 +1,23 @@
 .avatar-image{
     width:64px;
+    margin:auto;
 }
 
 .user-aside{
-    width:30vw;
+    width:fit-content;
     float:left;
-    display: block;
+    display: inline-grid;
+    border: 2px solid black;
+    border-radius:8px;
+    font-size:1.3rem;
+    margin-left:48px;
 }
 
 .profile-main, .profile-demographics{
     display:block;
     width:60vw;
     border: 2px solid gray;
-    background-color:lime;
+    background-color:lightgrey;
     font-size:24px;
+    margin:auto;
 }

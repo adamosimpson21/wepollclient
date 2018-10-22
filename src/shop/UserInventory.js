@@ -41,8 +41,10 @@ class UserInventory extends Component{
       }
       return(
         <div>
+          <div className='user-inventory-header'>
           {user.username}'s Inventory!
           You have {user.coins} coins
+          </div>
           <form onSubmit={this.handleSubmit}>
             <label>Buy Coins:
               <input

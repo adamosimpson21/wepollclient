@@ -5,6 +5,9 @@ import connect from 'react-redux/es/connect/connect'
 import { checkLevel } from '../helper/experience'
 import Button from '../hocs/Button'
 import {fetchItems} from '../store/actions/items'
+import InventoryItem from "../shop/InventoryItem";
+import {removeFromInventory} from "../store/actions/user";
+import moment from "moment";
 
 class Profile extends Component{
   constructor(props){
@@ -15,10 +18,8 @@ class Profile extends Component{
     }
   }
 
-  componentDidMount(){
-    if(this.props.items.length <= 0){
-      this.props.fetchItems();
-    }
+  componentWillMount(){
+    this.props.fetchItems();
   }
 
   revealPassword = () => {
@@ -30,11 +31,17 @@ class Profile extends Component{
   }
 
   render(){
-    const user = this.props.currentUser.user
-    if(user.experience) {
-      const items = user.inventory.map((item, index) => (
-        <div className='profile-item-single' key={index}>An item: {item.name}</div>
-      ))
+    const user = this.props.currentUser.user;
+    if(Object.keys(user).length > 0) {
+      let items = null
+      if(user.inventory.length > 0 && this.props.items.length > 0){
+        items = user.inventory.map((item, index) => (
+          <InventoryItem
+           key={index}
+           item={item}
+           removeItem={removeFromInventory.bind(this, item)}
+          />))
+      }
       return (<div className='profile-body'>
         <div className='user-aside'>
           {user.username}
@@ -43,10 +50,10 @@ class Profile extends Component{
         </div>
         <div className='profile-main'>
           <div className='profile-list'>Username: {user.username}</div>
-          <div className='profile-list'>Party: {user.party}</div>
-          <div className='profile-list'>Number of Questions Answered: {user.questions.length}</div>
-          <div className='profile-list'>Number of Questions Authored: {user.authored.length}</div>
-          <div className='profile-list'>Created at: {user.createdAt}</div>
+          <div className='profile-list'>Party: {user.party ? user.party : 'none'}</div>
+          <div className='profile-list'>Questions Answered: {user.questions.length}</div>
+          <div className='profile-list'>Questions Authored: {user.authored.length}</div>
+          <div className='profile-list'>Joined WePoll: {moment(user.createdAt).format('MMMM Do YYYY')}</div>
           <div className='profile-list-inventory'>Inventory: {items}</div>
           <div className='profile-list-password'>Password:
             {this.state.revealPassword ?
@@ -81,4 +88,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, {fetchItems})(withAuth(Profile));
+export default connect(mapStateToProps, {fetchItems, removeFromInventory})(withAuth(Profile));

@@ -26,7 +26,7 @@ class InventoryItem extends Component{
         <div>You have {itemWithDetails.stack} of these</div>
         <div>Can have multiple: {itemWithDetails.canHaveMultiple ? <span>Yes</span> : <span>No</span>}</div>
         <div>{itemWithDetails.description ? itemWithDetails.description : null}</div>
-        <Button onClick={removeItem} label='Delete Me' />
+        <Button onClick={removeItem} label='Remove' />
       </div>
     )
   }

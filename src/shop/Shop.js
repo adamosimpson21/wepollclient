@@ -14,8 +14,9 @@ class Shop extends Component{
   render(){
     const { items } = this.props
     return(<div>
-      {this.props.currentUser.user.authLevel==='admin' || this.props.currentUser.user.authLevel==='founder' && <ItemForm />}
+      {(this.props.currentUser.user.authLevel==='admin' || this.props.currentUser.user.authLevel==='founder') && <ItemForm />}
       {this.props.currentUser.isAuthenticated ? <UserInventory /> : <div>Log In to access your inventory</div>}
+      <div> Buy these Items from the store! </div>
       <ItemList items={items}/>
     </div>)
   }
