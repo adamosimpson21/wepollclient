@@ -18,6 +18,10 @@ header {
 }
 
 /* Mobile Navbar */
+.smallMenu .menuOpenButton{
+    padding-top:16px;
+}
+
 .smallMenu .menuCloseButton{
     padding: 22px 0 21px 20px;
     background-color: #6caadd;
