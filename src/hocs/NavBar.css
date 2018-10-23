@@ -18,47 +18,37 @@ header {
 }
 
 /* Mobile Navbar */
-header .smallMenu svg{
-    margin-top:16px;
-}
-
-.smallMenu nav{
-    display:block;
-}
-
-.smallMenu li{
-    padding:8px;
-}
-
-.navSmallMenuRow{
-    display:inline-flex;
-}
-
-.smallMenu .navSmallMenuRow a{
-    padding:2px;
-}
-
-.headerCloseButton{
-    margin-bottom:0;
-}
-
-.navbarAccess{
+.smallMenu .menuCloseButton{
+    padding: 22px 0 21px 20px;
     background-color: #6caadd;
-    fill:white;
-    opacity: 0.75
+    opacity: 0.75;
+    float:left;
 }
 
-header h1 {
-    text-align: center;
+.smallMenu header{
+    margin-left:44px;
 }
 
-header li {
-    list-style: none;
-    padding:15px;
-    color:black;
+.smallMenu .wepoll-brand{
+    display:none;
+}
+
+.smallMenu .navbar-text{
+    display:none;
+}
+
+.smallMenu h2{
+    display:none;
+}
+
+.smallMenu header li {
+    padding: 4px;
 }
 
 /* End Mobile Navbar */
+header h1 {
+    text-align: center;
+}
 
 header a {
     text-decoration: none;
@@ -75,6 +65,7 @@ header nav {
 }
 
 header nav li {
+    list-style: none;
     margin: 0 4px;
     padding: 0 15px;
     color:black;
@@ -84,6 +75,11 @@ header nav a {
     border-right: 2px solid aqua;
 }
 
+header nav a:last-of-type{
+    border-right:none;
+}
+
+/* Log out button if logged in */
 header nav li a{
     border-right:none;
 }
@@ -92,11 +88,4 @@ header nav li a{
     border: 2px solid #2473ac;
     border-radius:8px;
     background-color: #2473ac;
-}
-
-@media screen and (max-width: 700px) {
-    header{
-        flex-direction: column;
-        width:100%;
-    }
 }

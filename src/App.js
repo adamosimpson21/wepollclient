@@ -23,7 +23,6 @@ const App = () => {
         <NavBar/>
         <div className='app-content'>
         <ErrorDisplay />
-
           <Switch>
             <Route exact path='/splash' component={Splash}/>
             <Route exact path='/landing' component={Landing}/>

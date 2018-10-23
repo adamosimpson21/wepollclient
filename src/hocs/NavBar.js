@@ -16,12 +16,8 @@ class NavBar extends Component{
   render(){
     return(
       <ResponsiveMenu
-        menuOpenButton={<header>
-          <Icon icon="hamburgerMenu" />
-        </header>}
-        menuCloseButton={<header className="headerCloseButton">
-          <Icon icon="close"/>
-        </header>}
+        menuOpenButton={<div className='menuOpenButton'><Icon icon="hamburgerMenu" /></div>}
+        menuCloseButton={<div className='menuCloseButton'><Icon icon="close"/></div>}
         changeMenuOn="700px"
         largeMenuClassName="largeMenu"
         smallMenuClassName="smallMenu"
@@ -32,24 +28,20 @@ class NavBar extends Component{
                 <NavLink to="/landing"><li><WePollBrand /></li></NavLink>
               </h2>
               <nav>
-                <span className='navSmallMenuRow'>
-                  <NavLink activeClassName="activeNavLink" to="/question"><li> <Icon icon="questionMark" />Questions</li></NavLink>
-                  <NavLink activeClassName="activeNavLink" to="/shop"><li> <Icon icon="shop" />Shop</li></NavLink>
-                  <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user" />Profile</li></NavLink>
-                </span>
-                <span className='navSmallMenuRow'>
-                  {/*<NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" />Party</li></NavLink>*/}
-                  {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" />Settings</li></NavLink>*/}
-                  <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark" />About</li></NavLink>
+                  <NavLink activeClassName="activeNavLink" to="/question"><li> <Icon icon="questionMark" /><span className='navbar-text'>Questions</span></li></NavLink>
+                  <NavLink activeClassName="activeNavLink" to="/shop"><li> <Icon icon="shop" /><span className='navbar-text'>Shop</span></li></NavLink>
+                  <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user" /><span className='navbar-text'>Profile</span></li></NavLink>
+                  {/*<NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" /><span className='navbar-text'>Party</span></li></NavLink>*/}
+                  {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" /><span className='navbar-text'>Settings</span></li></NavLink>*/}
+                  <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark" /><span className='navbar-text'>About</span></li></NavLink>
                   {this.props.currentUser.isAuthenticated ? (
-                      <li><a onClick={this.logout}><Icon icon="logOut" />Log out</a></li>
+                      <li><a onClick={this.logout}><Icon icon="logOut" /><span className='navbar-text'></span>Log out</a></li>
                   ) : (
-                      <NavLink activeClassName="activeNavLink" to="/logIn"><li><Icon icon="signIn" />Log In</li></NavLink>
+                      <NavLink activeClassName="activeNavLink" to="/logIn"><li><Icon icon="signIn" /><span className='navbar-text'>Log In</span></li></NavLink>
                   )}
                   {!this.props.currentUser.isAuthenticated && (
                       <NavLink activeClassName="activeNavLink" to="/register"><li>Register</li></NavLink>
                   )}
-                </span>
               </nav>
             </div>
           </header>
