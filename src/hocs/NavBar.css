@@ -17,39 +17,6 @@ header {
     display:contents;
 }
 
-/* Mobile Navbar */
-.smallMenu .menuOpenButton{
-    padding-top:16px;
-}
-
-.smallMenu .menuCloseButton{
-    padding: 22px 0 21px 20px;
-    background-color: #6caadd;
-    opacity: 0.75;
-    float:left;
-}
-
-.smallMenu header{
-    margin-left:44px;
-}
-
-.smallMenu .wepoll-brand{
-    display:none;
-}
-
-.smallMenu .navbar-text{
-    display:none;
-}
-
-.smallMenu h2{
-    display:none;
-}
-
-.smallMenu header li {
-    padding: 4px;
-}
-
-/* End Mobile Navbar */
 header h1 {
     text-align: center;
 }
@@ -79,13 +46,26 @@ header nav a {
     border-right: 2px solid aqua;
 }
 
-header nav a:last-of-type{
+header nav .navbar-last-element{
     border-right:none;
 }
 
-/* Log out button if logged in */
-header nav li a{
-    border-right:none;
+@media screen and (max-width: 700px) {
+    .wepoll-brand{
+        display:none;
+    }
+
+    .navbar-text{
+        display:none;
+    }
+
+    h2{
+        display:none;
+    }
+
+    header li {
+        padding: 4px;
+    }
 }
 
 .activeNavLink li{
@@ -93,3 +73,100 @@ header nav li a{
     border-radius:8px;
     background-color: #2473ac;
 }
+
+/* old navbar styling*/
+/*header {*/
+    /*background-color: #6caadd;*/
+    /*display: flex;*/
+    /*position: absolute;*/
+    /*left:0;*/
+    /*top:0;*/
+    /*right:0;*/
+    /*height:70px;*/
+    /*justify-content: space-between;*/
+    /*align-items: center;*/
+    /*padding: 0 15px;*/
+    /*opacity: 0.75;*/
+/*}*/
+
+
+/*.fullNavbar{*/
+    /*display:contents;*/
+/*}*/
+
+/*!* Mobile Navbar *!*/
+/*.smallMenu .menuOpenButton{*/
+    /*padding-top:16px;*/
+/*}*/
+
+/*.smallMenu .menuCloseButton{*/
+    /*padding: 22px 0 21px 20px;*/
+    /*background-color: #6caadd;*/
+    /*opacity: 0.75;*/
+    /*float:left;*/
+/*}*/
+
+/*.smallMenu header{*/
+    /*margin-left:44px;*/
+/*}*/
+
+/*.smallMenu .wepoll-brand{*/
+    /*display:none;*/
+/*}*/
+
+/*.smallMenu .navbar-text{*/
+    /*display:none;*/
+/*}*/
+
+/*.smallMenu h2{*/
+    /*display:none;*/
+/*}*/
+
+/*.smallMenu header li {*/
+    /*padding: 4px;*/
+/*}*/
+
+/*!* End Mobile Navbar *!*/
+/*header h1 {*/
+    /*text-align: center;*/
+/*}*/
+
+/*header a {*/
+    /*text-decoration: none;*/
+    /*cursor: pointer;*/
+    /*opacity: 0.9;*/
+/*}*/
+
+/*header a:hover {*/
+    /*opacity: 1;*/
+/*}*/
+
+/*header nav {*/
+    /*display: flex;*/
+/*}*/
+
+/*header nav li {*/
+    /*list-style: none;*/
+    /*margin: 0 4px;*/
+    /*padding: 0 15px;*/
+    /*color:black;*/
+/*}*/
+
+/*header nav a {*/
+    /*border-right: 2px solid aqua;*/
+/*}*/
+
+/*header nav a:last-of-type{*/
+    /*border-right:none;*/
+/*}*/
+
+/*!* Log out button if logged in *!*/
+/*header nav li a{*/
+    /*border-right:none;*/
+/*}*/
+
+/*.activeNavLink li{*/
+    /*border: 2px solid #2473ac;*/
+    /*border-radius:8px;*/
+    /*background-color: #2473ac;*/
+/*}*/
