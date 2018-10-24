@@ -11,7 +11,7 @@ class ItemPlacard extends Component{
         <img className='shop-item-image' alt={name} src={image} />
         <p>{name}</p>
         <p>{description ? description : null}</p>
-        <p>Can Have Multiple: {canHaveMultiple ? <span>Yes</span> : <span>No</span>}</p>
+        <p>Can Have Multiple: {canHaveMultiple ? 'Yes' : 'No'}</p>
         <p>Cost: {cost} coins</p>
         <Button onClick={addToInventory} label='Buy This Item' />
         {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <div><button onClick={removeItem} className='shop-remove-item'> Remove This Item from the Game (founders and admins only) </button></div>}

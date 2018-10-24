@@ -40,18 +40,16 @@ class QuestionDetails extends Component{
   }
 
   render(){
-    if(this.props.questions.length === 1 && this.props.questions[0]){
+    if(this.props.questions.length === 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
       const { isAuthenticated, user } = this.props.currentUser
-      const answerDisplays = answers.map(answer => (
-        <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>
-      ))
+      const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
         <div className='question-content'>{questionContent}</div>
         <div className='question-education'>{education}</div>
         {answerDisplays}
-        {process.env.REACT_APP_ENV_TYPE==='development' && <div><Link to={'/question/'+_id + '/results'}>Go to results page (for development)</Link></div>}
+        {process.env.REACT_APP_ENV_TYPE==='development' && <div><Link to={`/question/${_id}/results`}>Go to results page (for development)</Link></div>}
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
@@ -62,14 +60,13 @@ class QuestionDetails extends Component{
         )}
       </div>)
     } else {
-      return(<div>
-        <Loader
-                    type="Circles"
-                    color="#00BFFF"
-                    height={200}
-                    width={100}
-                    />
-      </div>)}
+      return(<Loader
+          type="Circles"
+          color="#00BFFF"
+          height={200}
+          width={100}
+        />)
+    }
   }
 }
 

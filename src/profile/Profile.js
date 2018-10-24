@@ -5,30 +5,16 @@ import connect from 'react-redux/es/connect/connect'
 import { checkLevel } from '../helper/experience'
 import Button from '../hocs/Button'
 import {fetchItems} from '../store/actions/items'
-import InventoryItem from "../shop/InventoryItem";
 import {removeFromInventory} from "../store/actions/user";
 import moment from "moment";
 
 class Profile extends Component{
-  constructor(props){
-    super(props)
-    this.state = {
+  state = {
       revealPassword:false,
       revealDemographics:false
     }
-  }
 
-  populateItem(itemId){
-    let itemMatch = {}
-    this.props.items.forEach(item => {
-      if(item._id===itemId){
-        itemMatch = {...item}
-      }
-    })
-    return itemMatch;
-  }
-
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchItems();
   }
 
@@ -43,11 +29,11 @@ class Profile extends Component{
   render(){
     const user = this.props.currentUser.user;
     if(Object.keys(user).length > 0) {
-      let items = null
+      let items = (<div>You don't have any items!</div>)
       if(user.inventory.length > 0 && this.props.items.length > 0){
         items = user.inventory.map((item, index) =>{
-          let itemWithDetails = this.populateItem(item)
-            return(<img className='profile-item-image' alt={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
+          let itemWithDetails = this.props.items.find(itemProp => itemProp._id===item)
+          return(<img className='profile-item-image' alt={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
         })
       }
       return (<div className='profile-body'>

@@ -16,32 +16,24 @@ class QuestionResults extends Component{
   countResults = (answers, results) => {
     // This is to prevent answers that don't appear in the question from appearing (old data most likely)
     let resultsObj = {};
-    answers.forEach(answer => {
-      resultsObj[answer] = 0
-    })
-    results.forEach(result => {
-      if(resultsObj[result.answer]!==null){
-        ++resultsObj[result.answer]
-      }
-    })
+    answers.forEach(answer => resultsObj[answer] = 0);
+    results.forEach(result => Number.isInteger(resultsObj[result.answer]) ? ++resultsObj[result.answer] : null );
     return resultsObj;
   }
 
   render() {
-    if(this.props.questions[0]){
+    if(this.props.questions.length === 1){
       const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions[0]
       const { isAuthenticated, user } = this.props.currentUser
       let resultsObj = this.countResults(answers, results);
-      const answerDisplays = answers.map(answer => (
-        <div className='answer-display' key={answer}>{answer} : {resultsObj[answer]}</div>
-      ))
-
+      const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}>{answer} : {resultsObj[answer]}</div>)
       return(<div className='question-results'>
         <div className='question-title'>{title}</div>
         <div className='question-content'>{questionContent}</div>
         <div className='question-education'>{education}</div>
         {answerDisplays}
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
+        {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
           <div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
             {process.env.REACT_APP_ENV_TYPE==='development' &&  <button onClick={this.handleEdit}>Edit this Question (Not Implemented)</button>}
@@ -50,16 +42,13 @@ class QuestionResults extends Component{
         )}
       </div>)
     } else {
-      return(<div>
-        <Loader
+      return(<Loader
         type="Circles"
         color="#00BFFF"
         height={200}
         width={100}
-        />
-      </div>)
+        />)
     }
-
   }
 }
 

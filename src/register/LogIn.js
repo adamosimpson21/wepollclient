@@ -6,13 +6,10 @@ import Button from "../hocs/Button";
 import Link from "react-router-dom/es/Link";
 
 class LogIn extends Component{
-  constructor(props){
-    super(props)
-    this.state={
+  state={
       username:'',
       password:''
     }
-  }
 
   handleChange = e => {
     this.setState({

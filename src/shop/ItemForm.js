@@ -6,11 +6,6 @@ import Button from "../hocs/Button";
 import BackFrame from "../hocs/BackFrame";
 
 class ItemForm extends Component{
-  constructor(props){
-    super(props)
-    this.state = this.defaultState
-  }
-
   defaultState = {
     name: '',
     cost: 1,
@@ -18,6 +13,8 @@ class ItemForm extends Component{
     canHaveMultiple: false,
     image: "https://images.unsplash.com/photo-1520946708818-4966701c25e6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ada9b03ec040b816c353056c77eb6cd3&auto=format&fit=crop&w=1350&q=80"
   }
+
+  state = this.defaultState
 
   handleChange = event => {
     const target = event.target;

@@ -6,19 +6,9 @@ import BackFrame from "../hocs/BackFrame";
 import Button from "../hocs/Button";
 
 class InventoryItem extends Component{
-  populateItem(itemId){
-    let itemMatch = {}
-    this.props.items.forEach(item => {
-      if(item._id===itemId){
-        itemMatch = {...item}
-      }
-    })
-    return itemMatch;
-  }
-
   render(){
-    const { item, removeItem } = this.props
-    let itemWithDetails = this.populateItem(item)
+    const { items, item, removeItem } = this.props
+    let itemWithDetails = items.find(itemProp => itemProp._id === item)
     return(
       <div className='item-in-inventory'>
         <img className='shop-item-image' alt={itemWithDetails.name} src={itemWithDetails.image} />

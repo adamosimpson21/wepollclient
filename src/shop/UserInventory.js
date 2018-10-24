@@ -3,16 +3,14 @@ import './UserInventory.css';
 import connect from 'react-redux/es/connect/connect'
 import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
+import Loader from "react-loader-spinner";
 
 class UserInventory extends Component{
-  constructor(props){
-    super(props)
-    this.state = this.defaultState
-  }
-
   defaultState = {
     coinsToBuy : 5
   }
+
+  state = this.defaultState
 
   handleChange = event => {
     this.setState({
@@ -65,7 +63,12 @@ class UserInventory extends Component{
           </div>
         </div>
     )} else {
-      return(<div>Loading User...</div>)
+      return(<Loader
+          type="Circles"
+          color="#00BFFF"
+          height={200}
+          width={100}
+        />)
     }
   }
 }
