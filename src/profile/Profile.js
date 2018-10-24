@@ -18,6 +18,16 @@ class Profile extends Component{
     }
   }
 
+  populateItem(itemId){
+    let itemMatch = {}
+    this.props.items.forEach(item => {
+      if(item._id===itemId){
+        itemMatch = {...item}
+      }
+    })
+    return itemMatch;
+  }
+
   componentWillMount(){
     this.props.fetchItems();
   }
@@ -35,12 +45,10 @@ class Profile extends Component{
     if(Object.keys(user).length > 0) {
       let items = null
       if(user.inventory.length > 0 && this.props.items.length > 0){
-        items = user.inventory.map((item, index) => (
-          <InventoryItem
-           key={index}
-           item={item}
-           removeItem={removeFromInventory.bind(this, item)}
-          />))
+        items = user.inventory.map((item, index) =>{
+          let itemWithDetails = this.populateItem(item)
+            return(<img className='profile-item-image' alt={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
+        })
       }
       return (<div className='profile-body'>
         <div className='user-aside'>
@@ -57,7 +65,7 @@ class Profile extends Component{
           <div className='profile-list-inventory'>Inventory: {items}</div>
           <div className='profile-list-password'>Password:
             {this.state.revealPassword ?
-              <div className='password-joke'>Haha, just kidding</div> :
+              <span className='password-joke'>Haha, just kidding</span> :
               <Button label='Show Password' onClick={this.revealPassword}/> }
           </div>
         </div>

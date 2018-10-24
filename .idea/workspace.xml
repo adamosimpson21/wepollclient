@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="20c9fa19-a015-499a-beb1-28edb1165ac4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/Footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/Footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/NavBar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hocs/NavBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/NavBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/NewQuestionForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/NewQuestionForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/ItemList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/ItemList.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shop/UserInventory.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/shop/UserInventory.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Profile.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/profile/Profile.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,12 +29,12 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Procfile" value="1" />
-          <entry key="css" value="41" />
+          <entry key="css" value="43" />
           <entry key="development" value="2" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="3" />
-          <entry key="js" value="136" />
+          <entry key="js" value="138" />
           <entry key="json" value="5" />
           <entry key="mongod" value="1" />
         </counts>
@@ -47,22 +42,22 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="3" />
-          <entry key="CSS" value="41" />
+          <entry key="CSS" value="43" />
           <entry key="HTML" value="3" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="136" />
+          <entry key="JavaScript" value="138" />
           <entry key="PLAIN_TEXT" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="31" />
-          <entry key="css" value="4436" />
+          <entry key="css" value="4584" />
           <entry key="development" value="14" />
           <entry key="env" value="32" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="14" />
-          <entry key="js" value="6418" />
+          <entry key="js" value="6507" />
           <entry key="json" value="65" />
           <entry key="local" value="14" />
         </counts>
@@ -70,10 +65,10 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="60" />
-          <entry key="CSS" value="4436" />
+          <entry key="CSS" value="4584" />
           <entry key="HTML" value="14" />
           <entry key="JSON" value="65" />
-          <entry key="JavaScript" value="6418" />
+          <entry key="JavaScript" value="6507" />
           <entry key="PLAIN_TEXT" value="36" />
         </counts>
       </usages-collector>
@@ -90,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
+            <state relative-caret-position="-281">
               <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -99,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
@@ -109,19 +104,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.css">
+        <entry file="file://$PROJECT_DIR$/src/shop/InventoryItem.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="15" column="21" lean-forward="true" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
+            <state relative-caret-position="23">
+              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hocs/Footer.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/profile/Profile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="221">
+              <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -130,10 +125,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/hocs/Footer.css">
+        <entry file="file://$PROJECT_DIR$/src/profile/Profile.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="432">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -216,11 +211,9 @@
         <option value="$PROJECT_DIR$/src/shop/ItemForm.css" />
         <option value="$PROJECT_DIR$/src/shop/ItemForm.js" />
         <option value="$PROJECT_DIR$/src/shop/UserInventory.js" />
-        <option value="$PROJECT_DIR$/src/profile/Profile.css" />
         <option value="$PROJECT_DIR$/src/helper/item.js" />
         <option value="$PROJECT_DIR$/src/shop/InventoryItem.js" />
         <option value="$PROJECT_DIR$/src/shop/Shop.js" />
-        <option value="$PROJECT_DIR$/src/profile/Profile.js" />
         <option value="$PROJECT_DIR$/src/shop/ItemPlacard.js" />
         <option value="$PROJECT_DIR$/src/store/actions/items.js" />
         <option value="$PROJECT_DIR$/src/hocs/WePollBrand.js" />
@@ -248,6 +241,8 @@
         <option value="$PROJECT_DIR$/src/question/NewQuestionForm.css" />
         <option value="$PROJECT_DIR$/src/shop/ItemList.css" />
         <option value="$PROJECT_DIR$/src/shop/UserInventory.css" />
+        <option value="$PROJECT_DIR$/src/profile/Profile.css" />
+        <option value="$PROJECT_DIR$/src/profile/Profile.js" />
       </list>
     </option>
   </component>
@@ -322,7 +317,7 @@
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
               <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
@@ -410,18 +405,18 @@
       <updated>1539923955652</updated>
       <workItem from="1539923958367" duration="988000" />
       <workItem from="1539926629117" duration="55394000" />
-      <workItem from="1540248246957" duration="13204000" />
+      <workItem from="1540248246957" duration="14420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69586000" />
+    <option name="totallyTimeSpent" value="70802000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17002724" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17002724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -469,13 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/InventoryItem.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ItemForm.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -493,32 +481,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/profile/Profile.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/items.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/profile/Profile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1164">
-          <caret line="52" column="79" selection-start-line="52" selection-start-column="79" selection-end-line="52" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helper/item.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/shop/InventoryItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-92">
-          <caret line="5" column="36" lean-forward="true" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/ItemPlacard.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -821,9 +788,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/InventoryItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="23" column="8" lean-forward="true" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="98" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
+        <state relative-caret-position="-281">
           <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -835,6 +812,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/shop/InventoryItem.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profile/Profile.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/profile/Profile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="67" column="19" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

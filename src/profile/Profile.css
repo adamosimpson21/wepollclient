@@ -21,3 +21,9 @@
     font-size:24px;
     margin:auto;
 }
+
+.profile-main .profile-item-image{
+    width:64px;
+    margin: 4px 4px 0 4px
+}
+
