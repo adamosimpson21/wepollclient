@@ -17,9 +17,7 @@ class NavBar extends Component{
     return(
         <header>
           <div className="fullNavbar">
-            <h2>
-              <NavLink to="/landing"><li><WePollBrand /></li></NavLink>
-            </h2>
+              <NavLink to="/landing" className='wepoll-navbar-brand'><WePollBrand /></NavLink>
             <nav>
               <NavLink activeClassName="activeNavLink" to="/question"><li><Icon icon="questionMark" /><span className='navbar-text'>Questions</span></li></NavLink>
               <NavLink activeClassName="activeNavLink" to="/shop"><li><Icon icon="shop" /><span className='navbar-text'>Shop</span></li></NavLink>
@@ -28,7 +26,7 @@ class NavBar extends Component{
               {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" /><span className='navbar-text'>Settings</span></li></NavLink>*/}
               <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark" /><span className='navbar-text'>About</span></li></NavLink>
               {this.props.currentUser.isAuthenticated ? (
-                <li className='navbar-last-element'><a onClick={this.logout}><Icon icon="logOut" /><span className='navbar-text'>Log out</span></a></li>
+                <a onClick={this.logout} className='navbar-last-element'><li><Icon icon="logOut" /><span className='navbar-text'>Log out</span></li></a>
               ) : (
                 <NavLink activeClassName="activeNavLink" to="/logIn"><li><Icon icon="signIn" /><span className='navbar-text'>Log In</span></li></NavLink>
               )}

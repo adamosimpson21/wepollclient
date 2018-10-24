@@ -32,3 +32,25 @@
 #question-form-number-of-answers input{
     width:64px;
 }
+
+@media screen and (max-width:700px) {
+    .new-question-form{
+        width:96vw;
+        font-size: 1rem;
+    }
+
+    .new-question-form label{
+        margin:4px;
+        padding: 4px;
+    }
+
+    .new-question-form input{
+        width:75%;
+        font-size:1rem;
+    }
+
+    #question-form-number-of-answers{
+        width:80%;
+    }
+
+}

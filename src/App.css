@@ -28,6 +28,10 @@
     overflow-x: hidden;
   }
 
+  .app-content{
+    bottom:0;
+  }
+
   .App{
     font-size:14px;
   }

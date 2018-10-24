@@ -24,3 +24,9 @@
     height:32px;
     width:100%;
 }
+
+@media screen and (max-width: 700px) {
+    .footer {
+        display:none;
+    }
+}

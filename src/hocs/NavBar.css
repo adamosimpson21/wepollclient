@@ -12,6 +12,9 @@ header {
     opacity: 0.75;
 }
 
+.wepoll-navbar-brand{
+    margin-left:48px;
+}
 
 .fullNavbar{
     display:contents;
@@ -51,6 +54,10 @@ header nav .navbar-last-element{
 }
 
 @media screen and (max-width: 700px) {
+    .fullNavbar nav{
+        margin:auto;
+    }
+
     .wepoll-brand{
         display:none;
     }
@@ -59,7 +66,7 @@ header nav .navbar-last-element{
         display:none;
     }
 
-    h2{
+    .wepoll-navbar-brand{
         display:none;
     }
 
