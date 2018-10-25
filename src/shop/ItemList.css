@@ -2,5 +2,13 @@
     color:black;
     display:inline-flex;
     flex-wrap:wrap;
+    width:80vw;
+    margin:auto;
+}
+
+@media screen and (max-width: 700px) {
+    .shop-item-list{
+        width:90vw;
+    }
 }
 
