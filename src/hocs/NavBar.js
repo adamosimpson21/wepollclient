@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './NavBar.css';
 import NavLink from "react-router-dom/es/NavLink";
 import Icon from "./Icon";
-import ResponsiveMenu from 'react-responsive-navbar';
 import { logout } from "../store/actions/auth";
 import connect from 'react-redux/es/connect/connect';
 import withRouter from "react-router/es/withRouter";

@@ -1,5 +1,6 @@
 .shop-item-list{
     color:black;
     display:inline-flex;
+    flex-wrap:wrap;
 }
 

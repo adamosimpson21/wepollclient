@@ -33,7 +33,7 @@ class Profile extends Component{
       if(user.inventory.length > 0 && this.props.items.length > 0){
         items = user.inventory.map((item, index) =>{
           let itemWithDetails = this.props.items.find(itemProp => itemProp._id===item)
-          return(<img className='profile-item-image' alt={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
+          return(<img className='profile-item-image' alt={itemWithDetails.name} title={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
         })
       }
       return (<div className='profile-body'>

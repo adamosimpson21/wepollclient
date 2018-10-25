@@ -3,6 +3,7 @@ import './Landing.css'
 import ButtonLG from '../hocs/ButtonLG'
 import Link from "react-router-dom/es/Link";
 import connect from "react-redux/es/connect/connect";
+import WePollTwitterFeed from '../hocs/WePollTwitterFeed';
 
 class Landing extends Component{
   render(){
@@ -22,6 +23,10 @@ class Landing extends Component{
           <Link to='/profile'><ButtonLG label='Your Profile' /></Link>
           {/*<Link to='/settings'><ButtonLG label='Settings' /></Link>*/}
           <Link to='/about'><ButtonLG label='About WePoll' /></Link>
+
+        </div>
+        <div className='twitter-feed-landing'>
+          <WePollTwitterFeed />
         </div>
       </div>)
   }
