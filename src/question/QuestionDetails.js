@@ -78,4 +78,6 @@ function mapStateToProps(state){
   }
 }
 
+// TODO: write logic to redirect to results page if use has answered question
+
 export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addError})(BackFrame(QuestionDetails)));

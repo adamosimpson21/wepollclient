@@ -24,7 +24,13 @@ export function apiCall(method, path, data) {
           return resolve(res.data);
         })
         .catch(err => {
-          return reject(err.response.data.error);
+          if(err.response.data.error){
+            return reject(err.response.data.error);
+          } else {
+            console.log("API asleep error: ", err)
+            err.message = "API is asleep, refresh this page in about 10-15 seconds";
+            return reject(err);
+          }
         });
     } else {
       return axios[method.toLowerCase()](path, data)
