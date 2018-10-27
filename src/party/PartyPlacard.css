@@ -1,0 +1,14 @@
+.party-image{
+    width:96px;
+}
+
+.party-remove-party{
+    margin-top:16px;
+    font-size:.6rem;
+    background-color:red;
+    color:white;
+}
+
+.party-placard Button{
+    width:80%;
+}

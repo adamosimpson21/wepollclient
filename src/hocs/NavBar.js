@@ -21,7 +21,7 @@ class NavBar extends Component{
               <NavLink activeClassName="activeNavLink" to="/question"><li><Icon icon="questionMark" /><span className='navbar-text'>Questions</span></li></NavLink>
               <NavLink activeClassName="activeNavLink" to="/shop"><li><Icon icon="shop" /><span className='navbar-text'>Shop</span></li></NavLink>
               <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user" /><span className='navbar-text'>Profile</span></li></NavLink>
-              {/*<NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" /><span className='navbar-text'>Party</span></li></NavLink>*/}
+              <NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" /><span className='navbar-text'>Party</span></li></NavLink>
               {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" /><span className='navbar-text'>Settings</span></li></NavLink>*/}
               <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark" /><span className='navbar-text'>About</span></li></NavLink>
               {this.props.currentUser.isAuthenticated ? (
