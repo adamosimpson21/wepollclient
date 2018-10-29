@@ -11,7 +11,7 @@ export default (state = DEFAULT_STATE, action) => {
     case UPDATE_PARTY:
       return [...action.parties]
     case LOAD_ONE_PARTY:
-      return [action.parties]
+      return [action.party]
     case CREATE_PARTY:
       return [...state, action.party]
     case DELETE_PARTY:
