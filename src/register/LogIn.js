@@ -4,6 +4,7 @@ import connect from 'react-redux/es/connect/connect'
 import { authUser} from '../store/actions/auth'
 import Button from "../hocs/Button";
 import Link from "react-router-dom/es/Link";
+import { handleChange } from "../helper/handleChange";
 
 class LogIn extends Component{
   state={
@@ -11,16 +12,9 @@ class LogIn extends Component{
       password:''
     }
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]:e.target.value
-    });
-  }
-
   handleSubmit = e => {
     e.preventDefault();
-    this.props
-      .authUser("signin", this.state)
+    this.props.authUser("signin", this.state)
       .then(() => {
         this.props.history.push("/");
       })
@@ -37,7 +31,7 @@ class LogIn extends Component{
             autoComplete="off"
             id="username"
             name="username"
-            onChange={this.handleChange}
+            onChange={handleChange.bind(this)}
             type="text"
             minLength='8'
             value={username}
@@ -50,7 +44,7 @@ class LogIn extends Component{
             autoComplete="off"
             id="password"
             name="password"
-            onChange={this.handleChange}
+            onChange={handleChange.bind(this)}
             type="password"
             minLength='8'
             value={password}

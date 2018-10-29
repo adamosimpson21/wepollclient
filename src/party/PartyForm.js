@@ -4,6 +4,7 @@ import { createPartyAction } from '../store/actions/party'
 import connect from 'react-redux/es/connect/connect'
 import Button from "../hocs/Button";
 import BackFrame from "../hocs/BackFrame";
+import { handleChange } from "../helper/handleChange";
 
 class PartyForm extends Component{
   defaultState = {
@@ -15,22 +16,14 @@ class PartyForm extends Component{
 
   state = this.defaultState
 
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({
-      [target.name]: value
-    });
-  }
-
   handleSubmit = event => {
     event.preventDefault()
-    console.log("state is: ", this.state)
-    this.props.createPartyAction({...this.state})
+    this.props.createPartyAction(this.state)
     this.setState(this.defaultState)
   }
 
   render(){
+    const { name, description, image} = this.state
     return(<div className='new-party-body'>
       <p>Add a new party to the game. Admin and Founders only</p>
       <form onSubmit={this.handleSubmit} className='new-party-form'>
@@ -39,8 +32,8 @@ class PartyForm extends Component{
             type='text'
             name='name'
             aria-label='party name'
-            value={this.state.name}
-            onChange = {this.handleChange}
+            value={name}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -49,8 +42,8 @@ class PartyForm extends Component{
             type='text'
             name='description'
             aria-label='party description'
-            value={this.state.description}
-            onChange = {this.handleChange}
+            value={description}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -61,7 +54,7 @@ class PartyForm extends Component{
             name='joinType'
             aria-label='party join type open'
             value='open'
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -71,7 +64,7 @@ class PartyForm extends Component{
             name='joinType'
             aria-label='party join type closed'
             value='closed'
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -81,7 +74,7 @@ class PartyForm extends Component{
             {/*name='joinType'*/}
             {/*aria-label='party join type approval'*/}
             {/*value='approval'*/}
-            {/*onChange = {this.handleChange}*/}
+            {/*onChange = {handleChange.bind(this)}*/}
             {/*required*/}
           {/*/>*/}
         {/*</label>*/}
@@ -90,8 +83,8 @@ class PartyForm extends Component{
             type='text'
             name='image'
             aria-label='party image'
-            value={this.state.image}
-            onChange = {this.handleChange}
+            value={image}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>

@@ -34,7 +34,6 @@ export const authUser = (type, userData) => dispatch => {
       localStorage.setItem("jwtToken", token);
       setAuthorizationToken(token);
       dispatch(setCurrentUser(user));
-      dispatch(removeError());
     })
     .catch(err => dispatch(addError(err.message)));
 }

@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import connect from "react-redux/es/connect/connect";
 import {loadOnePartyAction, joinPartyAction} from "../store/actions/party";
 import './PartyView.css'
-import Loader from "react-loader-spinner";
 import Button from "../hocs/Button";
 import BackFrame from "../hocs/BackFrame";
+import MyLoader from "../hocs/Loader";
 
 class PartyView extends Component{
   componentDidMount(){
@@ -17,7 +17,7 @@ class PartyView extends Component{
       const user = this.props.currentUser.user
       return(<div className='party-view'>
         <div className='party-view-title'>{party.name} party</div>
-        <img className='party-view-image' src={party.image} />
+        <img className='party-view-image' alt={party.name} src={party.image} />
         <div>{party.members.length} members</div>
         <div>{party.description}</div>
         {party.president ? <div>The president is {party.president}</div> : <div>No President yet</div>}
@@ -28,12 +28,7 @@ class PartyView extends Component{
         <div>Prestige: {party.prestige}</div>
       </div>)
     } else {
-      return(<Loader
-      type="Circles"
-      color="#00BFFF"
-      height={200}
-      width={100}
-      />)
+      return(<MyLoader />)
     }
   }
 }

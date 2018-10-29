@@ -4,9 +4,10 @@ import { postItem } from '../store/actions/items'
 import connect from 'react-redux/es/connect/connect'
 import Button from "../hocs/Button";
 import BackFrame from "../hocs/BackFrame";
+import { handleChange } from "../helper/handleChange";
 
 class ItemForm extends Component{
-  defaultState = {
+   defaultState = {
     name: '',
     cost: 1,
     description:'',
@@ -15,14 +16,6 @@ class ItemForm extends Component{
   }
 
   state = this.defaultState
-
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({
-      [target.name]: value
-    });
-  }
 
   handleSubmit = event => {
     event.preventDefault()
@@ -40,7 +33,7 @@ class ItemForm extends Component{
             name='name'
             aria-label='item name'
             value={this.state.name}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -50,7 +43,7 @@ class ItemForm extends Component{
             name='description'
             aria-label='item description'
             value={this.state.description}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -60,7 +53,7 @@ class ItemForm extends Component{
             name='cost'
             aria-label='item cost'
             value={this.state.cost}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>
@@ -70,7 +63,7 @@ class ItemForm extends Component{
             name='canHaveMultiple'
             aria-label='Can a User have multiple in their inventory'
             value={this.state.canHaveMultiple}
-            onChange={this.handleChange}
+            onChange = {handleChange.bind(this)}
           />
         </label>
         <label className='new-item-image'>Item Image:
@@ -79,7 +72,7 @@ class ItemForm extends Component{
             name='image'
             aria-label='item image'
             value={this.state.image}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>

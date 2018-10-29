@@ -25,3 +25,12 @@ export const removeFromInventory = itemId => (dispatch, getState) => {
     .then(updatedUser => dispatch(updateCurrentUser(updatedUser)))
     .catch(err => addError(err.message));
 }
+
+export const updateDemographics = body => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  console.log("body is: ", body)
+  return apiCall("put", `/api/user/${id}/demographics`, body)
+    .then(updatedUser => dispatch(updateCurrentUser(updatedUser)))
+    .catch(err => addError(err.message));
+}

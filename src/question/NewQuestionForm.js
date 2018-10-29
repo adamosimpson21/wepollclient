@@ -6,11 +6,6 @@ import Button from "../hocs/Button";
 import withRouter from "react-router/es/withRouter";
 
 class NewQuestionForm extends Component{
-  constructor(props){
-    super(props)
-    this.state = this.defaultState
-  }
-
   defaultState = {
     questionContent: '',
     title:'',
@@ -18,6 +13,8 @@ class NewQuestionForm extends Component{
     education:'',
     numAnswers:3
   }
+
+  state = this.defaultState
 
 
   handleSubmit = event => {
