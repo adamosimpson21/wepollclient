@@ -1,4 +1,4 @@
-import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY,LOAD_PARTIES,LOAD_ONE_PARTY } from '../actionTypes'
+import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY, LOAD_PARTIES, LOAD_ONE_PARTY } from '../actionTypes'
 
 const DEFAULT_STATE = {
   parties: []

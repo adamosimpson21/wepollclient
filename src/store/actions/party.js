@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { addError } from "./errors";
-import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY,LOAD_PARTIES,LOAD_ONE_PARTY , JOIN_PARTY,LEAVE_PARTY, } from "../actionTypes";
+import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY,LOAD_PARTIES,LOAD_ONE_PARTY , JOIN_PARTY, LEAVE_PARTY } from "../actionTypes";
 import { updateCurrentUser } from "./auth";
 
 export const loadParties = parties => ({
@@ -33,37 +33,23 @@ export const joinParty = response => ({
   response
 })
 
-export const loadPartiesAction = () => {
-  return dispatch => {
-    return apiCall("get", "/api/party/")
-      .then(res => {
-        dispatch(loadParties(res));
-      })
-      .catch(err => {
-        dispatch(addError(err.message));
-      });
-  };
+export const loadPartiesAction = () => dispatch => {
+  return apiCall("get", "/api/party/")
+    .then(res => dispatch(loadParties(res)))
+    .catch(err => addError(err.message));
 };
 
-export const loadOnePartyAction = partyId => {
-  return dispatch => {
-    return apiCall("get", `/api/party/${partyId}`)
-      .then(res => {
-        dispatch(loadOneParty(res));
-      })
-      .catch(err => {
-        dispatch(addError(err.message));
-      });
-  };
+export const loadOnePartyAction = partyId => dispatch => {
+  return apiCall("get", `/api/party/${partyId}`)
+    .then(res => dispatch(loadOneParty(res)))
+    .catch(err =>  addError(err.message));
 };
 
 export const createPartyAction = body => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
   return apiCall("post", `/api/party/${id}`, body)
-    .then(res => {
-      dispatch(createParty(res))
-    })
+    .then(res =>  dispatch(createParty(res)))
     .catch(err => addError(err.message));
 };
 
@@ -72,19 +58,16 @@ export const deletePartyAction = partyId => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("delete", `/api/party/${id}/${partyId}`)
     .then(() => dispatch(deleteParty(partyId)))
-    .catch(err => {
-      addError(err.message);
-    });
+    .catch(err => addError(err.message));
 };
 
+// not implemented
 export const updatePartyAction = (partyId, body) => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
   return apiCall("put", `/api/items/${id}/${updateParty}`, body)
     .then(() => dispatch(updateParty(partyId)))
-    .catch(err => {
-      addError(err.message);
-    });
+    .catch(err => addError(err.message));
 };
 
 export const joinPartyAction = partyId => (dispatch, getState) => {
@@ -95,7 +78,7 @@ export const joinPartyAction = partyId => (dispatch, getState) => {
       dispatch(updateCurrentUser(res.user))
       dispatch(addError(res.message))
     })
-    .catch(err => dispatch(addError(err.message)));
+    .catch(err => addError(err.message));
 };
 
 

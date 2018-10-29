@@ -8,9 +8,3 @@ export const addError = error => ({
 export const removeError = () => ({
   type: REMOVE_ERROR
 });
-
-export const addErrorAction = error => {
-  return dispatch => {
-    dispatch(addError(error));
-  }
-}
