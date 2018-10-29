@@ -15,7 +15,7 @@ export default (state = DEFAULT_STATE, action) => {
     case CREATE_PARTY:
       return [...state, action.party]
     case DELETE_PARTY:
-      return [...state.filter(party => party._id !== action.id)]
+      return [...state.filter(party => party._id !== action.partyId)]
     default:
       return state;
   }

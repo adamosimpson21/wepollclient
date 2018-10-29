@@ -7,7 +7,7 @@ export const buyCoins = numCoins => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("put", `/api/user/${id}/coins`, {coins: numCoins})
     .then(updatedUser => dispatch(updateCurrentUser(updatedUser)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 }
 
 export const addToInventory = itemId => (dispatch, getState) => {
@@ -15,7 +15,7 @@ export const addToInventory = itemId => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("post", `/api/user/${id}/item/${itemId}`)
     .then(updatedUser => dispatch(updateCurrentUser(updatedUser)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 }
 
 export const removeFromInventory = itemId => (dispatch, getState) => {
@@ -23,14 +23,13 @@ export const removeFromInventory = itemId => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("delete", `/api/user/${id}/item/${itemId}`)
     .then(updatedUser => dispatch(updateCurrentUser(updatedUser)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 }
 
 export const updateDemographics = body => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  console.log("body is: ", body)
   return apiCall("put", `/api/user/${id}/demographics`, body)
     .then(updatedUser => dispatch(updateCurrentUser(updatedUser)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 }

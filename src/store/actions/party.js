@@ -36,13 +36,13 @@ export const joinParty = response => ({
 export const loadPartiesAction = () => dispatch => {
   return apiCall("get", "/api/party/")
     .then(res => dispatch(loadParties(res)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 export const loadOnePartyAction = partyId => dispatch => {
   return apiCall("get", `/api/party/${partyId}`)
     .then(res => dispatch(loadOneParty(res)))
-    .catch(err =>  addError(err.message));
+    .catch(err =>  dispatch(addError(err.message)));
 };
 
 export const createPartyAction = body => (dispatch, getState) => {
@@ -50,7 +50,7 @@ export const createPartyAction = body => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("post", `/api/party/${id}`, body)
     .then(res =>  dispatch(createParty(res)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 export const deletePartyAction = partyId => (dispatch, getState) => {
@@ -58,7 +58,7 @@ export const deletePartyAction = partyId => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("delete", `/api/party/${id}/${partyId}`)
     .then(() => dispatch(deleteParty(partyId)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 // not implemented
@@ -67,7 +67,7 @@ export const updatePartyAction = (partyId, body) => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("put", `/api/items/${id}/${updateParty}`, body)
     .then(() => dispatch(updateParty(partyId)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 export const joinPartyAction = partyId => (dispatch, getState) => {
@@ -78,7 +78,7 @@ export const joinPartyAction = partyId => (dispatch, getState) => {
       dispatch(updateCurrentUser(res.user))
       dispatch(addError(res.message))
     })
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 

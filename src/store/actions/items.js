@@ -22,13 +22,13 @@ export const removeItem = item_id => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("delete", `/api/items/${id}/${item_id}`)
     .then(() => dispatch(remove(item_id)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 export const fetchItems = () => dispatch => {
   return apiCall("get", "/api/items/")
     .then(res => dispatch(loadItems(res)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };
 
 export const postItem = body => (dispatch, getState) => {
@@ -36,5 +36,5 @@ export const postItem = body => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("post", `/api/items/${id}`, body)
     .then(res => dispatch(addItem(res)))
-    .catch(err => addError(err.message));
+    .catch(err => dispatch(addError(err.message)));
 };

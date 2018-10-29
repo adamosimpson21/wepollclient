@@ -51,7 +51,7 @@ class Profile extends Component{
         })
       }
 
-      let party = (<div>Loading...</div>)
+      let party = null
       if(user.party && this.props.parties.length === 1){
         party = this.props.parties[0]
       }
@@ -64,7 +64,7 @@ class Profile extends Component{
         </div>
         <div className='profile-main'>
           <div className='profile-list'>Username: {user.username}</div>
-          <div className='profile-list'>Party: {user.party ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'}</div>
+          <div className='profile-list'>Party: {(user.party && party) ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'}</div>
           <div className='profile-list'>Questions Answered: {user.questions.length}</div>
           <div className='profile-list'>Questions Authored: {user.authored.length}</div>
           <div className='profile-list'>Joined WePoll: {moment(user.createdAt).format('MMMM Do YYYY')}</div>
@@ -89,7 +89,9 @@ class Profile extends Component{
             </div>) :
             (<Button label='Show Demographics' onClick={this.revealDemographics}/>)}
           {this.state.updateDemographics &&
-            <UpdateDemographics />}
+            <UpdateDemographics
+              switchBack={this.revealDemographics.bind(this)}
+            />}
         </div>
       </div>)
     } else {

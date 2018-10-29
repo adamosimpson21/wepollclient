@@ -11,10 +11,16 @@ class PartyView extends Component{
     this.props.loadOnePartyAction(this.props.match.params.partyId)
   }
 
+  handleJoin = event => {
+    event.preventDefault()
+    this.props.joinPartyAction(this.props.match.params.partyId)
+  }
+
   render(){
     if(this.props.parties.length === 1){
-      const party = this.props.parties[0]
-      const user = this.props.currentUser.user
+      const party = this.props.parties[0];
+      const user = this.props.currentUser.user;
+      const isMyParty = user.party ? user.party===party._id : false;
       return(<div className='party-view'>
         <div className='party-view-title'>{party.name} party</div>
         <img className='party-view-image' alt={party.name} src={party.image} />
@@ -23,8 +29,8 @@ class PartyView extends Component{
         {party.president ? <div>The president is {party.president}</div> : <div>No President yet</div>}
         <div>There are {party.officers.length} officers</div>
         <div>This party is {party.joinType} to new members</div>
-        {user.party===party._id ? <div>You are in this party</div> : <button>Join this party</button>}
-        <Button label='Come chat with us! '/>
+        {party.joinType==='open' ? isMyParty ? <div>You are in this party</div> : <Button label='Join this Party' onClick={this.handleJoin} /> : null}
+        {isMyParty && <Button label='Come chat with us! '/>}
         <div>Prestige: {party.prestige}</div>
       </div>)
     } else {

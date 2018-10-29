@@ -14,19 +14,19 @@ class UpdateDemographics extends Component{
     gender:'Not Specified',
     education:'Not Specified',
     location:'Not Specified',
-    familySize:0
+    familySize:1
   }
 
   state=this.defaultState
 
   componentDidMount(){
-    this.setState({...this.props.currentUser.user})
+    this.setState(this.props.currentUser.user)
   }
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.updateDemographics({...this.state})
-    this.props.history.push('/profile')
+    this.props.updateDemographics(this.state)
+    this.props.switchBack();
   }
 
   createOptions = array => {
@@ -38,7 +38,7 @@ class UpdateDemographics extends Component{
   render(){
     const { age, education, familySize, gender, income, location, race} = this.state
     return(<form onSubmit={this.handleSubmit} className='profile-update-demographics'>
-      <h4> Update your demographics below. This is optional and you may estimate where applicable</h4>
+      <h4> Update your demographics below. This is optional and estimate where applicable</h4>
       <label> Age:
         <input
           type='number'
@@ -46,6 +46,8 @@ class UpdateDemographics extends Component{
           aria-label='Your Age'
           title='Your Age'
           value={age}
+          min={1}
+          max={150}
           onChange = {handleChange.bind(this)}
         />
       </label>
@@ -61,6 +63,9 @@ class UpdateDemographics extends Component{
           aria-label='Your Annual Income'
           title='Your Annual Income'
           value={income}
+          min={0}
+          step={5000}
+          max={1000000000}
           onChange = {handleChange.bind(this)}
         />
       </label>
@@ -86,6 +91,8 @@ class UpdateDemographics extends Component{
           aria-label='Number of people living in your house'
           title='Number of people living in your house'
           value={familySize}
+          min={1}
+          max={20}
           onChange = {handleChange.bind(this)}
         />
       </label>
