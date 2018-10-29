@@ -12,12 +12,15 @@ class LogIn extends Component{
       password:''
     }
 
+  componentWillReceiveProps(newProps){
+    if(newProps.currentUser.isAuthenticated){
+      this.props.history.push('/question')
+    }
+  }
+
   handleSubmit = e => {
     e.preventDefault();
     this.props.authUser("signin", this.state)
-      .then(() => {
-        this.props.history.push("/question");
-      })
   }
 
   render(){

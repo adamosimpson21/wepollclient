@@ -4,6 +4,7 @@ import connect from 'react-redux/es/connect/connect';
 import { authUser } from '../store/actions/auth';
 import Button from "../hocs/Button";
 import Link from "react-router-dom/es/Link";
+import { handleChange } from "../helper/handleChange";
 
 class Register extends Component{
   state={
@@ -11,19 +12,15 @@ class Register extends Component{
       password:''
     }
 
-  handleChange = e => {
-    this.setState({
-      [e.target.name]:e.target.value
-    });
+  componentWillReceiveProps(newProps){
+    if(newProps.currentUser.isAuthenticated){
+      this.props.history.push('/question')
+    }
   }
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props
-      .authUser("signup", this.state)
-      .then(() => {
-        this.props.history.push("/");
-      })
+    this.props.authUser("signup", this.state)
   }
 
   render(){
@@ -39,7 +36,7 @@ class Register extends Component{
             autoComplete="off"
             id="username"
             name="username"
-            onChange={this.handleChange}
+            onChange={handleChange.bind(this)}
             type="text"
             minLength='8'
             value={username}
@@ -52,7 +49,7 @@ class Register extends Component{
             autoComplete="off"
             id="password"
             name="password"
-            onChange={this.handleChange}
+            onChange={handleChange.bind(this)}
             type="password"
             minLength='8'
             value={password}
