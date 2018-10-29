@@ -16,9 +16,7 @@ class LogIn extends Component{
     e.preventDefault();
     this.props.authUser("signin", this.state)
       .then(() => {
-        if(!this.props.errors.message){
-          this.props.history.push("/question");
-        }
+        this.props.history.push("/question");
       })
   }
 
