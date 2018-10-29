@@ -1,5 +1,16 @@
 .party-image{
-    width:96px;
+    width:240px;
+}
+
+.party-placard{
+    width:25vw;
+}
+
+.party-placard-join-button{
+    background-color:lightgreen;
+    border: 2px solid black;
+    border-radius:8px;
+    font-size:1.2rem;
 }
 
 .party-remove-party{

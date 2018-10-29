@@ -66,25 +66,25 @@ class PartyForm extends Component{
           />
         </label>
         <label className='new-party-join-type'>Closed
-        <input
-          type='radio'
-          name='joinType'
-          aria-label='party join type closed'
-          value='closed'
-          onChange = {this.handleChange}
-          required
-        />
-      </label>
-        <label className='new-party-join-type'>Approval
           <input
             type='radio'
             name='joinType'
-            aria-label='party join type approval'
-            value='approval'
+            aria-label='party join type closed'
+            value='closed'
             onChange = {this.handleChange}
             required
           />
         </label>
+        {/*<label className='new-party-join-type'>Approval*/}
+          {/*<input*/}
+            {/*type='radio'*/}
+            {/*name='joinType'*/}
+            {/*aria-label='party join type approval'*/}
+            {/*value='approval'*/}
+            {/*onChange = {this.handleChange}*/}
+            {/*required*/}
+          {/*/>*/}
+        {/*</label>*/}
         <label className='new-party-image'>Party Image:
           <input
             type='text'

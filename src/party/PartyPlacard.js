@@ -5,13 +5,13 @@ import Link from "react-router-dom/es/Link";
 
 class PartyPlacard extends Component{
   render(){
-    const {name, description, image, deletePartyAction, joinPartyAction, currentUser, _id } = this.props
+    const {name, description, image, joinType, deletePartyAction, joinPartyAction, currentUser, _id } = this.props
     return(
       <div className='party-placard'>
         <img className='party-image' alt={name} src={image} />
-        <Link to={`party/${_id}`}>{name}</Link>
+        <div><Link to={`party/${_id}`}>{name}</Link></div>
         <p>{description ? description : null}</p>
-        {currentUser.isAuthenticated && <button onClick={joinPartyAction}>Join this party</button>}
+        {currentUser.isAuthenticated && joinType==='open' ? <button className='party-placard-join-button' onClick={joinPartyAction}>Join this party</button> : <div>This party is closed to new members</div>}
         {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <div><button onClick={deletePartyAction} className='party-remove-party'> Remove This Party from the Game (founders and admins only) </button></div>}
       </div>
     )
