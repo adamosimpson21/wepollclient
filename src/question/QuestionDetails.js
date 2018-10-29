@@ -12,9 +12,7 @@ import Loader from 'react-loader-spinner';
 class QuestionDetails extends Component{
   componentDidMount(){
     const { currentUser, match, history, addError, loadOneQuestionAction } = this.props
-    if(!process.env.REACT_APP_ENV_TYPE==='development'){
-      console.log("currentUser.user.questions: ", currentUser.user.questions)
-      console.log("match.params.questionId: ", match.params.questionId)
+    if(!(process.env.REACT_APP_ENV_TYPE==='development')){
       if(currentUser.user.questions.includes(match.params.questionId)){
         addError("You've answered this question already");
         history.push(`/question/${match.params.questionId}/results`)
