@@ -45,9 +45,9 @@ export const loadPartiesAction = () => {
   };
 };
 
-export const loadOnePartyAction = id => {
+export const loadOnePartyAction = partyId => {
   return dispatch => {
-    return apiCall("get", `/api/party/${id}`)
+    return apiCall("get", `/api/party/${partyId}`)
       .then(res => {
         dispatch(loadOneParty(res));
       })

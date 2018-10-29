@@ -7,6 +7,8 @@ import Button from '../hocs/Button'
 import {fetchItems} from '../store/actions/items'
 import {removeFromInventory} from "../store/actions/user";
 import moment from "moment";
+import {loadOnePartyAction} from "../store/actions/party";
+import Link from "react-router-dom/es/Link";
 
 class Profile extends Component{
   state = {
@@ -16,6 +18,9 @@ class Profile extends Component{
 
   componentDidMount(){
     this.props.fetchItems();
+    if(this.props.currentUser.user.party){
+      this.props.loadOnePartyAction(this.props.currentUser.user.party)
+    }
   }
 
   revealPassword = () => {
@@ -36,6 +41,10 @@ class Profile extends Component{
           return(<img className='profile-item-image' alt={itemWithDetails.name} title={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
         })
       }
+      let party = (<div>Loading...</div>)
+      if(user.party && this.props.parties.length ===1){
+        party = this.props.parties[0]
+      }
       return (<div className='profile-body'>
         <div className='user-aside'>
           {user.username}
@@ -44,7 +53,7 @@ class Profile extends Component{
         </div>
         <div className='profile-main'>
           <div className='profile-list'>Username: {user.username}</div>
-          <div className='profile-list'>Party: {user.party ? user.party : 'none'}</div>
+          <div className='profile-list'>Party: {user.party ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'}</div>
           <div className='profile-list'>Questions Answered: {user.questions.length}</div>
           <div className='profile-list'>Questions Authored: {user.authored.length}</div>
           <div className='profile-list'>Joined WePoll: {moment(user.createdAt).format('MMMM Do YYYY')}</div>
@@ -78,8 +87,9 @@ class Profile extends Component{
 function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
-    items: state.items
+    items: state.items,
+    parties: state.parties
   };
 }
 
-export default connect(mapStateToProps, {fetchItems, removeFromInventory})(withAuth(Profile));
+export default connect(mapStateToProps, {fetchItems, removeFromInventory, loadOnePartyAction})(withAuth(Profile));

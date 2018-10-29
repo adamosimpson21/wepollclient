@@ -1,0 +1,15 @@
+.party-view{
+    font-size:1.2rem;
+}
+
+.party-view .party-view-title{
+    font-size:2rem;
+}
+
+.party-view-image{
+    width:240px;
+}
+
+.party-view Button{
+    width:80%;
+}

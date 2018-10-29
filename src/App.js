@@ -3,19 +3,20 @@ import { Route, Redirect, Switch } from 'react-router-dom'
 import './App.css'
 import Landing from './landing/Landing'
 import NavBar from "./hocs/NavBar";
+import ErrorDisplay from "./hocs/ErrorDisplay";
 import Party from "./party/Party";
+import PartyView from "./party/PartyView";
 import Profile from "./profile/Profile";
-import Question from "./question/Question";
 import Settings from "./settings/Settings";
 import Shop from "./shop/Shop";
 import Splash from "./splash/Splash";
-import Register from "./register/Register";
 import LogIn from "./register/LogIn";
-import Footer from "./hocs/Footer";
+import Register from "./register/Register";
+import Question from "./question/Question";
 import NewQuestionForm from './question/NewQuestionForm'
 import QuestionDetails from './question/QuestionDetails'
 import QuestionResults from './question/QuestionResults'
-import ErrorDisplay from "./hocs/ErrorDisplay";
+import Footer from "./hocs/Footer";
 
 const App = () => {
   return(
@@ -28,6 +29,7 @@ const App = () => {
             <Route exact path='/landing' component={Landing}/>
             <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
             <Route exact path='/party' component={Party}/>
+            <Route exact path='/party/:partyId' component={PartyView}/>
             <Route exact path='/profile' component={Profile}/>
             <Route exact path='/question' component={Question}/>
             <Route exact path='/settings' component={Settings}/>
