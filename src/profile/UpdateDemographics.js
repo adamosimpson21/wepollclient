@@ -71,7 +71,7 @@ class UpdateDemographics extends Component{
       </label>
       <label> Gender:
         <select name='gender' aria-label='gender' title='gender' value={gender} onChange = {handleChange.bind(this)} defaultChecked={'Not Specified'}>
-          {this.createOptions(['Male', 'Female', 'Other', 'Choose not to say', 'Not Specified'])}
+          {this.createOptions(['Male', 'Female', 'Other', 'Not Specified'])}
         </select>
       </label>
       <label> Education:

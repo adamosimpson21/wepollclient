@@ -11,10 +11,10 @@ class Question extends Component{
   }
 
   render(){
-    const { questions } = this.props
+    const { questions, currentUser } = this.props
     return(<div>
       <QuestionTitle />
-      <QuestionList questions={questions} />
+      <QuestionList questions={questions} currentUser={currentUser} />
     </div>)
   }
 }
@@ -22,7 +22,8 @@ class Question extends Component{
 
 function mapStateToProps(state){
   return {
-    questions:state.questions
+    questions:state.questions,
+    currentUser: state.currentUser
   }
 }
 export default connect(mapStateToProps, {getAllQuestions})(Question);
