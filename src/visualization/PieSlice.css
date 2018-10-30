@@ -1,0 +1,18 @@
+.arc{
+    z-index:1;
+}
+
+.hallOfFamePieLabel{
+    z-index: 5;
+}
+
+.tooltip {
+    opacity:.75;
+    padding:4px;
+    border-radius:8px;
+    height:fit-content;
+    width:fit-content;
+    pointer-events: none;
+    background-color: #474d8b;
+    border: 1px solid #ccc;
+}

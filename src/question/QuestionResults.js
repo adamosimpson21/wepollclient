@@ -7,6 +7,7 @@ import BackFrame from "../hocs/BackFrame";
 import moment from "moment";
 import withAuth from "../hocs/withAuth";
 import Loader from 'react-loader-spinner';
+import PieChart from "../visualization/PieChart";
 
 class QuestionResults extends Component{
   componentDidMount(){
@@ -21,12 +22,19 @@ class QuestionResults extends Component{
     return resultsObj;
   }
 
+  toDataArray = object => {
+    return Object.keys(object).map(key => ({answer:key, count:object[key]})  )
+  }
+
   render() {
     if(this.props.questions.length === 1){
-      const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions[0]
-      const { isAuthenticated, user } = this.props.currentUser
+      const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions[0];
+      const { isAuthenticated, user } = this.props.currentUser;
+      const height = 500;
+      const width = 500;
       let resultsObj = this.countResults(answers, results);
-      const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}>{answer} : {resultsObj[answer]}</div>)
+      const visualizationData = this.toDataArray(resultsObj)
+      const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}>{answer} : {resultsObj[answer]}</div>);
       return(<div className='question-results'>
         <div className='question-title'>{title}</div>
         <div className='question-content'>{questionContent}</div>
@@ -40,6 +48,7 @@ class QuestionResults extends Component{
             <button className='question-delete' onClick={this.handleDelete}>Delete this Question</button>
           </div>
         )}
+        <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={10}  cornerRadius={12}/>
       </div>)
     } else {
       return(<Loader
