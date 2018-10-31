@@ -9,7 +9,6 @@ class PieChart extends Component{
     if (this.props.data) {
       const {data, width, height} = this.props
       const colors = d3.scaleOrdinal(visualizationColorSchema)
-      console.log("data is: ", data)
       const pie = d3.pie().padAngle(.05)
       const arcs = pie(data.map(d => d.count))
       return (<svg id="question-results-pie" width={width} height={height}>

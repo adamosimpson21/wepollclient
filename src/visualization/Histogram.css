@@ -1,0 +1,9 @@
+.axis--x .tick text{
+    font-size:1em;
+    text-anchor:start;
+    transform:rotate(45deg) ;
+}
+
+rect{
+    fill:#ccc;
+}

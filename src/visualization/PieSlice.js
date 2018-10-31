@@ -34,7 +34,7 @@ class PieSlice extends Component {
         <foreignObject transform={`translate(${arc.centroid(d)})`} dy=".35em" className="hallOfFamePieLabel">
           { this.state.isHovered &&
           <div className="tooltip">
-            {data[d.index].answer}
+            {data[d.index].answer}: {data[d.index].count}
           </div> }
         </foreignObject>
       </g>)
