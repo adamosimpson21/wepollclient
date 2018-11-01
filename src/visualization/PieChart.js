@@ -17,6 +17,11 @@ class PieChart extends Component{
             <PieSlice {...this.props} d={d} colors={colors} key={d.index}/>
           ))}
         </g>
+        <foreignObject transform={`translate(${width-200}, ${height-400})`}>
+          {data.map(d => (
+          <span>{d.answer}:{d.count}</span>
+        ))}
+        </foreignObject>
       </svg>)
     } else {
       return null;

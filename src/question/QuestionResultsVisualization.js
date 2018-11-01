@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 
 class QuestionResultsVisualization extends Component{
   defaultState={
-    vizType:'histogram',
+    vizType:'pie',
     age:ageRange,
     income:incomeRange,
     familySize:familySizeRange,
@@ -108,7 +108,7 @@ class QuestionResultsVisualization extends Component{
   render(){
     const { results, answers } = this.props
     const height = 500;
-    const width = 500;
+    const width = 800;
     const resultsObj = this.countResults(answers, results.filter(this.dataFilter))
     const visualizationData = this.toDataArray(resultsObj)
     const filterMenu = this.demographicTypes.map(demographicType => (
