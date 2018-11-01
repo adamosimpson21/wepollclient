@@ -10,28 +10,11 @@ import Loader from 'react-loader-spinner';
 import PieChart from "../visualization/PieChart";
 import Histogram from "../visualization/Histogram";
 import Button from "../hocs/Button";
+import QuestionResultsVisualization from "./QuestionResultsVisualization";
 
 class QuestionResults extends Component{
-  defaultState={
-    vizType:'histogram',
-    age:0,
-    familySize:0,
-    gender:'All',
-    income:0,
-    location:'All',
-    race:'All'
-  }
-
-  state=this.defaultState
-
-
   componentDidMount(){
     this.props.loadOneQuestionAction(this.props.match.params.questionId)
-  }
-
-  // filters results my current state, which indicates what the user is filtering by
-  dataFilter = result => {
-
   }
 
   countResults = (answers, results) => {
@@ -42,20 +25,12 @@ class QuestionResults extends Component{
     return resultsObj;
   }
 
-  toDataArray = object => {
-    return Object.keys(object).map(key => ({answer:key, count:object[key]})  )
-  }
 
   render() {
     if(this.props.questions.length === 1){
       const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions[0];
       const { isAuthenticated, user } = this.props.currentUser;
-      const height = 500;
-      const width = 500;
-      const filteredResults = results.filter(this.dataFilter);
       let resultsObj = this.countResults(answers, results);
-      const visualizationData = this.toDataArray(resultsObj)
-      console.log("results are: ", results);
       const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}>{answer} : {resultsObj[answer]}</div>);
       return(<div className='question-results'>
         <div className='question-title'>{title}</div>
@@ -70,10 +45,7 @@ class QuestionResults extends Component{
             <button className='question-delete' onClick={this.handleDelete}>Delete this Question</button>
           </div>
         )}
-        <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})}/><Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})}/>
-        {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={10}  cornerRadius={12}/>}
-        {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
-
+        <QuestionResultsVisualization results={results} resultsObj={resultsObj}/>
       </div>)
     } else {
       return(<Loader

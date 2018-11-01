@@ -5,6 +5,7 @@ import connect from "react-redux/es/connect/connect";
 import Button from "../hocs/Button";
 import withRouter from "react-router/es/withRouter";
 import { handleChange } from "../helper/handleChange";
+import {educationOptions, genderOptions, locationOptions, raceOptions} from "../helper/demographicsOptions";
 
 class UpdateDemographics extends Component{
   defaultState={
@@ -53,7 +54,7 @@ class UpdateDemographics extends Component{
       </label>
       <label> Race:
         <select name='race' aria-label='Race' title='Race' value={race} onChange={handleChange.bind(this)} defaultChecked={'Not Specified'}>
-          {this.createOptions(['White', 'Black', 'Native American', 'Hispanic', 'Other', 'Not Specified'])}
+          {this.createOptions(raceOptions)}
         </select>
       </label>
       <label> Income:
@@ -71,17 +72,17 @@ class UpdateDemographics extends Component{
       </label>
       <label> Gender:
         <select name='gender' aria-label='gender' title='gender' value={gender} onChange = {handleChange.bind(this)} defaultChecked={'Not Specified'}>
-          {this.createOptions(['Male', 'Female', 'Other', 'Not Specified'])}
+          {this.createOptions(genderOptions)}
         </select>
       </label>
       <label> Education:
         <select name='education' aria-label='education' title='education' value={education} onChange = {handleChange.bind(this)} defaultChecked={'Not Specified'}>
-          {this.createOptions(['Doctorate', 'Masters', 'Bachelors', 'High School', 'Less than High School', 'Not Specified'])}
+          {this.createOptions(educationOptions)}
         </select>
       </label>
       <label> Location:
         <select name='location' aria-label='location' title='location' value={location} onChange = {handleChange.bind(this)} defaultChecked={'Not Specified'}>
-          {this.createOptions([ 'Not Specified', 'Non-USA' ,'AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY' ])}
+          {this.createOptions(locationOptions)}
         </select>
       </label>
       <label> Family Size:
