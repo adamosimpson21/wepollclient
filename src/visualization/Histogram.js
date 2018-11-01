@@ -32,7 +32,7 @@ class Histogram extends Component {
           </g>
           {data.map(d => (
             <rect
-              key={d.id}
+              key={d.answer}
               className="bar"
               x={x(d.answer)}
               y={y(d.count)}
