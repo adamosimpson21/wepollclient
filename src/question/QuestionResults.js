@@ -7,9 +7,6 @@ import BackFrame from "../hocs/BackFrame";
 import moment from "moment";
 import withAuth from "../hocs/withAuth";
 import Loader from 'react-loader-spinner';
-import PieChart from "../visualization/PieChart";
-import Histogram from "../visualization/Histogram";
-import Button from "../hocs/Button";
 import QuestionResultsVisualization from "./QuestionResultsVisualization";
 
 class QuestionResults extends Component{
@@ -45,7 +42,7 @@ class QuestionResults extends Component{
             <button className='question-delete' onClick={this.handleDelete}>Delete this Question</button>
           </div>
         )}
-        <QuestionResultsVisualization results={results} resultsObj={resultsObj}/>
+        <QuestionResultsVisualization results={results} answers={answers}/>
       </div>)
     } else {
       return(<Loader

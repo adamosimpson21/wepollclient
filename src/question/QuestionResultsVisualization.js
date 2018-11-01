@@ -2,19 +2,14 @@ import React, {Component} from 'react'
 import Button from "../hocs/Button";
 import PieChart from "../visualization/PieChart";
 import Histogram from "../visualization/Histogram";
-import { handleChange } from "../helper/handleChange";
 import {educationOptions, genderOptions, locationOptions, raceOptions} from "../helper/demographicsOptions";
 
 class QuestionResultsVisualization extends Component{
   defaultState={
     vizType:'histogram',
-    age:0,
-    income:0,
-    familySize:0,
-    allGender:true,
-    allRace:true,
-    allLocation:true,
-    allEducation:true,
+    age:{min:0, max:150},
+    income:{min:0, max:1000000000},
+    familySize:{min:0, max:20},
     race:raceOptions,
     gender:genderOptions,
     location:locationOptions,
@@ -22,6 +17,31 @@ class QuestionResultsVisualization extends Component{
   }
 
   state=this.defaultState
+  demographicTypes = ['race', 'gender', 'education', 'location']
+  demographicRanges = ['age', 'income', 'familySize']
+
+  demographicTypeToOption = demographicType => {
+    switch(demographicType){
+      case 'race':
+        return raceOptions;
+      case 'gender':
+        return genderOptions;
+      case 'education':
+        return educationOptions;
+      case 'location':
+        return locationOptions;
+      default:
+        return null;
+    }
+  }
+
+  countResults = (answers, results) => {
+    // This is to prevent answers that don't appear in the question from appearing (old data most likely)
+    let resultsObj = {};
+    answers.forEach(answer => resultsObj[answer] = 0);
+    results.forEach(result => Number.isInteger(resultsObj[result.answer]) ? ++resultsObj[result.answer] : null );
+    return resultsObj;
+  }
 
   toDataArray = object => {
     return Object.keys(object).map(key => ({answer:key, count:object[key]})  )
@@ -29,17 +49,17 @@ class QuestionResultsVisualization extends Component{
 
   // filters results my current state, which indicates what the user is filtering by
   dataFilter = result => {
-
+    let includesDemographics = true;
+    this.demographicTypes.forEach(demoType => this.state[demoType].includes(result.user[demoType]) ? null : includesDemographics=false);
+    return includesDemographics ? result : null
   }
 
   handleFilter = event => {
     const target = event.target;
     const value = target.value;
-    const boolean = target.checked;
-    if(boolean){
-      console.log("[...this.state[target.name].push(value)]:" , this.state[target.name])
+    if(target.checked){
       this.setState({
-        [target.name]: this.state[target.name].push(value)
+        [target.name]: this.state[target.name].concat(value)
       });
     } else {
       this.setState({
@@ -48,35 +68,41 @@ class QuestionResultsVisualization extends Component{
     }
   }
 
+  createFilterComponent = (demographicArray, demographicName) => {
+    return demographicArray.map(demographic => (
+      <label>{demographic}
+        <input
+          type='checkbox'
+          name={demographicName}
+          key={demographic}
+          value={demographic}
+          defaultChecked={true}
+          onChange={this.handleFilter}
+        />
+      </label>
+    ))
+  }
+
   render(){
-    const { results, resultsObj } = this.props
+    const { results, answers } = this.props
     const height = 500;
     const width = 500;
-    const filteredResults = results.filter(this.dataFilter);
+    const resultsObj = this.countResults(answers, results.filter(this.dataFilter))
     const visualizationData = this.toDataArray(resultsObj)
-    console.log("results are: ", results);
+    const filterMenu = this.demographicTypes.map(demographicType => (
+      <div key={demographicType}>{demographicType}:
+        {this.createFilterComponent(this.demographicTypeToOption(demographicType), demographicType)}
+      </div>
+    ))
     return(<div>
-        <div>
-          <div>Filter Results</div>
-          <div>Gender</div>
-          <input
-            type='checkbox'
-            name='allGender'
-            value='All'
-            checked={this.state.allGender}
-            onChange={handleChange.bind(this)}
-          />
-          <input
-            type='checkbox'
-            name='gender'
-            value='Male'
-            onChange={this.handleFilter}
-          />
 
-        </div>
       <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})}/><Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})}/>
         {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={10}  cornerRadius={12}/>}
         {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
+        <div>
+          <div>Filter Results</div>
+          {filterMenu}
+        </div>
       </div>
     )
   }
