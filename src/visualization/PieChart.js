@@ -11,15 +11,19 @@ class PieChart extends Component{
       const colors = d3.scaleOrdinal(visualizationColorSchema)
       const pie = d3.pie().padAngle(.05)
       const arcs = pie(data.map(d => d.count))
+      arcs.forEach((arc, index) => arc.answer = data[index].answer);
       return (<svg id="question-results-pie" width={width} height={height}>
-        <g transform={`translate(${width / 2}, ${height / 2})`}>
+        <g transform={`translate(${width/ 3}, ${height / 2})`}>
           {arcs.map(d => (
             <PieSlice {...this.props} d={d} colors={colors} key={d.index}/>
           ))}
         </g>
-        <foreignObject transform={`translate(${width-200}, ${height-400})`}>
-          {data.map(d => (
-          <span>{d.answer}:{d.count}</span>
+        <foreignObject transform={`translate(${width*(3/4)}, ${height*(1/4)})`}>
+          {arcs.map(d => (
+          <div key={d.index}>
+            <div style={{width:'24px', height:'24px', backgroundColor:colors(d.index)}}> </div>
+            {d.answer}:{d.value}
+          </div>
         ))}
         </foreignObject>
       </svg>)

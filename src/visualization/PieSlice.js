@@ -19,7 +19,7 @@ class PieSlice extends Component {
   }
 
   render() {
-    const {d, data, innerRadius, outerRadius, cornerRadius, colors} = this.props
+    const {d, innerRadius, outerRadius, cornerRadius, colors} = this.props
     const arc = d3.arc()
       .innerRadius(innerRadius)
       .outerRadius(outerRadius)
@@ -27,16 +27,16 @@ class PieSlice extends Component {
       .startAngle(d => d.startAngle + Math.PI * 1.5)
       .endAngle(d => d.endAngle + Math.PI * 1.5)
     return (
-      <g className="arc" key={`a${data}`}
+      <g className="arc" key={`a${d.answer}`}
          onMouseOut={() => this.mouseOut()}
          onMouseOver={() => this.mouseOver()}>
         <path d={arc(d)} fill={colors(d.index)}/>
-        <foreignObject transform={`translate(${arc.centroid(d)})`} dy=".35em" className="hallOfFamePieLabel">
-          { this.state.isHovered &&
-          <div className="tooltip">
-            {data[d.index].answer}: {data[d.index].count}
-          </div> }
-        </foreignObject>
+        {/*<foreignObject transform={`translate(${arc.centroid(d)})`} dy=".35em" className="hallOfFamePieLabel">*/}
+          {/*{ this.state.isHovered &&*/}
+          {/*<div className="tooltip">*/}
+            {/*{d.answer}: {d.value}*/}
+          {/*</div> }*/}
+        {/*</foreignObject>*/}
       </g>)
   }
 }
