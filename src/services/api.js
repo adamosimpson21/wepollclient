@@ -24,7 +24,7 @@ export function apiCall(method, path, data) {
           return resolve(res.data);
         })
         .catch(err => {
-          if(err.response.data.error){
+          if(err.response){
             return reject(err.response.data.error);
           } else {
             console.log("API asleep error: ", err)
@@ -38,7 +38,7 @@ export function apiCall(method, path, data) {
           return resolve(res.data);
         })
         .catch(err => {
-          if(err.response.data.error){
+          if(err.response){
             return reject(err.response.data.error);
           } else {
             console.log("API asleep error: ", err)

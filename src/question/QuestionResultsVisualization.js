@@ -10,6 +10,7 @@ import 'rc-slider/assets/index.css';
 class QuestionResultsVisualization extends Component{
   defaultState={
     vizType:'pie',
+    filterMenu:false,
     age:ageRange,
     income:incomeRange,
     familySize:familySizeRange,
@@ -92,7 +93,7 @@ class QuestionResultsVisualization extends Component{
 
   createFilterComponent = (demographicArray, demographicName) => {
     return demographicArray.map(demographic => (
-      <label key={demographic}>{demographic}
+      <label key={demographic} className='filter-option-label'>{demographic}
         <input
           type='checkbox'
           name={demographicName}
@@ -117,10 +118,12 @@ class QuestionResultsVisualization extends Component{
       </div>
     ))
     return(<div className='question-results-visualization'>
-      <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})}/><Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})}/>
+      <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})} />
+      <Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})} />
         {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={10}  cornerRadius={12}/>}
         {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
         <div>
+          {!this.state.filterMenu ? <Button label='Open Filter Options' onClick={() => this.setState({filterMenu:true})}/> : <span>
           <div className='filter-title'>Filter Results</div>
           <div>Use the sliders and check boxes to filter results based on the user's demographics. <br /> 0 values are users who have not provided that demographic</div>
           <div className='filter-range-wrapper'>
@@ -155,6 +158,7 @@ class QuestionResultsVisualization extends Component{
             </label>
           </div>
           {filterMenu}
+          </span>}
         </div>
       </div>
     )
