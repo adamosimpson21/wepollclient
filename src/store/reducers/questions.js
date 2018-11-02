@@ -25,7 +25,6 @@ export default (state = DEFAULT_STATE, action) => {
     case DELETE_QUESTION:
       return [...state.filter(question => question._id !== action.id)]
     case ANSWER_QUESTION:
-      action.question.results.push(action.result)
       return [action.question];
     default:
       return state;
