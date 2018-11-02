@@ -18,12 +18,9 @@ class PieChart extends Component{
             <PieSlice {...this.props} d={d} colors={colors} key={d.index}/>
           ))}
         </g>
-        <foreignObject transform={`translate(${width*(3/4)}, ${height*(1/4)})`}>
+        <foreignObject transform={`translate(${width*(2/3)}, ${height*(1/5)})`}>
           {arcs.map(d => (
-          <div key={d.index}>
-            <div style={{width:'24px', height:'24px', backgroundColor:colors(d.index)}}> </div>
-            {d.answer}:{d.value}
-          </div>
+            <div key={d.index} className='results-pie-chart-legend' style={{width:(width/3), backgroundColor:colors(d.index)}}> {d.answer}:{d.value} </div>
         ))}
         </foreignObject>
       </svg>)

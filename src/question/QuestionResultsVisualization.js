@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 
 class QuestionResultsVisualization extends Component{
   defaultState={
-    vizType:'pie',
+    vizType:'histogram',
     filterMenu:false,
     age:ageRange,
     income:incomeRange,
@@ -120,7 +120,7 @@ class QuestionResultsVisualization extends Component{
     return(<div className='question-results-visualization'>
       <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})} />
       <Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})} />
-        {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={10}  cornerRadius={12}/>}
+        {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={12}  cornerRadius={24}/>}
         {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
         <div>
           {!this.state.filterMenu ? <Button label='Open Filter Options' onClick={() => this.setState({filterMenu:true})}/> : <span>
