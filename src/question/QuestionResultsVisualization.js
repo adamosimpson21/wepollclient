@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 
 class QuestionResultsVisualization extends Component{
   defaultState={
-    vizType:'pie',
+    vizType:'histogram',
     filterMenu:false,
     age:ageRange,
     income:incomeRange,

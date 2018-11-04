@@ -1,11 +1,10 @@
 .axis--x .tick text{
-    font-size:1.6em;
-    text-anchor:middle;
     display:none;
-    /*transform:rotate(8deg) translateY(10px);*/
 }
 
-.text-wrap{
-    fill:green;
-    textLength: 100px;
+#question-results-histogram .results-pie-chart-legend{
+    padding:6px;
+    margin: 4px;
+    height:fit-content;
+    color:white;
 }
