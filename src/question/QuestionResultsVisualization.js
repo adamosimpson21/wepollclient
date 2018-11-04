@@ -9,7 +9,7 @@ import 'rc-slider/assets/index.css';
 
 class QuestionResultsVisualization extends Component{
   defaultState={
-    vizType:'histogram',
+    vizType:'pie',
     filterMenu:false,
     age:ageRange,
     income:incomeRange,
@@ -108,8 +108,11 @@ class QuestionResultsVisualization extends Component{
 
   render(){
     const { results, answers } = this.props
-    const height = 500;
-    const width = 800;
+    const height = window.innerWidth<= 700 ? 300 : 500;
+    const width = window.innerWidth<= 700 ? 350 : 800;
+    const outerRadius = window.innerWidth<= 700 ? 100 : 200;
+    const innerRadius = window.innerWidth<= 700 ? 6 : 12;
+    const cornerRadius = window.innerWidth<= 700 ? 12 : 24;
     const resultsObj = this.countResults(answers, results.filter(this.dataFilter))
     const visualizationData = this.toDataArray(resultsObj)
     const filterMenu = this.demographicTypes.map(demographicType => (
@@ -120,14 +123,14 @@ class QuestionResultsVisualization extends Component{
     return(<div className='question-results-visualization'>
       <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})} />
       <Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})} />
-        {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={200} innerRadius={12}  cornerRadius={24}/>}
+        {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={outerRadius} innerRadius={innerRadius}  cornerRadius={cornerRadius}/>}
         {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
         <div>
           {!this.state.filterMenu ? <Button label='Open Filter Options' onClick={() => this.setState({filterMenu:true})}/> : <span>
-          <div className='filter-title'>Filter Results</div>
+          <div className='filter-title'>Filter Options</div>
           <div>Use the sliders and check boxes to filter results based on the user's demographics. <br /> 0 values are users who have not provided that demographic</div>
           <div className='filter-range-wrapper'>
-            <label>Age:
+            <label>Age (years):
               <Range min={ageRange[0]}
                      max={ageRange[1]}
                      defaultValue={ageRange}
@@ -138,7 +141,7 @@ class QuestionResultsVisualization extends Component{
             </label>
           </div>
           <div className='filter-range-wrapper'>
-            <label>Income:
+            <label>Income (annual, USD):
               <Range min={incomeRange[0]}
                      max={incomeRange[1]}
                      defaultValue={incomeRange}
@@ -148,7 +151,7 @@ class QuestionResultsVisualization extends Component{
             </label>
           </div>
           <div className='filter-range-wrapper'>
-            <label>Family Size:
+            <label>Family Size (humans):
               <Range min={familySizeRange[0]}
                      max={familySizeRange[1]}
                      defaultValue={familySizeRange}

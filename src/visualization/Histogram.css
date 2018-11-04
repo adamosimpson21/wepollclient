@@ -1,9 +1,11 @@
 .axis--x .tick text{
-    font-size:1em;
-    text-anchor:start;
-    transform:rotate(45deg) ;
+    font-size:1.6em;
+    text-anchor:middle;
+    display:none;
+    /*transform:rotate(8deg) translateY(10px);*/
 }
 
-rect{
-    fill:#ccc;
+.text-wrap{
+    fill:green;
+    textLength: 100px;
 }

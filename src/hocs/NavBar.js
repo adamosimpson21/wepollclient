@@ -13,24 +13,25 @@ class NavBar extends Component{
     this.props.logout();
   };
   render(){
+    const iconSize = window.innerWidth<= 700 ? '36px' : '24px';
     return(
         <header>
           <div className="fullNavbar">
               <NavLink to="/landing" className='wepoll-navbar-brand'><WePollBrand /></NavLink>
             <nav>
-              <NavLink activeClassName="activeNavLink" to="/question"><li><Icon icon="questionMark" /><span className='navbar-text'>Questions</span></li></NavLink>
-              <NavLink activeClassName="activeNavLink" to="/shop"><li><Icon icon="shop" /><span className='navbar-text'>Shop</span></li></NavLink>
-              <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user" /><span className='navbar-text'>Profile</span></li></NavLink>
-              <NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group" /><span className='navbar-text'>Party</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/question"><li><Icon icon="questionMark" width={iconSize} height={iconSize}/><span className='navbar-text'>Questions</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/shop"><li><Icon icon="shop"  width={iconSize} height={iconSize}/><span className='navbar-text'>Shop</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user"  width={iconSize} height={iconSize}/><span className='navbar-text'>Profile</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group"  width={iconSize} height={iconSize}/><span className='navbar-text'>Party</span></li></NavLink>
               {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" /><span className='navbar-text'>Settings</span></li></NavLink>*/}
-              <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark" /><span className='navbar-text'>About</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark"  width={iconSize} height={iconSize}/><span className='navbar-text'>About</span></li></NavLink>
               {this.props.currentUser.isAuthenticated ? (
-                <a onClick={this.logout} className='navbar-last-element'><li><Icon icon="logOut" /><span className='navbar-text'>Log out</span></li></a>
+                <a onClick={this.logout} className='navbar-last-element'><li><Icon icon="logOut"  width={iconSize} height={iconSize}/><span className='navbar-text'>Log out</span></li></a>
               ) : (
-                <NavLink activeClassName="activeNavLink" to="/logIn"><li><Icon icon="signIn" /><span className='navbar-text'>Log In</span></li></NavLink>
+                <NavLink activeClassName="activeNavLink" to="/logIn"><li><Icon icon="signIn"  width={iconSize} height={iconSize}/><span className='navbar-text'>Log In</span></li></NavLink>
               )}
               {!this.props.currentUser.isAuthenticated && (
-                <NavLink activeClassName="activeNavLink" className='navbar-last-element' to="/register"><li>Register</li></NavLink>
+                <NavLink activeClassName="activeNavLink" className='navbar-last-element' to="/register"><li><Icon icon="register"  width={iconSize} height={iconSize} viewBox={'0 0 720 720'} /><span className='navbar-text'>Register</span></li></NavLink>
               )}
             </nav>
           </div>

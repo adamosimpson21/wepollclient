@@ -15,6 +15,7 @@ class QuestionResults extends Component{
   }
 
   render() {
+
     if(this.props.questions.length === 1){
       const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions[0];
       const { isAuthenticated, user } = this.props.currentUser;
