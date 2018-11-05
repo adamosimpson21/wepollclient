@@ -5,6 +5,6 @@
 #question-results-histogram .results-pie-chart-legend{
     padding:6px;
     margin: 4px;
-    height:fit-content;
+    /*height:fit-content;*/
     color:white;
 }

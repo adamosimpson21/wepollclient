@@ -86,7 +86,8 @@ class QuestionResultsVisualization extends Component{
     // TODO: refactor using reduce?
     let tickObj = {}
     for(let i = range[0]; i<=range[1]; i+=step){
-      tickObj[i] = i.toString().length>3 ? i.toString().slice(0,3).concat('K') : i;
+      let iString = i.toString()
+      tickObj[i] = iString.length>3 ? iString.substring(0, iString.length - 3).concat('K') : i;
     }
     return tickObj
   }

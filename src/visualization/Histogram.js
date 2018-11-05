@@ -6,10 +6,12 @@ import './Histogram.css';
 class Histogram extends Component {
    render() {
     if (this.props.data.length > 0) {
-      const margin = {top:30, bottom:75, left:50, right:30}
+      const margin = {top:45, bottom:15, left:30, right:30}
       const {data, width, height} = this.props
+      const innerWidth = width-margin.right-margin.left;
+      const numResults = data.reduce((acc, num) => acc+=num.count, 0)
       const x = d3.scaleBand()
-        .range([(width*3/4)- margin.left - margin.right, 0])
+        .range([(innerWidth*3/4), 0])
         .domain(data.map(d => d.answer))
         .padding(0.1)
       const y = d3.scaleLinear()
@@ -26,7 +28,7 @@ class Histogram extends Component {
           />
           <g className="axis axis--y">
             <g ref={node => d3.select(node).call(d3.axisLeft(y).ticks(5))} />
-            <text transform="rotate(-90)" y="-50" x={-height/3} dy="0.71em" textAnchor="middle">
+            <text transform="rotate(-90)" y="-50" x={-height/3} dy="0.71em">
               Count
             </text>
           </g>
@@ -41,10 +43,19 @@ class Histogram extends Component {
               height={height - margin.bottom - margin.top - y(d.count)}
             />
           ))}
-          <foreignObject transform={`translate(${width*(2/3)}, ${height*(1/5)})`}>
-            {console.log("data: ", data)}
+
+          {/* Display results as % on top of bars */}
+          {data.map(d => (
+            <text
+              key={d.answer}
+              x={x(d.answer)+x.bandwidth()/2}
+              y={y(d.count)-2}
+            >{(d.count*100/numResults).toFixed(0)}%</text>
+          ))}
+          {/* Histogram Legend */}
+          <foreignObject transform={`translate(${innerWidth*(3/4)}, ${height*(1/5)})`}>
             {data.map((d, index) => (
-              <div key={index} className='results-pie-chart-legend' style={{width:(width/3), backgroundColor:colors(index)}}> {d.answer}:{d.count} </div>
+              <div key={index} className='results-pie-chart-legend' style={{width:(innerWidth/4), backgroundColor:colors(index)}}> {d.answer}:{d.count} </div>
             ))}
           </foreignObject>
         </g>
