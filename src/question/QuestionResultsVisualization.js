@@ -10,7 +10,7 @@ import 'rc-slider/assets/index.css';
 class QuestionResultsVisualization extends Component{
   defaultState={
     vizType:'histogram',
-    filterMenu:false,
+    filterMenu:true,
     age:ageRange,
     income:incomeRange,
     familySize:familySizeRange,
@@ -83,7 +83,7 @@ class QuestionResultsVisualization extends Component{
   }
 
   createTickMarks = (range, step) => {
-    // TODO: refactor using reduce?
+    // TODO: refactor using reduce? Can you use reduce without iterating over every option in range?
     let tickObj = {}
     for(let i = range[0]; i<=range[1]; i+=step){
       let iString = i.toString()
@@ -94,8 +94,10 @@ class QuestionResultsVisualization extends Component{
 
   createFilterComponent = (demographicArray, demographicName) => {
     return demographicArray.map(demographic => (
-      <label key={demographic} className='filter-option-label'>{demographic}
+      <span className='filter-option-wrapper'>{demographic}
+      <label key={demographic} className='filter-option-label'>
         <input
+          className='filter-option-demographic-checkbox'
           type='checkbox'
           name={demographicName}
           key={demographic}
@@ -103,7 +105,9 @@ class QuestionResultsVisualization extends Component{
           defaultChecked={true}
           onChange={this.handleFilter}
         />
+        <span className="filter-option-slider"></span>
       </label>
+      </span>
     ))
   }
 
