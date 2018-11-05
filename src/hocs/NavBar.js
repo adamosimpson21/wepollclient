@@ -13,7 +13,7 @@ class NavBar extends Component{
     this.props.logout();
   };
   render(){
-    const iconSize = window.innerWidth<= 700 ? '36px' : '24px';
+    const iconSize = window.innerWidth<= 700 ? '28px' : '24px';
     return(
         <header>
           <div className="fullNavbar">

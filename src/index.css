@@ -6,8 +6,6 @@ body {
   height:100vh;
 }
 
-@media screen and (max-width: 700px) {
-  body{
-    /*background: url("img/TerrariaSky.jpg") fixed;*/
-  }
+* {
+  box-sizing: border-box;
 }

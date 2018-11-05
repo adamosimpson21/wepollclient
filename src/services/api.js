@@ -16,7 +16,13 @@ export function apiCall(method, path, data) {
           return resolve(res.data);
         })
         .catch(err => {
-          return reject(err.response.data.error);
+          if(err.response){
+            return reject(err.response.data.error);
+          } else {
+            console.log("API error: ", err)
+            err.message = "API is asleep, refresh this page in about 10-15 seconds";
+            return reject(err);
+          }
         });
     } else if(process.env.REACT_APP_ENV_TYPE==='production'){
       return axios[method.toLowerCase()]('https://wepollapi.herokuapp.com' + path, data)
@@ -27,7 +33,7 @@ export function apiCall(method, path, data) {
           if(err.response){
             return reject(err.response.data.error);
           } else {
-            console.log("API asleep error: ", err)
+            console.log("API error: ", err)
             err.message = "API is asleep, refresh this page in about 10-15 seconds";
             return reject(err);
           }
@@ -41,7 +47,7 @@ export function apiCall(method, path, data) {
           if(err.response){
             return reject(err.response.data.error);
           } else {
-            console.log("API asleep error: ", err)
+            console.log("API error: ", err)
             err.message = "API is asleep, refresh this page in about 10-15 seconds";
             return reject(err);
           }

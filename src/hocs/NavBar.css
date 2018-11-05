@@ -70,6 +70,11 @@ header nav .navbar-last-element{
         display:none;
     }
 
+    header {
+        margin:auto;
+        padding: 0;
+    }
+
     header nav li {
         padding: 6px;
     }
