@@ -10,7 +10,7 @@ import 'rc-slider/assets/index.css';
 class QuestionResultsVisualization extends Component{
   defaultState={
     vizType:'histogram',
-    filterMenu:true,
+    filterMenu:false,
     age:ageRange,
     income:incomeRange,
     familySize:familySizeRange,
@@ -56,7 +56,7 @@ class QuestionResultsVisualization extends Component{
     return range[0] <= value && value <=range[1]
   }
 
-  // filters results my current state, which indicates what the user is filtering by
+  // filters results by current state
   dataFilter = result => {
     let includesDemographics = true;
     this.demographicTypes.forEach(demoType => this.state[demoType].includes(result.user[demoType]) ? null : includesDemographics=false);
@@ -113,11 +113,12 @@ class QuestionResultsVisualization extends Component{
 
   render(){
     const { results, answers } = this.props
-    const height = window.innerWidth<= 700 ? 300 : 500;
-    const width = window.innerWidth<= 700 ? 350 : 800;
-    const outerRadius = window.innerWidth<= 700 ? 100 : 200;
-    const innerRadius = window.innerWidth<= 700 ? 6 : 12;
-    const cornerRadius = window.innerWidth<= 700 ? 12 : 24;
+    const isMobile = window.innerWidth<=700
+    const height = isMobile ? 300 : 500;
+    const width = isMobile ? 200 : 400;
+    const outerRadius = isMobile ? 100 : 200;
+    const innerRadius = isMobile ? 6 : 12;
+    const cornerRadius = isMobile ? 12 : 24;
     const resultsObj = this.countResults(answers, results.filter(this.dataFilter))
     const visualizationData = this.toDataArray(resultsObj)
     const filterMenu = this.demographicTypes.map(demographicType => (

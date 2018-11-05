@@ -2,9 +2,6 @@
     display:none;
 }
 
-#question-results-histogram .results-pie-chart-legend{
-    padding:6px;
-    margin: 4px;
-    /*height:fit-content;*/
-    color:white;
+.histogram-wrapper{
+    display:inline-flex;
 }
