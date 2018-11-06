@@ -9,15 +9,15 @@ class PieSlice extends Component {
     }
 
   render() {
-    const {d, innerRadius, outerRadius, cornerRadius, colors} = this.props
+    const {d, innerRadius, outerRadius, cornerRadius, colors, index} = this.props
     const arc = d3.arc()
       .innerRadius(innerRadius)
       .outerRadius(outerRadius)
       .cornerRadius(cornerRadius)
       .startAngle(d => d.startAngle + Math.PI * 1.5)
       .endAngle(d => d.endAngle + Math.PI * 1.5)
-    return (<g className="arc" key={`a${d.answer}`}>
-              <path d={arc(d)} fill={colors(d.index)}/>
+    return (<g className="arc" key={d.answer}>
+              <path d={arc(d)} fill={colors(index)}/>
             </g>)
   }
 }

@@ -4,6 +4,7 @@ import connect from 'react-redux/es/connect/connect'
 import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
 import Loader from "react-loader-spinner";
+import ItemForm from "./ItemForm";
 
 class UserInventory extends Component{
   defaultState = {
@@ -41,8 +42,9 @@ class UserInventory extends Component{
         <div>
           <div className='user-inventory-header'>
           {user.username}'s Inventory!
-          You have {user.coins} coins
+          You have {user.coins} Opinion Points
           </div>
+          {(user.authLevel==='admin' || user.authLevel==='founder') &&
           <form onSubmit={this.handleSubmit}>
             <label>Buy Coins:
               <input
@@ -55,7 +57,7 @@ class UserInventory extends Component{
               />
             </label>
             <button type="submit">Add Coins</button>
-          </form>
+          </form>}
           <div>
             <div className='inventory-items'>
               {userItems}

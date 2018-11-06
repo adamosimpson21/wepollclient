@@ -16,8 +16,8 @@ class PieChart extends Component{
       return (<div className='pie-chart-wrapper'>
         <svg id="question-results-pie" width={width} height={height}>
           <g transform={`translate(${width/ 2}, ${height / 2})`}>
-            {arcs.map(d => (
-              <PieSlice {...this.props} d={d} colors={colors} key={d.index}/>
+            {arcs.map((d, index) => (
+              <PieSlice {...this.props} d={d} colors={colors} key={index} index={index}/>
             ))}
           </g>
         </svg>

@@ -94,8 +94,8 @@ class QuestionResultsVisualization extends Component{
 
   createFilterComponent = (demographicArray, demographicName) => {
     return demographicArray.map(demographic => (
-      <span className='filter-option-wrapper'>{demographic}
-      <label key={demographic} className='filter-option-label'>
+      <span className='filter-option-wrapper' key={demographic} >{demographic}
+      <label className='filter-option-label'>
         <input
           className='filter-option-demographic-checkbox'
           type='checkbox'

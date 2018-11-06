@@ -12,26 +12,29 @@ import Loader from 'react-loader-spinner';
 class QuestionDetails extends Component{
   componentDidMount(){
     const { currentUser, match, history, addError, loadOneQuestionAction } = this.props
+    const questionId = match.params.questionId
     if(process.env.REACT_APP_ENV_TYPE!=='development'){
-      if(currentUser.isAuthenticated && currentUser.user.questions.includes(match.params.questionId)){
+      if(currentUser.isAuthenticated && currentUser.user.questions.includes(questionId)){
         addError("You've answered this question already");
-        history.push(`/question/${match.params.questionId}/results`)
+        history.push(`/question/${questionId}/results`)
       }
     }
-    loadOneQuestionAction(match.params.questionId)
+    loadOneQuestionAction(questionId)
   }
 
   handleAnswer = event => {
     event.preventDefault();
     const { currentUser, answerQuestionAction, match, history, addError } = this.props
-    if(currentUser.isAuthenticated && !currentUser.user.questions.includes(match.params.questionId)){
-      answerQuestionAction(match.params.questionId, event.target.value)
-      history.push(`/question/${match.params.questionId}/results`)
+    const questionId = match.params.questionId
+    if(currentUser.isAuthenticated && !currentUser.user.questions.includes(questionId)){
+      answerQuestionAction(questionId, event.target.value)
+      history.push(`/question/${questionId}/results`)
     } else if(currentUser.isAuthenticated){
       addError("You've answered this question already")
-      history.push(`/question/${match.params.questionId}/results`)
+      history.push(`/question/${questionId}/results`)
     } else{
       addError("You must be logged in to do that")
+      history.push(`/logIn`)
     }
   }
 
@@ -56,7 +59,7 @@ class QuestionDetails extends Component{
         <div className='question-content'>{questionContent}</div>
         <div className='question-education'>{education}</div>
         {answerDisplays}
-        {process.env.REACT_APP_ENV_TYPE==='development' && <div><Link to={`/question/${_id}/results`}>Go to results page (for development)</Link></div>}
+        {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
