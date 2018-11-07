@@ -1,6 +1,6 @@
 .backFrame{
-    background-color: rgba(253, 253, 253, 0.8);
-    border: 2px solid #4b4b4b;
+    background-color: rgb(239, 239, 239);
+    /*border: 2px solid #fdfdfd;*/
     border-radius:15px;
     display:inline-flex;
     padding:8px;
