@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { addError } from "./errors";
-import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY,LOAD_PARTIES,LOAD_ONE_PARTY , JOIN_PARTY, LEAVE_PARTY } from "../actionTypes";
+import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY,LOAD_PARTIES,LOAD_ONE_PARTY , JOIN_PARTY } from "../actionTypes";
 import { updateCurrentUser } from "./auth";
 
 export const loadParties = parties => ({

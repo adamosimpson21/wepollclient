@@ -4,7 +4,6 @@ import connect from 'react-redux/es/connect/connect'
 import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
 import Loader from "react-loader-spinner";
-import ItemForm from "./ItemForm";
 
 class UserInventory extends Component{
   defaultState = {

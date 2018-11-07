@@ -56,11 +56,14 @@ class QuestionDetails extends Component{
       const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
+        <hr />
         <div className='question-content'>{questionContent}</div>
+        <hr />
         <div className='question-education'>{education}</div>
+        <hr />
         {answerDisplays}
         {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
-        <div className='question-xpReward'>Answer this Question to get {xpReward} experience</div>
+        <div className='question-xpReward'>Answer this Question to get {xpReward} experience and 5 Opinion Points</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
           <div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}

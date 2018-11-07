@@ -4,6 +4,7 @@ import { postQuestion } from '../store/actions/questions'
 import connect from 'react-redux/es/connect/connect'
 import Button from "../hocs/Button";
 import withRouter from "react-router/es/withRouter";
+import {handleChange} from "../helper/handleChange";
 
 class NewQuestionForm extends Component{
   defaultState = {
@@ -30,13 +31,6 @@ class NewQuestionForm extends Component{
     this.props.history.push('/question')
   }
 
-  handleChange = event => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    this.setState({
-      [target.name]: value
-    });
-  }
 
   render(){
     // TODO: refactor this? Currently works, but there's probably a better way to do it? reduce?
@@ -45,12 +39,12 @@ class NewQuestionForm extends Component{
       answerInputs.push(<label key={index}> Answer {index+1}:
         <input
           type='text'
-           //TODO: understand and research the implications of setState on states that weren't in the initial constructor
           name={`answer${index+1}`}
           aria-label={`Answer #${index+1}`}
           title={`Answer #${index+1}`}
           value={this.state.answers}
-          onChange = {this.handleChange}
+          onChange = {handleChange.bind(this)}
+          maxLength='50'
           required
         />
       </label>)
@@ -68,10 +62,12 @@ class NewQuestionForm extends Component{
             aria-label='Your Question'
             title='Your Question'
             value={this.state.questionContent}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
+          <p className='new-question-form-field-description'>Ask any question you'd like. The best questions clearly and concisely state the issue at hand.</p>
         </label>
+
         <label> Title:
           <input
             type='text'
@@ -79,9 +75,11 @@ class NewQuestionForm extends Component{
             aria-label='Short title'
             title='Short title'
             value={this.state.title}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
+            maxLength='30'
             required
           />
+          <p className='new-question-form-field-description'>Your title should be the topic of your question in a few words.</p>
         </label>
         <label> Description:
           <input
@@ -90,9 +88,11 @@ class NewQuestionForm extends Component{
             aria-label='Detailed Description'
             title='Detailed Description'
             value={this.state.description}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
+            maxLength='75'
             required
           />
+          <p className='new-question-form-field-description'>An 'at a glance' description of your question. </p>
         </label>
         <label> Education:
           <input
@@ -101,9 +101,10 @@ class NewQuestionForm extends Component{
             aria-label='An Educational Resource to teach others about possible answers'
             title='An Educational Resource to teach others about possible answers'
             value={this.state.education}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
+          <p className='new-question-form-field-description'>Educate the reader about for and against arguments for your poll. Why do some people want one answer, while others favor a different one?</p>
         </label>
         {/* TODO: Implement tags */}
         { process.env.REACT_APP_ENV_TYPE ==='development' &&
@@ -114,7 +115,7 @@ class NewQuestionForm extends Component{
             aria-label='Keywords to search for'
             title='Keywords to search for'
             value='Not Implemented yet'
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
           />
         </label> }
         <label id='question-form-number-of-answers'> Number of Answers:
@@ -126,7 +127,7 @@ class NewQuestionForm extends Component{
             min={2}
             max={20}
             value={this.state.numAnswers}
-            onChange = {this.handleChange}
+            onChange = {handleChange.bind(this)}
             required
           />
         </label>

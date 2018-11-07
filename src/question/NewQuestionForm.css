@@ -24,6 +24,11 @@
     font-size:1.3rem;
 }
 
+.new-question-form .new-question-form-field-description{
+    font-size:.75rem;
+    color:darkslategray;
+}
+
 #question-form-number-of-answers{
     margin:auto auto;
     width:40%;
