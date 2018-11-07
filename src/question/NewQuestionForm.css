@@ -2,6 +2,7 @@
     display:inline-grid;
     width:60vw;
     font-size: 1.3rem;
+    margin-bottom:24px;
 }
 
 .new-question-form Button{

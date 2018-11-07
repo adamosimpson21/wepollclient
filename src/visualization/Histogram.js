@@ -53,7 +53,7 @@ class Histogram extends Component {
                 x={x(d.answer)+x.bandwidth()/2}
                 y={y(d.count)-2}
                 textAnchor='middle'
-              >{(d.count*100/numResults).toFixed(1)}%</text>
+              >{numResults >0 ? (d.count*100/numResults).toFixed(1).concat('%') : 'No Data'}</text>
             ))}
           </g>
         </svg>

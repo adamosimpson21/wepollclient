@@ -8,8 +8,14 @@ import BackFrame from "../hocs/BackFrame";
 import moment from 'moment';
 import {addError} from "../store/actions/errors";
 import Loader from 'react-loader-spinner';
+import Button from "../hocs/Button";
 
 class QuestionDetails extends Component{
+  state={
+    heldAnswer: '',
+    answerSelected:false
+  }
+
   componentDidMount(){
     const { currentUser, match, history, addError, loadOneQuestionAction } = this.props
     const questionId = match.params.questionId
@@ -24,19 +30,28 @@ class QuestionDetails extends Component{
 
   handleAnswer = event => {
     event.preventDefault();
-    const { currentUser, answerQuestionAction, match, history, addError } = this.props
-    const questionId = match.params.questionId
-    if(currentUser.isAuthenticated && !currentUser.user.questions.includes(questionId)){
-      answerQuestionAction(questionId, event.target.value)
-      history.push(`/question/${questionId}/results`)
-    } else if(currentUser.isAuthenticated){
-      addError("You've answered this question already")
-      history.push(`/question/${questionId}/results`)
-    } else{
-      addError("You must be logged in to do that")
-      history.push(`/logIn`)
-    }
+    this.setState({answerSelected:true, heldAnswer: event.target.value})
   }
+
+  confirmAnswer = event => {
+    if(this.state.answerSelected){
+      event.preventDefault();
+      const {currentUser, answerQuestionAction, match, history, addError} = this.props
+      const questionId = match.params.questionId
+      if (currentUser.isAuthenticated && !currentUser.user.questions.includes(questionId)) {
+        answerQuestionAction(questionId, this.state.heldAnswer)
+        history.push(`/question/${questionId}/results`)
+      } else if (currentUser.isAuthenticated) {
+        addError("You've answered this question already")
+        history.push(`/question/${questionId}/results`)
+      } else {
+        addError("You must be logged in to do that")
+        history.push(`/logIn`)
+      }
+    } else {
+      this.setState({answerSelected:true})
+    }
+}
 
   // TODO: implement after specs
   handleEdit = event => {
@@ -63,6 +78,9 @@ class QuestionDetails extends Component{
         <hr />
         {answerDisplays}
         {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
+
+        { this.state.answerSelected && <Button label='Send your ballot' onClick={this.confirmAnswer}/> }
+
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience and 5 Opinion Points</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
