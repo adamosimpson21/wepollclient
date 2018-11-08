@@ -15,23 +15,26 @@
 
 #landing-header h1 {
     color: #fff;
-    background: rgba(100,100,100,.5);
-    width:350px;
+    background: rgba(100,100,100,.7);
+    font-size:2.4rem;
+    width:fit-content;
+    padding:16px;
     margin:auto;
-    border-radius:15px;
+    border-radius:36px;
 }
 
 .splashButton{
     width:300px;
     height:50px;
-    background-color:green;
+    background: linear-gradient(0deg, #008200, #00e900);
     margin: 0 auto;
+    border: 2px solid green;
     border-radius:25px;
     font-size:22px;
 }
 
 .splashButton a{
-    color:#ccc;
+    color:#fff;
     text-decoration: none;
     padding: 10px 16px;
     margin: auto auto;

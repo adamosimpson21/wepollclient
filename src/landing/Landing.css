@@ -1,11 +1,11 @@
 .landingTitle{
-    border: 2px solid black;
-    background-color:lightgreen;
+    background-color: #6bcc6b;
     border-radius:8px;
     margin: 24px auto;
     padding:32px;
     width:60%;
-    color:black;
+    color:white;
+    text-shadow: 1px 1px 5px #888888, -1px 1px 5px #888888;
 }
 
 .landingButtons{

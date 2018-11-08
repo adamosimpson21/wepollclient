@@ -46,7 +46,7 @@ class QuestionDetails extends Component{
         history.push(`/question/${questionId}/results`)
       } else {
         addError("You must be logged in to do that")
-        history.push(`/logIn`)
+        history.push(`/register`)
       }
     } else {
       this.setState({answerSelected:true})
