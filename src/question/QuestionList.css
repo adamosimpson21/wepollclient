@@ -23,9 +23,13 @@
 }
 
 @media screen and (max-width: 700px) {
+
+    .question-thumbnail-wrapper{
+        width:50%;
+    }
+
     .question-thumbnail {
-        width:45%;
-        margin: 8px auto;
+        margin: 8px 2px;
         padding:2px;
     }
 

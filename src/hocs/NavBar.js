@@ -24,7 +24,7 @@ class NavBar extends Component{
               <NavLink activeClassName="activeNavLink" to="/profile"><li><Icon icon="user"  width={iconSize} height={iconSize}/><span className='navbar-text'>Profile</span></li></NavLink>
               <NavLink activeClassName="activeNavLink" to="/party"><li><Icon icon="group"  width={iconSize} height={iconSize}/><span className='navbar-text'>Party</span></li></NavLink>
               {/*<NavLink activeClassName="activeNavLink" to="/settings"><li><Icon icon="gear" /><span className='navbar-text'>Settings</span></li></NavLink>*/}
-              <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="questionMark"  width={iconSize} height={iconSize}/><span className='navbar-text'>About</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/about"><li><Icon icon="info"  width={iconSize} height={iconSize} viewBox='0 0 437.6 437.6'/><span className='navbar-text'>About</span></li></NavLink>
               {this.props.currentUser.isAuthenticated ? (
                 <a onClick={this.logout} className='navbar-last-element'><li><Icon icon="logOut"  width={iconSize} height={iconSize}/><span className='navbar-text'>Log out</span></li></a>
               ) : (

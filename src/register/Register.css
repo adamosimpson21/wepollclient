@@ -1,5 +1,6 @@
 .register-page{
     font-size:1.3rem;
+    width:100vw;
 }
 
 .register-form{
@@ -24,4 +25,8 @@
 
 .register-form Button{
     margin: 4px auto 24px auto;
+}
+
+@media (min-width: 700px) {
+    
 }

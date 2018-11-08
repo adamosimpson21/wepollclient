@@ -40,6 +40,7 @@ class UpdateDemographics extends Component{
     const { age, education, familySize, gender, income, location, race} = this.state
     return(<form onSubmit={this.handleSubmit} className='profile-update-demographics'>
       <h4> Update your demographics below. This is optional and estimate where applicable</h4>
+      <h5> WePoll will never give your information to third parties. It's used for in-app filtering of results. Your username will not be included with this data.</h5>
       <label> Age:
         <input
           type='number'
