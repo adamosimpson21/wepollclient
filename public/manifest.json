@@ -4,8 +4,23 @@
   "icons": [
     {
       "src": "WePollIcon.png",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/png"
+      "type": "image/png",
+      "sizes": "64x64 32x32 24x24 16x16"
+    },
+    {
+      "src": "WePollAppIcon144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "WePollAppIcon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "WePollIcon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": "./index.html",
