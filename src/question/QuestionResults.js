@@ -21,8 +21,11 @@ class QuestionResults extends Component{
       const { isAuthenticated, user } = this.props.currentUser;
       return(<div className='question-results'>
         <div className='question-title'>{title}</div>
+        <hr />
         <div className='question-content'>{questionContent}</div>
+        <hr />
         <div className='question-education'>{education}</div>
+        <hr />
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
