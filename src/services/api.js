@@ -11,7 +11,7 @@ export function setTokenHeader(token) {
 export function apiCall(method, path, data) {
   return new Promise((resolve, reject) => {
     if(process.env.REACT_APP_ENV_TYPE==='development'){
-      return axios[method.toLowerCase()]('http://localhost:4000' + path, data)
+      return axios[method.toLowerCase()]('http://10.0.0.53:4000' + path, data)
         .then(res => {
           return resolve(res.data);
         })
@@ -20,7 +20,7 @@ export function apiCall(method, path, data) {
             return reject(err.response.data.error);
           } else {
             console.log("API error: ", err)
-            err.message = "API is asleep, refresh this page in about 10-15 seconds";
+            err.message = "Error connecting to Server, please contact Admin";
             return reject(err);
           }
         });
@@ -34,7 +34,7 @@ export function apiCall(method, path, data) {
             return reject(err.response.data.error);
           } else {
             console.log("API error: ", err)
-            err.message = "API is asleep, refresh this page in about 10-15 seconds";
+            err.message = "Error connecting to Server, please contact Admin";
             return reject(err);
           }
         });
@@ -48,7 +48,7 @@ export function apiCall(method, path, data) {
             return reject(err.response.data.error);
           } else {
             console.log("API error: ", err)
-            err.message = "API is asleep, refresh this page in about 10-15 seconds";
+            err.message = "Error connecting to Server, please contact Admin";
             return reject(err);
           }
         });

@@ -16,10 +16,6 @@ header {
     margin-left:48px;
 }
 
-.fullNavbar{
-    display:contents;
-}
-
 header h1 {
     text-align: center;
 }
@@ -28,10 +24,6 @@ header a {
     text-decoration: none;
     cursor: pointer;
     opacity: 0.9;
-}
-
-header a:hover {
-    opacity: 1;
 }
 
 header nav {
@@ -45,19 +37,21 @@ header nav li {
     color:black;
 }
 
-header nav a {
-    border-right: 2px solid aqua;
-}
+/*header nav a {*/
+     /*border-right: 2px solid aqua;*/
+ /*}*/
+
 
 header nav .navbar-last-element{
     border-right:none;
 }
 
-@media screen and (max-width: 700px) {
-    .wepoll-brand{
-        display:none;
-    }
+.activeNavLink li{
+    border-radius:8px;
+    background-color: #2473ac;
+}
 
+@media screen and (max-width: 700px) {
     .navbar-text{
         display:none;
     }
@@ -66,26 +60,12 @@ header nav .navbar-last-element{
         display:none;
     }
 
-    header{
-        padding:0;
-    }
-
     header nav{
-        margin: 0;
-        padding: 0;
-    }
-
-    header nav a{
-        width:13vw;
+        display:contents;
     }
 
     header nav li {
-        padding: 2px;
+        padding:4px;
     }
 }
 
-.activeNavLink li{
-    border: 2px solid #2473ac;
-    border-radius:8px;
-    background-color: #2473ac;
-}

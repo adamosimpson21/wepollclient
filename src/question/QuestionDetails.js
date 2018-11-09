@@ -9,6 +9,7 @@ import moment from 'moment';
 import {addError} from "../store/actions/errors";
 import Loader from 'react-loader-spinner';
 import Button from "../hocs/Button";
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class QuestionDetails extends Component{
   state={
@@ -71,11 +72,11 @@ class QuestionDetails extends Component{
       const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
-        <hr />
+        <HorizontalLine />
         <div className='question-content'>{questionContent}</div>
-        <hr />
+        <HorizontalLine />
         <div className='question-education'>{education}</div>
-        <hr />
+        <HorizontalLine />
         {answerDisplays}
         {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
 
