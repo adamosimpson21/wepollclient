@@ -6,6 +6,7 @@ import './QuestionResultsVisualization.css'
 import {educationOptions, genderOptions, locationOptions, raceOptions, ageRange, incomeRange, familySizeRange} from "../helper/demographicsOptions";
 import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class QuestionResultsVisualization extends Component{
   defaultState={
@@ -40,28 +41,8 @@ class QuestionResultsVisualization extends Component{
     }
   }
 
-  countResults = (answers, results) => {
-    // This is to prevent answers that don't appear in the question from appearing (old data most likely)
-    let resultsObj = {};
-    answers.forEach(answer => resultsObj[answer] = 0);
-    results.forEach(result => Number.isInteger(resultsObj[result.answer]) ? ++resultsObj[result.answer] : null );
-    return resultsObj;
-  }
-
-  toDataArray = object => {
-    return Object.keys(object).map(key => ({answer:key, count:object[key]})  )
-  }
-
   isBetween = (value, range) => {
     return range[0] <= value && value <=range[1]
-  }
-
-  // filters results by current state
-  dataFilter = result => {
-    let includesDemographics = true;
-    this.demographicTypes.forEach(demoType => this.state[demoType].includes(result.user[demoType]) ? null : includesDemographics=false);
-    this.demographicRanges.forEach(demoRange => this.isBetween(result.user[demoRange], this.state[demoRange]) ? null : includesDemographics=false);
-    return includesDemographics ? result : null
   }
 
   handleFilter = event => {
@@ -82,6 +63,11 @@ class QuestionResultsVisualization extends Component{
     this.setState({[target]:event})
   }
 
+  handleFilterReset = () => {
+    this.setState(this.defaultState);
+    setTimeout(() => this.setState({filterMenu:true}), 0)
+  }
+
   createTickMarks = (range, step) => {
     // TODO: refactor using reduce? Can you use reduce without iterating over every option in range?
     let tickObj = {}
@@ -95,34 +81,56 @@ class QuestionResultsVisualization extends Component{
   createFilterComponent = (demographicArray, demographicName) => {
     return demographicArray.map(demographic => (
       <span className='filter-option-wrapper' key={demographic} >{demographic}
-      <label className='filter-option-label'>
-        <input
-          className='filter-option-demographic-checkbox'
-          type='checkbox'
-          name={demographicName}
-          key={demographic}
-          value={demographic}
-          defaultChecked={true}
-          onChange={this.handleFilter}
-        />
-        <span className="filter-option-slider"></span>
-      </label>
+        <label className='filter-option-label'>
+          <input
+            className='filter-option-demographic-checkbox'
+            type='checkbox'
+            name={demographicName}
+            key={demographic}
+            value={demographic}
+            defaultChecked={true}
+            onChange={this.handleFilter}
+          />
+          <span className="filter-option-slider"></span>
+        </label>
       </span>
     ))
   }
 
+  countResults = (answers, results) => {
+    // This is to prevent answers that don't appear in the question from appearing (old data most likely)
+    let resultsObj = {};
+    answers.forEach(answer => resultsObj[answer] = 0);
+    results.forEach(result => Number.isInteger(resultsObj[result.answer]) ? ++resultsObj[result.answer] : null );
+    return Object.keys(resultsObj).map(key => ({answer:key, count:resultsObj[key]}))
+  }
+
+  // filters results by current state
+  dataFilter = result => {
+    // TODO: Can this be refactored for better readability? Should this use && conditionals or filter function?
+    let includesDemographics = true;
+    this.demographicTypes.forEach(demoType => this.state[demoType].includes(result.user[demoType]) ? null : includesDemographics=false);
+    this.demographicRanges.forEach(demoRange => this.isBetween(result.user[demoRange], this.state[demoRange]) ? null : includesDemographics=false);
+    return includesDemographics ? result : null
+  }
+
+
   render(){
     const { results, answers } = this.props
     const isMobile = window.innerWidth<=700
+    // Dimensions of Visualizations
     const height = isMobile ? 300 : 500;
-    const width = isMobile ? 200 : 400;
+    const width = isMobile ? window.innerWidth*.8 : 400;
+    // Pie chart styles
     const outerRadius = isMobile ? 100 : 200;
     const innerRadius = isMobile ? 6 : 12;
     const cornerRadius = isMobile ? 12 : 24;
-    const resultsObj = this.countResults(answers, results.filter(this.dataFilter))
-    const visualizationData = this.toDataArray(resultsObj)
+    const visualizationData = this.countResults(answers, results.filter(this.dataFilter))
     const filterMenu = this.demographicTypes.map(demographicType => (
-      <div key={demographicType} className='filter-type-wrapper'>{demographicType.toUpperCase()}:
+      <div key={demographicType} className='filter-type-wrapper'>
+        <span className='filter-option-title' >
+          {demographicType.toUpperCase()}:
+        </span>
         {this.createFilterComponent(this.demographicTypeToOption(demographicType), demographicType)}
       </div>
     ))
@@ -131,10 +139,14 @@ class QuestionResultsVisualization extends Component{
       <Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})} />
         {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={outerRadius} innerRadius={innerRadius}  cornerRadius={cornerRadius}/>}
         {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
-        <div>
+        <div className='filter-options-wrapper'>
           {!this.state.filterMenu ? <Button label='Open Filter Options' onClick={() => this.setState({filterMenu:true})}/> : <span>
           <div className='filter-title'>Filter Options</div>
-          <div>Use the sliders and check boxes to filter results based on the user's demographics. <br /> 0 values are users who have not provided that demographic</div>
+            <HorizontalLine/>
+          <div>Use the sliders and check boxes to filter results based on the user's demographics.
+            <br /><br />
+            0 = Not Specified <Button label='Reset Filters' onClick={this.handleFilterReset}/>
+          </div>
           <div className='filter-range-wrapper'>
             <label>Age (years):
               <Range min={ageRange[0]}

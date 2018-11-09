@@ -2,6 +2,9 @@
     display:none;
 }
 
-.histogram-wrapper{
-    display:inline-flex;
+
+@media screen and (min-width:700px) {
+    .histogram-wrapper{
+        display:inline-flex;
+    }
 }

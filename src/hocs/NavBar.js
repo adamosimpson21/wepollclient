@@ -33,9 +33,9 @@ class NavBar extends Component{
             {this.props.currentUser.isAuthenticated ? (
               <a onClick={this.logout} className='navbar-last-element'><li><Icon icon="logOut"  width={iconSize} height={iconSize}/><span className='navbar-text'>Log out</span></li></a>
             ) : [
-              <NavLink activeClassName="activeNavLink" to="/logIn"><li><Icon icon="signIn"  width={iconSize} height={iconSize}/><span className='navbar-text'>Log In</span></li></NavLink>,
-              <VerticalLine/>,
-              <NavLink activeClassName="activeNavLink" className='navbar-last-element' to="/register"><li><Icon icon="register"  width={iconSize} height={iconSize} viewBox={'0 0 720 720'} /><span className='navbar-text'>Register</span></li></NavLink>
+              <NavLink activeClassName="activeNavLink" to="/logIn" key={'login'}><li><Icon icon="signIn"  width={iconSize} height={iconSize}/><span className='navbar-text'>Log In</span></li></NavLink>,
+              <VerticalLine key={'verticalLine'}/>,
+              <NavLink activeClassName="activeNavLink" className='navbar-last-element' to="/register" key={'register'}><li><Icon icon="register"  width={iconSize} height={iconSize} viewBox={'0 0 720 720'} /><span className='navbar-text'>Register</span></li></NavLink>
             ]}
           </nav>
         </header>

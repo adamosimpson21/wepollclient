@@ -1,11 +1,13 @@
-.visualization-legend{
-    width:20vw;
-    margin: auto auto;
-    display:inline-block;
-}
-
 .visualization-legend-element{
     padding:6px;
     margin: 4px;
     color:white;
+}
+
+@media screen and (min-width:700px) {
+    .visualization-legend{
+        width:20vw;
+        margin: auto auto;
+        display:inline-block;
+    }
 }

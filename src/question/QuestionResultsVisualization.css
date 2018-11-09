@@ -7,14 +7,22 @@
     padding:16px;
 }
 
-.filter-type-wrapper{
-    padding:16px;
+.filter-range-wrapper .rc-slider-mark .rc-slider-mark-text{
+    font-size:10px;
 }
 
+.filter-type-wrapper{
+    padding: 8px 4px;
+}
 
-/* filter option styling */
+.filter-option-title{
+    display:block;
+    font-size:1.2rem;
+}
+
 .filter-option-wrapper{
     display:inline-grid;
+    font-size:14px;
     margin:4px;
     max-width:120px;
 }
@@ -35,7 +43,7 @@
     height: 0;
 }
 
-/* The slider */
+/* Input slider */
 .filter-option-slider {
     position: absolute;
     cursor: pointer;
@@ -72,4 +80,9 @@ input:checked + .filter-option-slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
+}
+/* End input slider */
+
+@media screen and (min-width:700px) {
+    
 }
