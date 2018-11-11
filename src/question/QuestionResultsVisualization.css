@@ -3,6 +3,7 @@
 }
 
 
+
 .filter-range-wrapper{
     padding:16px;
 }
@@ -84,5 +85,12 @@ input:checked + .filter-option-slider:before {
 /* End input slider */
 
 @media screen and (min-width:700px) {
-    
+    .question-results-visualization .results-button-wrapper{
+        display:block;
+    }
+
+    .question-results-visualization Button{
+        width:fit-content;
+        margin: 0 9vw;
+    }
 }

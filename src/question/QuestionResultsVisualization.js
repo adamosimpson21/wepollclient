@@ -10,7 +10,7 @@ import HorizontalLine from "../hocs/HorizontalLine";
 
 class QuestionResultsVisualization extends Component{
   defaultState={
-    vizType:'histogram',
+    vizType:'pie',
     filterMenu:false,
     age:ageRange,
     income:incomeRange,
@@ -135,8 +135,10 @@ class QuestionResultsVisualization extends Component{
       </div>
     ))
     return(<div className='question-results-visualization'>
-      <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})} />
-      <Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})} />
+        <div className='results-button-wrapper'>
+          <Button label='Pie Chart' onClick={() => this.setState({vizType:'pie'})} />
+          <Button label='Bar Chart' onClick={() => this.setState({vizType:'histogram'})} />
+        </div>
         {this.state.vizType==='pie' && <PieChart data={visualizationData} height={height} width={width} outerRadius={outerRadius} innerRadius={innerRadius}  cornerRadius={cornerRadius}/>}
         {this.state.vizType==='histogram' && <Histogram data={visualizationData} height={height} width={width} />}
         <div className='filter-options-wrapper'>
