@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import './PartyPlacard.css';
 import BackFrame from '../hocs/BackFrame';
 import Link from "react-router-dom/es/Link";
+import Button from "../hocs/Button";
 
 class PartyPlacard extends Component{
   render(){
@@ -12,7 +13,7 @@ class PartyPlacard extends Component{
         <div><Link to={`party/${_id}`}>{name}</Link></div>
         <p>{description ? description : null}</p>
         {currentUser.isAuthenticated ? joinType==='open' ?
-            <button className='party-placard-join-button' onClick={joinPartyAction}>Join this party</button>
+            <Button onClick={joinPartyAction} label='Join this party' />
           : <div>This party is closed to new members</div>
           : <div>Log in to join this party</div>}
         {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <div><button onClick={deletePartyAction} className='party-remove-party'> Remove This Party from the Game (founders and admins only) </button></div>}

@@ -9,6 +9,8 @@ import withAuth from "../hocs/withAuth";
 import Loader from 'react-loader-spinner';
 import QuestionResultsVisualization from "./QuestionResultsVisualization";
 import HorizontalLine from "../hocs/HorizontalLine";
+import Link from "react-router-dom/es/Link";
+import Button from "../hocs/Button";
 
 class QuestionResults extends Component{
   componentDidMount(){
@@ -27,6 +29,7 @@ class QuestionResults extends Component{
         <HorizontalLine />
         <div className='question-education'>{education}</div>
         <HorizontalLine />
+        <Link to='/question'><Button label='Questions Page'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (

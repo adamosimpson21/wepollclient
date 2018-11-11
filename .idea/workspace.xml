@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20c9fa19-a015-499a-beb1-28edb1165ac4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/question/QuestionResultsVisualization.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionResultsVisualization.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/question/QuestionResultsVisualization.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionResultsVisualization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hocs/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hocs/VerticalLine.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/VerticalLine.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/party/PartyList.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/party/PartyList.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/party/PartyPlacard.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/party/PartyPlacard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/party/PartyPlacard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/party/PartyPlacard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/question/QuestionResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionResults.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -31,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="Procfile" value="3" />
-          <entry key="css" value="111" />
+          <entry key="css" value="115" />
           <entry key="development" value="2" />
           <entry key="env" value="1" />
           <entry key="gitignore" value="3" />
           <entry key="html" value="6" />
           <entry key="jpg" value="1" />
-          <entry key="js" value="383" />
+          <entry key="js" value="388" />
           <entry key="json" value="9" />
           <entry key="mongod" value="1" />
         </counts>
@@ -45,23 +49,23 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="3" />
-          <entry key="CSS" value="111" />
+          <entry key="CSS" value="115" />
           <entry key="HTML" value="6" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="9" />
-          <entry key="JavaScript" value="383" />
+          <entry key="JavaScript" value="388" />
           <entry key="PLAIN_TEXT" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="58" />
-          <entry key="css" value="7537" />
+          <entry key="css" value="7661" />
           <entry key="development" value="14" />
           <entry key="env" value="32" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="98" />
-          <entry key="js" value="29440" />
+          <entry key="js" value="29552" />
           <entry key="json" value="197" />
           <entry key="local" value="14" />
         </counts>
@@ -69,10 +73,10 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="60" />
-          <entry key="CSS" value="7537" />
+          <entry key="CSS" value="7661" />
           <entry key="HTML" value="98" />
           <entry key="JSON" value="197" />
-          <entry key="JavaScript" value="29440" />
+          <entry key="JavaScript" value="29552" />
           <entry key="PLAIN_TEXT" value="63" />
         </counts>
       </usages-collector>
@@ -86,11 +90,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/party/Party.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.js">
+        <entry file="file://$PROJECT_DIR$/src/party/PartyPlacard.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+            <state relative-caret-position="506">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -99,51 +126,60 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/profile/Profile.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="92" column="61" selection-start-line="92" selection-start-column="61" selection-end-line="92" selection-end-column="61" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
+        <entry file="file://$PROJECT_DIR$/src/party/PartyPlacard.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="115">
-              <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+              <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/party/PartyList.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#38#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/profile/Profile.css">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/src/party/PartyList.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/question/QuestionDetails.js">
+        <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1670">
-              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
+            <state relative-caret-position="198">
+              <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hocs/VerticalLine.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="86" lean-forward="true" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hocs/VerticalLine.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -156,9 +192,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/register/LogIn.js" />
-        <option value="$PROJECT_DIR$/src/register/Register.js" />
-        <option value="$PROJECT_DIR$/src/question/Question.js" />
         <option value="$PROJECT_DIR$/src/question/QuestionTitle.js" />
         <option value="$PROJECT_DIR$/src/helper/chartColorSchemes.js" />
         <option value="$PROJECT_DIR$/src/hocs/withAuth.js" />
@@ -190,12 +223,9 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/src/services/api.js" />
-        <option value="$PROJECT_DIR$/src/hocs/NavBar.css" />
-        <option value="$PROJECT_DIR$/src/hocs/VerticalLine.css" />
         <option value="$PROJECT_DIR$/src/App.css" />
         <option value="$PROJECT_DIR$/src/hocs/HorizontalLine.css" />
         <option value="$PROJECT_DIR$/src/question/QuestionDetails.js" />
-        <option value="$PROJECT_DIR$/src/question/QuestionResults.js" />
         <option value="$PROJECT_DIR$/src/question/QuestionDetails.css" />
         <option value="$PROJECT_DIR$/src/question/QuestionResults.css" />
         <option value="$PROJECT_DIR$/src/hocs/Button.css" />
@@ -207,6 +237,12 @@
         <option value="$PROJECT_DIR$/src/hocs/NavBar.js" />
         <option value="$PROJECT_DIR$/src/question/QuestionResultsVisualization.css" />
         <option value="$PROJECT_DIR$/src/question/QuestionResultsVisualization.js" />
+        <option value="$PROJECT_DIR$/src/question/QuestionResults.js" />
+        <option value="$PROJECT_DIR$/src/hocs/NavBar.css" />
+        <option value="$PROJECT_DIR$/src/hocs/VerticalLine.css" />
+        <option value="$PROJECT_DIR$/src/party/PartyPlacard.css" />
+        <option value="$PROJECT_DIR$/src/party/PartyList.css" />
+        <option value="$PROJECT_DIR$/src/party/PartyPlacard.js" />
       </list>
     </option>
   </component>
@@ -275,25 +311,13 @@
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
               <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="profile" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="question" type="462c0819:PsiDirectoryNode" />
+              <item name="party" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
               <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
-              <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="visualization" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -352,12 +376,12 @@
       <workItem from="1539923958367" duration="988000" />
       <workItem from="1539926629117" duration="55394000" />
       <workItem from="1540248246957" duration="117503000" />
-      <workItem from="1541381821644" duration="67447000" />
+      <workItem from="1541381821644" duration="69263000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241332000" />
+    <option name="totallyTimeSpent" value="243148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
@@ -390,49 +414,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/shop/UserInventory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/NewQuestionForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="54" column="69" selection-start-line="54" selection-start-column="52" selection-end-line="54" selection-end-column="69" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/NewQuestionForm.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/BackFrame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/BackFrame.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="40" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/profile/UpdateDemographics.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -590,20 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="37" column="1" lean-forward="true" selection-start-line="37" selection-start-column="1" selection-end-line="37" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/VerticalLine.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -662,30 +629,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="479">
-          <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hocs/HorizontalLine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
           <caret line="4" column="90" lean-forward="true" selection-start-line="4" selection-start-column="90" selection-end-line="4" selection-end-column="90" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/VerticalLine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="86" lean-forward="true" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -736,6 +683,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="31" column="59" selection-start-line="31" selection-start-column="59" selection-end-line="31" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/profile/Profile.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -749,27 +723,76 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
+    <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
+        <state relative-caret-position="198">
+          <caret line="51" column="19" selection-start-line="51" selection-start-column="19" selection-end-line="51" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hocs/VerticalLine.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hocs/VerticalLine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="86" lean-forward="true" selection-start-line="4" selection-start-column="86" selection-end-line="4" selection-end-column="86" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hocs/NavBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="36" column="51" lean-forward="true" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.css">
+    <entry file="file://$PROJECT_DIR$/src/party/Party.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="93" column="22" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.js">
+    <entry file="file://$PROJECT_DIR$/src/party/PartyList.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="18" lean-forward="true" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+        <state relative-caret-position="46">
+          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/party/PartyList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/party/PartyPlacard.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="21" lean-forward="true" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/party/PartyPlacard.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>

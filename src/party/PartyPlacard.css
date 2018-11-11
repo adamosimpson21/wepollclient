@@ -3,23 +3,29 @@
 }
 
 .party-placard{
-    width:25vw;
+    margin: 4px auto;
 }
 
-.party-placard-join-button{
-    background-color:lightgreen;
-    border: 2px solid black;
-    border-radius:8px;
-    font-size:1.2rem;
-}
+@media (min-width:700px) {
+    .party-placard{
+        width:25vw;
+    }
 
-.party-remove-party{
-    margin-top:16px;
-    font-size:.6rem;
-    background-color:red;
-    color:white;
-}
+    .party-placard-join-button{
+        background-color:lightgreen;
+        border: 2px solid black;
+        border-radius:8px;
+        font-size:1.2rem;
+    }
 
-.party-placard Button{
-    width:80%;
+    .party-remove-party{
+        margin-top:16px;
+        font-size:.6rem;
+        background-color:red;
+        color:white;
+    }
+
+    .party-placard Button{
+        width:80%;
+    }
 }

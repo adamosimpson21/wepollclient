@@ -37,10 +37,6 @@ header nav li {
     color:black;
 }
 
-/*header nav a {*/
-     /*border-right: 2px solid aqua;*/
- /*}*/
-
 
 header nav .navbar-last-element{
     border-right:none;
@@ -53,7 +49,8 @@ header nav .navbar-last-element{
 
 @media screen and (max-width: 700px) {
     .navbar-text{
-        display:none;
+        font-size:8px;
+        display:flex;
     }
 
     .wepoll-navbar-brand{
