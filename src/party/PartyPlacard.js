@@ -9,14 +9,16 @@ class PartyPlacard extends Component{
     const {name, description, image, joinType, deletePartyAction, joinPartyAction, currentUser, _id } = this.props
     return(
       <div className='party-placard'>
+        <span className='party-placard-top-section'>
         <img className='party-image' alt={name} src={image} />
-        <div><Link to={`party/${_id}`}>{name}</Link></div>
-        <p>{description ? description : null}</p>
+        <Link to={`party/${_id}`}><Button label={`Learn more about the ${name}`}/></Link>
         {currentUser.isAuthenticated ? joinType==='open' ?
-            <Button onClick={joinPartyAction} label='Join this party' />
+          <button onClick={joinPartyAction} className='party-placard-join-button'>Join this party</button>
           : <div>This party is closed to new members</div>
           : <div>Log in to join this party</div>}
         {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <div><button onClick={deletePartyAction} className='party-remove-party'> Remove This Party from the Game (founders and admins only) </button></div>}
+        </span>
+        <p>{description ? description : null}</p>
       </div>
     )
   }
