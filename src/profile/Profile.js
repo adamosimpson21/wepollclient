@@ -10,10 +10,10 @@ import moment from "moment";
 import {loadOnePartyAction} from "../store/actions/party";
 import Link from "react-router-dom/es/Link";
 import UpdateDemographics from "./UpdateDemographics";
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class Profile extends Component{
   state = {
-      revealPassword:false,
       revealDemographics:false,
       updateDemographics: false
     }
@@ -23,10 +23,6 @@ class Profile extends Component{
     if(this.props.currentUser.user.party){
       this.props.loadOnePartyAction(this.props.currentUser.user.party)
     }
-  }
-
-  revealPassword = () => {
-    this.setState({revealPassword:true})
   }
 
   revealDemographics = () => {
@@ -60,21 +56,43 @@ class Profile extends Component{
         <div className='user-aside'>
           {user.username}
           {user.avatar && <img className='avatar-image' alt='user avatar' src={user.avatar} /> }
-          You're level {checkLevel(user.experience)}
+          <br />
+          Level {checkLevel(user.experience)}
         </div>
+
         <div className='profile-main'>
-          <div className='profile-list'>Username: {user.username}</div>
-          <div className='profile-list'>Party: {(user.party && party) ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'}</div>
-          <div className='profile-list'>Questions Answered: {user.questions.length}</div>
-          <div className='profile-list'>Questions Authored: {user.authored.length}</div>
-          <div className='profile-list'>Joined WePoll: {moment(user.createdAt).format('MMMM Do YYYY')}</div>
-          <div className='profile-list-inventory'>Inventory: {items}</div>
-          <div className='profile-list-password'>Password:
-            {this.state.revealPassword ?
-              <span className='password-joke'>Haha, just kidding</span> :
-              <Button label='Show Password' onClick={this.revealPassword}/> }
-          </div>
+          <table>
+            <tr>
+              <td>Username: </td>
+              <td>{user.username}</td>
+            </tr>
+            <tr>
+              <td>Party: </td>
+              <td>{(user.party && party) ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'}</td>
+            </tr>
+            <tr>
+              <td>Questions Answered: </td>
+              <td>{user.questions.length}</td>
+            </tr>
+            <tr>
+              <td>Questions Authored: </td>
+              <td>{user.authored.length}</td>
+            </tr>
+            <tr>
+              <td>Joined WePoll: </td>
+              <td>{moment(user.createdAt).format('MMMM Do YYYY')}</td>
+            </tr>
+            <tr>
+              <td>Inventory: </td>
+              <td>{items}</td>
+            </tr>
+            <tr>
+              <td>Joined WePoll: </td>
+              <td>{moment(user.createdAt).format('MMMM Do YYYY')}</td>
+            </tr>
+          </table>
         </div>
+        <HorizontalLine/>
         <div className='profile-demographics'>
           {this.state.revealDemographics ? (
             <div className='profile-demographics-body'>

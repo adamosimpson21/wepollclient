@@ -1,29 +1,36 @@
 .avatar-image{
-    width:64px;
+    width:60vw;
     margin:auto;
 }
 
 .user-aside{
-    width:fit-content;
-    float:left;
-    display: inline-grid;
-    border: 2px solid black;
+    display: block;
+    width:90vw;
+    margin: 4px auto;
+    background-color: #fff;
     border-radius:8px;
     font-size:1.3rem;
-    margin-left:48px;
 }
 
 .profile-main, .profile-demographics{
     display:block;
-    width:60vw;
-    border: 2px solid gray;
-    background-color:lightgrey;
-    font-size:24px;
+    background-color:#fff;
+    border-radius:8px;
+    width:90vw;
+    font-size:1.3rem;
     margin:auto;
 }
 
 .profile-main .profile-item-image{
     width:64px;
     margin: 4px 4px 0 4px
+}
+
+@media (min-width: 700px) {
+    .profile-main, .profile-demographics{
+        width:60vw;
+    }
+
+
 }
 
