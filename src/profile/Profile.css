@@ -18,7 +18,7 @@
     border-radius:8px;
     width:90vw;
     font-size:1.3rem;
-    margin:auto;
+    margin: 8px auto;
 }
 
 .profile-main .profile-item-image{
@@ -31,6 +31,17 @@
         width:60vw;
     }
 
+    .profile-demographics .profile-demographics-body table{
+        margin: 0 auto 32px auto;
+    }
+
+    .avatar-image{
+        width:100%;
+    }
+
+    .user-aside{
+        width:280px;
+    }
 
 }
 

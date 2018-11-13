@@ -1,7 +1,3 @@
-.inventory-items{
-    border-bottom: 2px solid black;
-}
-
 .user-inventory-header{
     font-size:1.3rem;
     background-color: white;
@@ -10,6 +6,11 @@
     margin: auto;
     padding:12px;
     width:fit-content;
+}
+
+.inventory-items > div{
+    margin: 4px auto;
+    padding:4px;
 }
 
 @media screen and (max-width: 700px) {

@@ -5,6 +5,7 @@ import ItemForm from "./ItemForm";
 import { fetchItems } from '../store/actions/items';
 import connect from 'react-redux/es/connect/connect';
 import UserInventory from './UserInventory';
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class Shop extends Component{
   componentDidMount(){
@@ -16,6 +17,7 @@ class Shop extends Component{
     return(<div>
       {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <ItemForm />}
       {currentUser.isAuthenticated ? <UserInventory /> : <div>Log In to access your inventory</div>}
+      <HorizontalLine />
       <div> Buy these Items from the store! </div>
       <ItemList items={items}/>
     </div>)

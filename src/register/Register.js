@@ -25,10 +25,9 @@ class Register extends Component{
 
   render(){
     const { username, password } = this.state;
-
     return(<div className='register-page'>
       <h1>Join WePoll today</h1>
-      <h4>All you have to do is choose a username and password</h4>
+      <h4>Register here to access polls and other awesome WePoll features</h4>
       <form onSubmit = {this.handleSubmit} className='register-form'>
         <label className='register-form-username'>Choose a Username:
           <input

@@ -48,7 +48,7 @@ class UpdateDemographics extends Component{
           aria-label='Your Age'
           title='Your Age'
           value={age}
-          min={1}
+          min={0}
           max={150}
           onChange = {handleChange.bind(this)}
         />
@@ -93,7 +93,7 @@ class UpdateDemographics extends Component{
           aria-label='Number of people living in your house'
           title='Number of people living in your house'
           value={familySize}
-          min={1}
+          min={0}
           max={20}
           onChange = {handleChange.bind(this)}
         />

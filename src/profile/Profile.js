@@ -59,7 +59,7 @@ class Profile extends Component{
           <br />
           Level {checkLevel(user.experience)}
         </div>
-
+        <HorizontalLine/>
         <div className='profile-main'>
           <table>
             <tr>
@@ -97,13 +97,36 @@ class Profile extends Component{
           {this.state.revealDemographics ? (
             <div className='profile-demographics-body'>
               <Button label='Update My Demographics' onClick={this.updateDemographics} />
-              <div className='profile-demographics-list'>Age: {user.age}</div>
-              <div className='profile-demographics-list'>Race: {user.race}</div>
-              <div className='profile-demographics-list'>Est. Income: {user.income}</div>
-              <div className='profile-demographics-list'>Gender: {user.gender}</div>
-              <div className='profile-demographics-list'>Education: {user.education}</div>
-              <div className='profile-demographics-list'>Location: {user.location}</div>
-              <div className='profile-demographics-list'>Household size: {user.familySize}</div>
+              <table>
+                <tr>
+                  <td>Age:  </td>
+                  <td>{user.age}</td>
+                </tr>
+                <tr>
+                  <td>Est. Income:  </td>
+                  <td>{user.income}</td>
+                </tr>
+                <tr>
+                  <td>Household size:  </td>
+                  <td>{user.familySize}</td>
+                </tr>
+                <tr>
+                  <td>Gender: </td>
+                  <td> {user.gender}</td>
+                </tr>
+                <tr>
+                  <td>Education:  </td>
+                  <td>{user.education}</td>
+                </tr>
+                <tr>
+                  <td>Location: </td>
+                  <td> {user.location}</td>
+                </tr>
+                <tr>
+                  <td>Race: </td>
+                  <td> {user.race}</td>
+                </tr>
+              </table>
             </div>) :
             (<Button label='Show Demographics' onClick={this.revealDemographics}/>)}
           {this.state.updateDemographics &&

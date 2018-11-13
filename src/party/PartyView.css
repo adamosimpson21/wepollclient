@@ -13,3 +13,9 @@
 .party-view Button{
     width:80%;
 }
+
+@media screen and (min-width:700px) {
+    .party-view{
+        width: 60vw;
+    }
+}

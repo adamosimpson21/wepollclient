@@ -1,5 +1,6 @@
 .shop-item-image{
     width:96px;
+    border-radius:8px;
 }
 
 .shop-remove-item{
@@ -11,4 +12,14 @@
 
 .shop-item-placard Button{
     width:80%;
+}
+
+.shop-item-placard{
+    display:inline-block;
+}
+
+.shop-item-list > div{
+    margin: 4px auto;
+    padding: 4px;
+    width: 45vw;
 }

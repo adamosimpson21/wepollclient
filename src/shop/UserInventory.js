@@ -4,6 +4,7 @@ import connect from 'react-redux/es/connect/connect'
 import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
 import Loader from "react-loader-spinner";
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class UserInventory extends Component{
   defaultState = {
@@ -41,7 +42,10 @@ class UserInventory extends Component{
         <div>
           <div className='user-inventory-header'>
           {user.username}'s Inventory!
+            <HorizontalLine/>
           You have {user.coins} Opinion Points
+            <HorizontalLine/>
+            Answer questions to earn more
           </div>
           {(user.authLevel==='admin' || user.authLevel==='founder') &&
           <form onSubmit={this.handleSubmit}>
