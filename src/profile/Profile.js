@@ -86,10 +86,6 @@ class Profile extends Component{
               <td>Inventory: </td>
               <td>{items}</td>
             </tr>
-            <tr>
-              <td>Joined WePoll: </td>
-              <td>{moment(user.createdAt).format('MMMM Do YYYY')}</td>
-            </tr>
           </table>
         </div>
         <HorizontalLine/>
@@ -111,20 +107,20 @@ class Profile extends Component{
                   <td>{user.familySize}</td>
                 </tr>
                 <tr>
+                  <td>Race: </td>
+                  <td> {user.race}</td>
+                </tr>
+                <tr>
                   <td>Gender: </td>
                   <td> {user.gender}</td>
                 </tr>
                 <tr>
+                  <td>Location: </td>
+                  <td>{user.location}</td>
+                </tr>
+                <tr>
                   <td>Education:  </td>
                   <td>{user.education}</td>
-                </tr>
-                <tr>
-                  <td>Location: </td>
-                  <td> {user.location}</td>
-                </tr>
-                <tr>
-                  <td>Race: </td>
-                  <td> {user.race}</td>
                 </tr>
               </table>
             </div>) :

@@ -5,6 +5,7 @@ import { authUser } from '../store/actions/auth';
 import Button from "../hocs/Button";
 import Link from "react-router-dom/es/Link";
 import { handleChange } from "../helper/handleChange";
+import FacebookLoginButton from "../hocs/FacebookLoginButton";
 
 class Register extends Component{
   state={
@@ -56,6 +57,7 @@ class Register extends Component{
           />
         </label>
         <Button type="submit" label='Register Now'/>
+        {/*<FacebookLoginButton />*/}
         <Link to='/login'>Already have an account?</Link>
       </form>
     </div>)
