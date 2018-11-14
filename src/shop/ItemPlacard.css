@@ -23,3 +23,9 @@
     padding: 4px;
     width: 45vw;
 }
+
+@media screen and (min-width: 700px) {
+    .shop-item-list > div{
+        width: fit-content;
+    }
+}

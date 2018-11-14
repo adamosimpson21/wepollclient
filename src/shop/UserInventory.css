@@ -1,21 +1,22 @@
 .user-inventory-header{
     font-size:1.3rem;
     background-color: white;
-    border: 2px solid black;
+    box-shadow: 0 10px 6px -6px #777;
     border-radius:8px;
-    margin: auto;
+    margin: 4px auto;
     padding:12px;
     width:fit-content;
 }
 
 .inventory-items > div{
-    margin: 4px auto;
+    margin: 3px;
     padding:4px;
+    display:inline-flex;
+    flex-wrap: wrap;
 }
 
-@media screen and (max-width: 700px) {
-    .inventory-items{
-        display:inline-flex;
-        flex-wrap: wrap;
+@media screen and (min-width: 700px) {
+    .inventory-items > div{
+        margin:6px;
     }
 }
