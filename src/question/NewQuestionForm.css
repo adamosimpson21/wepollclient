@@ -10,7 +10,7 @@
 }
 
 .new-question-form label{
-    border: 2px solid black;
+    box-shadow: 0 10px 6px -6px #777;
     border-radius:16px;
     background: #ebebeb;
     margin:12px;
@@ -23,6 +23,15 @@
     border-bottom: 1px solid black;
     width:80%;
     font-size:1.3rem;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+    outline: none;
+}
+
+.new-question-form input:focus{
+    border: 1px solid rgba(81, 203, 238, 1);
+    box-shadow: 0 0 15px rgba(81, 203, 238, 1);
 }
 
 .new-question-form .new-question-form-field-description{
