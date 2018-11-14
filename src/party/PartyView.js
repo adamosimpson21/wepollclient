@@ -5,6 +5,7 @@ import './PartyView.css'
 import Button from "../hocs/Button";
 import BackFrame from "../hocs/BackFrame";
 import MyLoader from "../hocs/Loader";
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class PartyView extends Component{
   componentDidMount(){
@@ -22,12 +23,16 @@ class PartyView extends Component{
       const user = this.props.currentUser.user;
       const isMyParty = user.party ? user.party===party._id : false;
       return(<div className='party-view'>
-        <div className='party-view-title'>{party.name} party</div>
+        <div className='party-view-title'>{party.name}</div>
         <img className='party-view-image' alt={party.name} src={party.image} />
         <div>{party.members.length} members</div>
+        <HorizontalLine/>
         <div>{party.description}</div>
+        <HorizontalLine/>
         {party.president ? <div>The president is {party.president}</div> : <div>No President yet</div>}
-        <div>There are {party.officers.length} officers</div>
+        <HorizontalLine/>
+        <div> {party.officers.length} officers</div>
+        <HorizontalLine/>
         <div>This party is {party.joinType} to new members</div>
         {party.joinType==='open' ? isMyParty ? <div>You are in this party</div> : <Button label='Join this Party' onClick={this.handleJoin} /> : null}
         {isMyParty && <Button label='Come chat with us! '/>}

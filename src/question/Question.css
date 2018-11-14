@@ -1,0 +1,19 @@
+.question-search-bar{
+    background-color:white;
+    height:28px;
+    width:fit-content;
+    border-radius:8px;
+    margin: 4px auto;
+    display:inline-flex;
+}
+
+.question-search-bar svg{
+    padding: 2px;
+    border-right: 2px solid black;
+}
+
+.question-search-bar input{
+    border: none;
+    outline: none;
+    border-radius:8px;
+}

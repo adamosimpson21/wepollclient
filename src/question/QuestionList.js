@@ -41,6 +41,7 @@ class QuestionList extends Component{
               {allQuestions}
             </div>)
     } else {
+
       return(<div>
           <Loader
             type="Circles"
