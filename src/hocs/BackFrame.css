@@ -1,13 +1,13 @@
 .backFrame{
     background-color: rgb(239, 239, 239);
-    /*border: 2px solid #fdfdfd;*/
+    box-shadow: 0 10px 6px -6px #777;
     border-radius:15px;
     display:inline-flex;
     padding:8px;
     margin:4px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 700px) {
     .backFrame {
         display: block;
         width:fit-content;
