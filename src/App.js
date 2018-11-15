@@ -17,6 +17,7 @@ import NewQuestionForm from './question/NewQuestionForm'
 import QuestionDetails from './question/QuestionDetails'
 import QuestionResults from './question/QuestionResults'
 import Footer from "./hocs/Footer";
+import MessageDisplay from "./hocs/MessageDisplay";
 
 const App = () => {
   return(
@@ -24,6 +25,7 @@ const App = () => {
         <NavBar/>
         <div className='app-content'>
         <ErrorDisplay />
+        <MessageDisplay />
           <Switch>
             <Route exact path='/splash' component={Splash}/>
             <Route exact path='/landing' component={Landing}/>

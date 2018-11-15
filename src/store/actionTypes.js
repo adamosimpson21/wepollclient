@@ -1,6 +1,9 @@
 export const ADD_ERROR        = "ADD_ERROR";
 export const REMOVE_ERROR     = "REMOVE_ERROR";
 
+export const ADD_MESSAGE        = "ADD_MESSAGE";
+export const REMOVE_MESSAGE     = "REMOVE_MESSAGE";
+
 export const SET_CURRENT_USER     = "SET_CURRENT_USER";
 export const UPDATE_CURRENT_USER  = "UPDATE_CURRENT_USER";
 
