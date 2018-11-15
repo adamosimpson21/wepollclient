@@ -15,7 +15,7 @@ class Landing extends Component{
           polls to improve debate and Democracy!</div>
         </div>
         <div className='landingButtons'>
-          <Link to='/question'><ButtonLG label='Check out some Questions' /></Link>
+          <Link to='/question'><ButtonLG label='Check out some Questions' id='landing-question-button'/></Link>
           {!this.props.currentUser.isAuthenticated && <Link to='/register'><ButtonLG label='Sign up Today' /></Link>}
           {!this.props.currentUser.isAuthenticated && <Link to='/logIn'><ButtonLG label='Have an account already? Log In' /></Link>}
           {/*<Link to='/party'><ButtonLG label='Party' /></Link>*/}

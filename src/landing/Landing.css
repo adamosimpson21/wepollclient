@@ -1,25 +1,44 @@
 .landingTitle{
     background-color: #6bcc6b;
     border-radius:8px;
-    margin: 24px auto;
-    padding:32px;
-    width:60%;
+    margin: 4px 8px;
+    padding:8px;
     color:white;
     text-shadow: 1px 1px 5px #888888, -1px 1px 5px #888888;
 }
 
 .landingButtons{
     display:inline-grid;
-    width:40%;
+}
+
+.landingButtons button{
+    width:80vw;
+}
+
+#landing-question-button{
+    font-size:1.4rem;
 }
 
 .twitter-feed-landing{
-    float:right;
-    margin-right:10vw;
+    width:90vw;
+    margin:auto;
 }
 
-@media screen and (max-width: 700px) {
+
+@media screen and (min-width: 700px) {
     .landingTitle{
-        margin: 4px auto;
+        padding:32px;
+        margin: 24px auto;
+        width:60%;
+    }
+
+    .landingButtons{
+        display:inline-grid;
+        width:40%;
+    }
+
+    .twitter-feed-landing{
+        float:right;
+        margin-right:10vw;
     }
 }
