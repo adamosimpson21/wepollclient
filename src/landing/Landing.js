@@ -10,7 +10,7 @@ import Button from "../hocs/Button";
 class Landing extends Component{
   render(){
     return(
-      <div>
+      <div className='landing-wrapper'>
         <div className='landingTitle'>
         <h1>Welcome to WePoll!</h1>
         <div className='landingDescription'>WePoll is a free to use app that helps people Represent Themselves! Answer political, social, and economic
@@ -25,7 +25,6 @@ class Landing extends Component{
           <Link to='/profile'><Button label='Your Profile' /></Link>
           {/*<Link to='/settings'><Button label='Settings' /></Link>*/}
           <Link to='/about'><Button label='About WePoll' /></Link>
-
         </div>
         <div className='twitter-feed-landing'>
           <WePollTwitterFeed />

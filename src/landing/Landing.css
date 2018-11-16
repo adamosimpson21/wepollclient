@@ -34,11 +34,16 @@
     }
 
     .landingButtons{
-        display:inline-grid;
-        width:40%;
+        width:30vw;
+        margin-left:15vw;
+    }
+
+    .landingButtons button{
+        width:100%;
     }
 
     .twitter-feed-landing{
+        width:40vw;
         float:right;
         margin-right:10vw;
     }
