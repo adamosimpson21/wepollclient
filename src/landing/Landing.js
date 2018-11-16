@@ -15,7 +15,6 @@ class Landing extends Component{
         <div className='landingDescription'>WePoll is a free to use app that helps people Represent Themselves! Answer political, social, and economic
           polls to improve debate and Democracy!</div>
         </div>
-        <ButtonLG label='Add Hello Message' onClick={() => this.props.addMessage({message: "Hello", degree:"success"})}/>
         <div className='landingButtons'>
           <Link to='/question'><ButtonLG label='Check out some Questions' id='landing-question-button'/></Link>
           {!this.props.currentUser.isAuthenticated && <Link to='/register'><ButtonLG label='Sign up Today' /></Link>}

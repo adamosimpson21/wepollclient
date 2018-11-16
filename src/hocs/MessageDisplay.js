@@ -5,17 +5,18 @@ import withRouter from 'react-router/es/withRouter'
 import {removeMessage} from "../store/actions/messages";
 
 class MessageDisplay extends Component{
-  removeMessage = () => {
-    this.props.removeMessage()
-  }
   render(){
     const { messages } = this.props
     if(messages.length > 0){
-      console.log("Got to message display: ", messages);
+      const allMessages = messages.map((message, index) => (
+        <div className={`message-display message-${message.degree}-style` } key={index}>
+          {message.message}
+        </div>
+      ))
       return(
-        <div className='message-display'>
-          {messages[0].message}
-          <button onClick={this.removeMessage} className='message-display-remove'><strong>X</strong></button>
+        <div className='message-display-wrapper'>
+          <button onClick={this.props.removeMessage} className='message-display-remove'><strong>X</strong></button>
+          {allMessages}
         </div>
       )
     } else {
