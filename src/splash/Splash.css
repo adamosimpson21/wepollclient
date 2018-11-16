@@ -10,12 +10,12 @@
     position:relative;
     text-align:center;
     padding-top:40vh;
-    /*padding-left:40%;*/
 }
 
 #landing-header h1 {
     color: #fff;
-    background: rgba(100,100,100,.7);
+    text-shadow: 2px 2px 8px #4b4b4b;
+    background: rgba(100,100,100,.5);
     font-size:2.4rem;
     width:fit-content;
     padding:16px;
@@ -24,11 +24,11 @@
 }
 
 .splashButton{
-    width:300px;
+    width:260px;
     height:50px;
     background: linear-gradient(0deg, #008200, #00e900);
+    box-shadow: 0 6px 0 #005600;
     margin: 0 auto;
-    border: 2px solid green;
     border-radius:25px;
     font-size:22px;
 }

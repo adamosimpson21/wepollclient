@@ -2,6 +2,7 @@ import { apiCall } from "../../services/api";
 import { addError } from "./errors";
 import { CREATE_PARTY, DELETE_PARTY, UPDATE_PARTY,LOAD_PARTIES,LOAD_ONE_PARTY , JOIN_PARTY } from "../actionTypes";
 import { updateCurrentUser } from "./auth";
+import {addMessage} from "./messages";
 
 export const loadParties = parties => ({
   type: LOAD_PARTIES,
@@ -76,7 +77,7 @@ export const joinPartyAction = partyId => (dispatch, getState) => {
   return apiCall("post", `/api/party/${id}/${partyId}`)
     .then(res => {
       dispatch(updateCurrentUser(res.user))
-      dispatch(addError(res.message))
+      dispatch(addMessage({message:res.message, degree:"success"}))
     })
     .catch(err => dispatch(addError(err.message)));
 };

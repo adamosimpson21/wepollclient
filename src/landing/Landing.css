@@ -13,6 +13,7 @@
 
 .landingButtons button{
     width:80vw;
+    font-size:1.2rem;
 }
 
 #landing-question-button{

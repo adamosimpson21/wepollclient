@@ -1,6 +1,7 @@
 import { apiCall } from "../../services/api";
 import { addError } from "./errors";
 import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION, ANSWER_QUESTION } from "../actionTypes";
+import {addMessage} from "./messages";
 
 export const loadQuestions = questions => ({
   type: GET_QUESTIONS,
@@ -75,6 +76,9 @@ export const answerQuestionAction = (question_id, answer) => (dispatch, getState
   let { currentUser } = getState();
   const id = currentUser.user._id;
   return apiCall("post", `/api/questions/${id}/${question_id}`, {answer})
-    .then(res => dispatch(answerQuestion(res)))
+    .then(res => {
+      dispatch(answerQuestion(res))
+      res.messages.forEach(message => {dispatch(addMessage(message))})
+    })
     .catch(err => addError(err.message));
 }
