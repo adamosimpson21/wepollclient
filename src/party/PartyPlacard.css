@@ -5,24 +5,13 @@
     border-radius: 8px;
 }
 
-.party-remove-party{
-    margin-top:16px;
-    background-color:red;
-    color:white;
-}
-
 .party-placard .party-placard-top-section Button{
     width:45%;
 }
 
 .party-placard{
-    margin: 4px auto;
-}
-
-.party-placard-join-button{
-    background-color:lightgreen;
-    border-radius:8px;
-    font-size:1.2rem;
+    margin: 6px auto;
+    padding: 4px;
 }
 
 @media (min-width:700px) {

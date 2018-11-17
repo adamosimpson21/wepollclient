@@ -14,7 +14,7 @@ class ItemPlacard extends Component{
         <p>Can Have Multiple: {canHaveMultiple ? 'Yes' : 'No'}</p>
         <p>Cost: {cost} Opinion Points</p>
         <Button onClick={addToInventory} label='Buy This Item' />
-        {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <div><button onClick={removeItem} className='shop-remove-item'> Remove This Item from the Game (founders and admins only) </button></div>}
+        {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <Button onClick={removeItem} color='red' label='Remove This Item from the Game (founders and admins only)' />}
       </div>
     )
   }

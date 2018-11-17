@@ -1,6 +1,4 @@
 .buttonHOC{
-    background: linear-gradient(to bottom right, #6d99f8, #4b58f4);
-    box-shadow: 0 4px 0 #323f9f;
     font-size:14px;
     border: none;
     outline:none;
@@ -15,13 +13,50 @@
 .buttonHOC:active{
     transform: translate(0px, 4px) ;
     box-shadow:none;
+}
+
+/*.pressed {*/
+    /*color: rgba( 221, 221, 221, 0.7);*/
+    /*box-shadow:none;*/
+    /*background: linear-gradient(to bottom right, #323269, #262d69);*/
+/*}*/
+
+/* Begin color schemes */
+.blue-button{
+    background: linear-gradient(to bottom right, #6d99f8, #4b58f4);
+    box-shadow: 0 4px 0 #323f9f;
+}
+
+.blue-button:active{
     background: linear-gradient(to bottom right, #323269, #262d69);
 }
 
-.pressed {
-    color: rgba( 221, 221, 221, 0.7);
-    box-shadow:none;
-    background: linear-gradient(to bottom right, #323269, #262d69);
+.yellow-button{
+    background: linear-gradient(to bottom right, #f8b91d, #9a6324);
+    box-shadow: 0 4px 0 #9a7020;
+}
+
+.yellow-button:active{
+    background: linear-gradient(to bottom right, #8b6928, #5b3f1b);
+}
+
+
+.green-button{
+    background: linear-gradient(to bottom right, #4af83f, #3c9a2f);
+    box-shadow: 0 4px 0 #3c9a2f;
+}
+
+.green-button:active{
+    background: linear-gradient(to bottom right, #2f8b26, #225b1b);
+}
+
+.red-button{
+    background: linear-gradient(to bottom right, #f82627, #8d120f);
+    box-shadow: 0 4px 0 #8c1214;
+}
+
+.red-button:active{
+    background: linear-gradient(to bottom right, #8b1a1b, #5b1110);
 }
 
 

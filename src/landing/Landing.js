@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import './Landing.css'
-import ButtonLG from '../hocs/ButtonLG'
 import Link from "react-router-dom/es/Link";
 import connect from "react-redux/es/connect/connect";
 import WePollTwitterFeed from '../hocs/WePollTwitterFeed';

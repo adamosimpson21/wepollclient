@@ -3,8 +3,8 @@ import './UserInventory.css';
 import connect from 'react-redux/es/connect/connect'
 import {buyCoins, removeFromInventory} from '../store/actions/user'
 import InventoryItem from './InventoryItem'
-import Loader from "react-loader-spinner";
 import HorizontalLine from "../hocs/HorizontalLine";
+import MyLoader from "../hocs/Loader";
 
 class UserInventory extends Component{
   defaultState = {
@@ -61,19 +61,12 @@ class UserInventory extends Component{
             </label>
             <button type="submit">Add Coins</button>
           </form>}
-          <div>
-            <div className='inventory-items'>
-              {userItems}
-            </div>
+          <div className='inventory-items'>
+            {userItems}
           </div>
         </div>
     )} else {
-      return(<Loader
-          type="Circles"
-          color="#00BFFF"
-          height={200}
-          width={100}
-        />)
+      return(<MyLoader />)
     }
   }
 }

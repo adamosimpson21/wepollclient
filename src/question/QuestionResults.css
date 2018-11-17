@@ -20,20 +20,14 @@
     border-radius: 8px;
 }
 
-
+.question-results-edit{
+    margin: 20px auto;
+}
 
 .question-results .question-history{
     margin-top:24px;
 }
 
-.question-results .question-delete{
-    background-color: #e15a61;
-    margin:4px;
-    padding:4px;
-    color:white;
-    border: 2px solid #e15a61;
-    border-radius: 8px;
-}
 
 @media (min-width: 700px) {
     .question-results{

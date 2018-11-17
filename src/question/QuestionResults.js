@@ -33,9 +33,9 @@ class QuestionResults extends Component{
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
-          <div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
-            {process.env.REACT_APP_ENV_TYPE==='development' &&  <button onClick={this.handleEdit}>Edit this Question (Not Implemented)</button>}
-            <button className='question-delete' onClick={this.handleDelete}>Delete this Question</button>
+          <div className='question-results-edit'>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
+            {process.env.REACT_APP_ENV_TYPE==='development' &&  <Button onClick={this.handleEdit} color='yellow' label='Edit this Question (Not Implemented)' />}
+            <Button onClick={this.handleDelete} label='Delete this Poll' color='red'/>
           </div>
         )}
         <QuestionResultsVisualization results={results} answers={answers}/>

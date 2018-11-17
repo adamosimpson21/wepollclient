@@ -1,5 +1,5 @@
 .landingTitle{
-    background-color: #6bcc6b;
+    background: linear-gradient(to bottom right, #6fc76f, green);
     border-radius:8px;
     margin: 4px 8px;
     padding:8px;
@@ -9,6 +9,7 @@
 
 .landingButtons{
     display:inline-grid;
+    margin: 8px auto;
 }
 
 .landingButtons button{
@@ -17,7 +18,7 @@
 }
 
 #landing-question-button{
-    font-size:1.4rem;
+    font-size:1.5rem;
 }
 
 .twitter-feed-landing{

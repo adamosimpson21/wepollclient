@@ -13,10 +13,10 @@ class PartyPlacard extends Component{
         <img className='party-image' alt={name} src={image} />
         <Link to={`party/${_id}`}><Button label={`Learn more about the ${name}`}/></Link>
         {currentUser.isAuthenticated ? joinType==='open' ?
-          <button onClick={joinPartyAction} className='party-placard-join-button'>Join this party</button>
+          <Button onClick={joinPartyAction} label='Join this party' color='green' style={{ fontSize:'1.1rem'}}/>
           : <div>This party is closed to new members</div>
           : <div>Log in to join this party</div>}
-        {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <div><button onClick={deletePartyAction} className='party-remove-party'> Remove This Party from the Game (founders and admins only) </button></div>}
+        {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <Button onClick={deletePartyAction} label='Remove This Party from the Game (founders and admins only)' color='red'/>}
         </span>
         <p>{description ? description : null}</p>
       </div>
