@@ -13,6 +13,7 @@ import Shop from "../shop/Shop";
 import NewQuestionForm from "../question/NewQuestionForm";
 import QuestionDetails from "../question/QuestionDetails";
 import QuestionResults from "../question/QuestionResults";
+import Switch from "react-router/es/Switch";
 
 class MainLayout extends Component{
   render(){
@@ -20,19 +21,21 @@ class MainLayout extends Component{
       <NavBar/>
       <div className='app-content'>
         <MessageDisplay />
-        <Route exact path='/landing' component={Landing}/>
-        {/* TODO: make the about page more user friendly */}
-        <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
-        <Route exact path='/party' component={Party}/>
-        <Route exact path='/party/:partyId' component={PartyView}/>
-        <Route exact path='/profile' component={Profile}/>
-        <Route exact path='/question' component={Question}/>
-        <Route exact path='/settings' component={Settings}/>
-        <Route exact path='/shop' component={Shop}/>
-        <Route exact path='/newQuestionForm' component={NewQuestionForm} />
-        <Route exact path='/question/:questionId' component={QuestionDetails} />
-        <Route exact path='/question/:questionId/results' component={QuestionResults} />
-        <Redirect from="*" to="/landing"/>
+        <Switch>
+          <Route exact path='/landing' component={Landing}/>
+          {/* TODO: make the about page more user friendly */}
+          <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
+          <Route exact path='/party' component={Party}/>
+          <Route exact path='/party/:partyId' component={PartyView}/>
+          <Route exact path='/profile' component={Profile}/>
+          <Route exact path='/question' component={Question}/>
+          <Route exact path='/settings' component={Settings}/>
+          <Route exact path='/shop' component={Shop}/>
+          <Route exact path='/newQuestionForm' component={NewQuestionForm} />
+          <Route exact path='/question/:questionId' component={QuestionDetails} />
+          <Route exact path='/question/:questionId/results' component={QuestionResults} />
+          <Redirect from="*" to="/landing"/>
+        </Switch>
       </div>
       <Footer/>
     </div>)

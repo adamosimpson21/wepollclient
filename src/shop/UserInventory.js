@@ -28,7 +28,7 @@ class UserInventory extends Component{
   render(){
     const { user } = this.props.currentUser
     const { items, removeFromInventory } = this.props
-    if(Object.keys(user).length > 0){
+    if(this.props.currentUser.isAuthenticated){
       let userItems = (<div>You don't have any items!</div>)
       if(items.length >0 && user.inventory.length>0){
         userItems = user.inventory.map((item, index) => (
