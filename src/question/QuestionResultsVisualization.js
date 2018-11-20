@@ -117,6 +117,7 @@ class QuestionResultsVisualization extends Component{
 
   render(){
     const { results, answers } = this.props
+    const resultsLoaded = !!this.props.results[0].user
     const isMobile = window.innerWidth<=700
     // Dimensions of Visualizations
     const height = isMobile ? 300 : 500;
@@ -125,7 +126,7 @@ class QuestionResultsVisualization extends Component{
     const outerRadius = isMobile ? 100 : 200;
     const innerRadius = isMobile ? 6 : 12;
     const cornerRadius = isMobile ? 12 : 24;
-    const visualizationData = this.countResults(answers, results.filter(this.dataFilter))
+    const visualizationData = this.countResults(answers, results.filter(resultsLoaded ? this.dataFilter : () => true))
     const filterMenu = this.demographicTypes.map(demographicType => (
       <div key={demographicType} className='filter-type-wrapper'>
         <span className='filter-option-title' >

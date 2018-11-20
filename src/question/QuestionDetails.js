@@ -66,8 +66,8 @@ class QuestionDetails extends Component{
   }
 
   render(){
-    if(this.props.questions.length === 1){
-      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions[0]
+    if(this.props.questions.length >= 1){
+      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
       const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>)
       return(<div className='question-answer-form'>

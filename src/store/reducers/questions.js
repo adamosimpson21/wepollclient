@@ -18,14 +18,14 @@ export default (state = DEFAULT_STATE, action) => {
     case CREATE_QUESTION:
       return [...state]
     case GET_ONE_QUESTION:
-      return [action.question]
+      return [...state.filter(question => question._id!==action.question._id).concat(action.question)]
     // not implemented yet
     case UPDATE_QUESTION:
       return [...state, action.question]
     case DELETE_QUESTION:
       return [...state.filter(question => question._id !== action.id)]
     case ANSWER_QUESTION:
-      return [action.question];
+      return [...state.filter(question => question._id!==action.question._id).concat(action.question)];
     default:
       return state;
   }

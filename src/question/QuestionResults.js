@@ -6,11 +6,11 @@ import withRouter from 'react-router/es/withRouter'
 import BackFrame from "../hocs/BackFrame";
 import moment from "moment";
 import withAuth from "../hocs/withAuth";
-import Loader from 'react-loader-spinner';
 import QuestionResultsVisualization from "./QuestionResultsVisualization";
 import HorizontalLine from "../hocs/HorizontalLine";
 import Link from "react-router-dom/es/Link";
 import Button from "../hocs/Button";
+import MyLoader from "../hocs/Loader";
 
 class QuestionResults extends Component{
   componentDidMount(){
@@ -18,9 +18,8 @@ class QuestionResults extends Component{
   }
 
   render() {
-
-    if(this.props.questions.length === 1){
-      const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions[0];
+    if(this.props.questions.length >= 1){
+      const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions.find(question => question._id===this.props.match.params.questionId);
       const { isAuthenticated, user } = this.props.currentUser;
       return(<div className='question-results'>
         <div className='question-title'>{title}</div>
@@ -41,12 +40,7 @@ class QuestionResults extends Component{
         <QuestionResultsVisualization results={results} answers={answers}/>
       </div>)
     } else {
-      return(<Loader
-        type="Circles"
-        color="#00BFFF"
-        height={200}
-        width={100}
-        />)
+      return(<MyLoader />)
     }
   }
 }
