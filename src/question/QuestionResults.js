@@ -21,6 +21,9 @@ class QuestionResults extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, results, createdAt, rating, answers } = this.props.questions.find(question => question._id===this.props.match.params.questionId);
       const { isAuthenticated, user } = this.props.currentUser;
+      // TODO: test randomQuestion feature
+      const hasNotAnswered = this.props.questions.filter(question => user.questions.includes(question._id))
+      const randomQuestion = hasNotAnswered[Math.floor((Math.random()*hasNotAnswered.length))]
       return(<div className='question-results'>
         <div className='question-title'>{title}</div>
         <HorizontalLine />
@@ -29,6 +32,7 @@ class QuestionResults extends Component{
         <div className='question-education'>{education}</div>
         <HorizontalLine />
         <Link to='/question'><Button label='Questions Page'/></Link>
+        <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
