@@ -36,7 +36,10 @@ export const answerQuestion = response => ({
 export const getAllQuestions = () => dispatch => {
   return apiCall("get", "/api/questions")
     .then(res => dispatch(loadQuestions(res)))
-    .catch(err => addError(err.message))
+    .catch(err => {
+      console.log("err: ", err);
+      addError(err.message)
+    })
 }
 
 export const postQuestion = body => (dispatch, getState) => {
