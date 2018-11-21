@@ -9,8 +9,6 @@ export function setTokenHeader(token) {
 }
 
 export function apiCall(method, path, data) {
-  console.log("Making apicall")
-    console.log("node envS:", process.env.NODE_ENV)
   return new Promise((resolve, reject) => {
     if(process.env.REACT_APP_ENV_TYPE==='development'){
       return axios[method.toLowerCase()]('http://10.0.0.53:4000' + path, data)
