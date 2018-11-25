@@ -24,6 +24,15 @@
     background-color: rgba(220,220,220,.4);
 }
 
+.message-showing{
+    opacity: 1;
+}
+
+.message-hidden{
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
 .message-success-style{
     background-image:linear-gradient(to bottom right, #32d332, #00a000);
 }
