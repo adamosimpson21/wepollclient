@@ -11,8 +11,8 @@ class MessageDisplay extends Component{
 
   fadeMessage = () => {
     this.setState({showingMessage: false})
-    setTimeout(this.props.removeMessage, 2000);
-    setTimeout(() => this.setState({showingMessage: true}), 2001);
+    setTimeout(this.props.removeMessage, 1500);
+    setTimeout(() => this.setState({showingMessage: true}), 1501);
   }
 
   render(){
@@ -24,9 +24,10 @@ class MessageDisplay extends Component{
           {message.message}
         </div>
       ))
+      this.state.showingMessage && setTimeout(this.fadeMessage, 2000);
       return(
         <div className={`message-display-wrapper ${this.state.showingMessage ? 'message-showing' : 'message-hidden'}`}>
-          <button onClick={this.fadeMessage} className='message-display-remove'><strong>X</strong></button>
+          <button onClick={this.props.removeMessage} className='message-display-remove'><strong>X</strong></button>
           {allMessages}
         </div>
       )

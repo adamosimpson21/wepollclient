@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="20c9fa19-a015-499a-beb1-28edb1165ac4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hocs/MessageDisplay.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/MessageDisplay.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hocs/MessageDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/MessageDisplay.js" afterDir="false" />
     </list>
@@ -60,12 +61,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Procfile" value="58" />
-          <entry key="css" value="11134" />
+          <entry key="css" value="11253" />
           <entry key="development" value="14" />
           <entry key="env" value="32" />
           <entry key="gitignore" value="5" />
           <entry key="html" value="133" />
-          <entry key="js" value="35252" />
+          <entry key="js" value="35341" />
           <entry key="json" value="197" />
           <entry key="local" value="14" />
         </counts>
@@ -73,10 +74,10 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="60" />
-          <entry key="CSS" value="11134" />
+          <entry key="CSS" value="11253" />
           <entry key="HTML" value="133" />
           <entry key="JSON" value="197" />
-          <entry key="JavaScript" value="35252" />
+          <entry key="JavaScript" value="35341" />
           <entry key="PLAIN_TEXT" value="63" />
         </counts>
       </usages-collector>
@@ -138,11 +139,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state relative-caret-position="482">
+              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -150,11 +151,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
+            <state relative-caret-position="460">
+              <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -216,8 +217,8 @@
         <option value="$PROJECT_DIR$/src/question/QuestionResults.js" />
         <option value="$PROJECT_DIR$/src/question/QuestionDetails.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/questions.js" />
-        <option value="$PROJECT_DIR$/src/hocs/MessageDisplay.css" />
         <option value="$PROJECT_DIR$/src/hocs/MessageDisplay.js" />
+        <option value="$PROJECT_DIR$/src/hocs/MessageDisplay.css" />
       </list>
     </option>
   </component>
@@ -368,12 +369,12 @@
       <workItem from="1541381821644" duration="99761000" />
       <workItem from="1542234596310" duration="28629000" />
       <workItem from="1542722526149" duration="599000" />
-      <workItem from="1543119889170" duration="8526000" />
+      <workItem from="1543119889170" duration="10854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="311400000" />
+    <option name="totallyTimeSpent" value="313728000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
@@ -719,20 +720,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="27" column="15" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+        <state relative-caret-position="482">
+          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
