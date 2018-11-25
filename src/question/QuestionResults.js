@@ -15,6 +15,7 @@ import MyLoader from "../hocs/Loader";
 class QuestionResults extends Component{
   componentDidMount(){
     if(this.props.questions.length < 1){
+      console.log("You are here")
       this.props.getAllQuestions();
     }
     this.props.loadOneQuestionAction(this.props.match.params.questionId)
@@ -34,8 +35,8 @@ class QuestionResults extends Component{
         <HorizontalLine />
         <div className='question-education'>{education}</div>
         <HorizontalLine />
-        <Link to='/question'><Button label='Questions Page'/></Link>
         {randomQuestion && <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>}
+        <Link to='/question'><Button label='Questions Page'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (

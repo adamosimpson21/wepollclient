@@ -7,11 +7,7 @@ import {
   ANSWER_QUESTION
 } from "../actionTypes";
 
-const DEFAULT_STATE = {
-  questions: []
-};
-
-export default (state = DEFAULT_STATE, action) => {
+export default (state = [], action) => {
   switch (action.type) {
     case GET_QUESTIONS:
       return [...action.questions]
