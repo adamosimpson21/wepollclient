@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './QuestionDetails.css'
-import { loadOneQuestionAction, removeQuestionAction, answerQuestionAction } from '../store/actions/questions'
+import { loadOneQuestionAction, removeQuestionAction, answerQuestionAction, getAllQuestions } from '../store/actions/questions'
 import connect from 'react-redux/es/connect/connect'
 import withRouter from 'react-router/es/withRouter'
 import Link from 'react-router-dom/es/Link'
@@ -18,8 +18,11 @@ class QuestionDetails extends Component{
   }
 
   componentDidMount(){
-    const { currentUser, match, history, addError, loadOneQuestionAction } = this.props
+    const { currentUser, match, history, addError, loadOneQuestionAction, questions, getAllQuestions } = this.props
     const questionId = match.params.questionId
+    if(questions.length< 1){
+      getAllQuestions();
+    }
     if(process.env.REACT_APP_ENV_TYPE!=='development'){
       if(currentUser.isAuthenticated && currentUser.user.questions.includes(questionId)){
         addError("You've answered this question already");
@@ -69,6 +72,7 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
+
       const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
@@ -112,4 +116,4 @@ function mapStateToProps(state){
 
 // TODO: write logic to redirect to results page if use has answered question
 
-export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addError})(BackFrame(QuestionDetails)));
+export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addError, getAllQuestions})(BackFrame(QuestionDetails)));

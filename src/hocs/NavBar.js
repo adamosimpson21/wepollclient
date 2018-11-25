@@ -12,7 +12,10 @@ class NavBar extends Component{
   logout = e => {
     e.preventDefault();
     this.props.logout();
+    this.props.history.push('/')
   };
+
+
   render(){
     const iconSize = '24px';
     return(

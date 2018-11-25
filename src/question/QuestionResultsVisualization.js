@@ -117,7 +117,7 @@ class QuestionResultsVisualization extends Component{
 
   render(){
     const { results, answers } = this.props
-    const resultsLoaded = !!this.props.results[0].user
+    const resultsLoaded = !!this.props.results[0] && !!this.props.results[0].user;
     const isMobile = window.innerWidth<=700
     // Dimensions of Visualizations
     const height = isMobile ? 300 : 500;
