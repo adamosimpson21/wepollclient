@@ -37,6 +37,7 @@ class QuestionResults extends Component{
         <HorizontalLine />
         {randomQuestion && <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>}
         <Link to='/question'><Button label='Questions Page'/></Link>
+        <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (

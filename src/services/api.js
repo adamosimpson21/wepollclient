@@ -39,7 +39,7 @@ export function apiCall(method, path, data) {
           }
         });
     } else {
-      return axios[method.toLowerCase()](path, data)
+      return axios[method.toLowerCase()]('http://10.0.0.53:4000' + path, data)
         .then(res => {
           return resolve(res.data);
         })

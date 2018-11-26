@@ -6,8 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="20c9fa19-a015-499a-beb1-28edb1165ac4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/hocs/MessageDisplay.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/MessageDisplay.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hocs/MessageDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hocs/MessageDisplay.js" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/question/QuestionResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/question/QuestionResults.js" afterDir="false" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,6 +22,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="FUSProjectUsageTrigger">
     <session id="737258262">
       <usages-collector id="statistics.lifecycle.project">
@@ -88,10 +93,15 @@
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages" />
     </session>
+=======
+  <component name="FavoritesManager">
+    <favorites_list name="wepollclient" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/question/QuestionDetails.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="230">
@@ -99,15 +109,38 @@
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="40" selection-start-line="40" selection-end-line="40" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/services/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-16">
+              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state relative-caret-position="368">
               <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+=======
+            <state relative-caret-position="124">
+              <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -116,6 +149,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1472">
@@ -147,10 +181,17 @@
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -158,6 +199,11 @@
               <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
             </state>
           </provider>
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         </entry>
       </file>
     </leaf>
@@ -168,7 +214,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/party/PartyList.css" />
+=======
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         <option value="$PROJECT_DIR$/src/profile/UpdateDemographics.js" />
         <option value="$PROJECT_DIR$/src/profile/Profile.css" />
         <option value="$PROJECT_DIR$/src/shop/Shop.js" />
@@ -195,7 +244,6 @@
         <option value="$PROJECT_DIR$/src/store/actions/errors.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/messages.js" />
         <option value="$PROJECT_DIR$/src/store/actions/messages.js" />
-        <option value="$PROJECT_DIR$/src/store/actions/questions.js" />
         <option value="$PROJECT_DIR$/src/splash/Splash.css" />
         <option value="$PROJECT_DIR$/src/store/actions/party.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
@@ -217,52 +265,25 @@
         <option value="$PROJECT_DIR$/src/question/QuestionResults.js" />
         <option value="$PROJECT_DIR$/src/question/QuestionDetails.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/questions.js" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/hocs/MessageDisplay.js" />
         <option value="$PROJECT_DIR$/src/hocs/MessageDisplay.css" />
+=======
+        <option value="$PROJECT_DIR$/src/question/QuestionResultsVisualization.js" />
+        <option value="$PROJECT_DIR$/src/question/QuestionResults.css" />
+        <option value="$PROJECT_DIR$/src/store/actions/questions.js" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="$PROJECT_DIR$/src/services/api.js" />
+        <option value="$PROJECT_DIR$/src/question/QuestionResults.js" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
-    <package-json value="$PROJECT_DIR$/package.json" />
-  </component>
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="673" />
     <option name="height" value="496" />
-  </component>
-  <component name="ProjectInspectionProfilesVisibleTreeState">
-    <entry key="Project Default">
-      <profile-state>
-        <expanded-state>
-          <State />
-          <State>
-            <id>HTML</id>
-          </State>
-          <State>
-            <id>JavaScript</id>
-          </State>
-        </expanded-state>
-        <selected-state>
-          <State>
-            <id>JavaScript</id>
-          </State>
-        </selected-state>
-      </profile-state>
-    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -289,6 +310,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="hocs" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
             <path>
               <item name="wepollclient" type="b2602c69:ProjectViewProjectNode" />
               <item name="wepollclient" type="462c0819:PsiDirectoryNode" />
@@ -309,6 +331,8 @@
               <item name="store" type="462c0819:PsiDirectoryNode" />
               <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
           </expand>
           <select />
         </subPane>
@@ -328,17 +352,17 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wepollclient" />
+      <recent name="C:\wepollclient\src" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\wepollclient\public" />
       <recent name="C:\wepollclient\src\party" />
       <recent name="C:\wepollclient" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\wepollclient" />
-      <recent name="C:\wepollclient\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -367,26 +391,42 @@
       <workItem from="1539926629117" duration="55394000" />
       <workItem from="1540248246957" duration="117503000" />
       <workItem from="1541381821644" duration="99761000" />
+<<<<<<< HEAD
       <workItem from="1542234596310" duration="28629000" />
       <workItem from="1542722526149" duration="599000" />
       <workItem from="1543119889170" duration="10854000" />
+=======
+      <workItem from="1542234596310" duration="25569000" />
+      <workItem from="1542712791977" duration="2351000" />
+      <workItem from="1542720633811" duration="2405000" />
+      <workItem from="1542723380869" duration="561000" />
+      <workItem from="1542724056007" duration="844000" />
+      <workItem from="1542827819379" duration="2978000" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="313728000" />
+=======
+    <option name="totallyTimeSpent" value="308354000" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1873" height="1096" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
+<<<<<<< HEAD
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17002724" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49739584" visible="true" weight="0.1688988" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="npm" order="2" sideWeight="0.5026042" side_tool="true" weight="0.1688988" />
+      <window_info id="Favorites" order="3" sideWeight="0.5026042" side_tool="true" weight="0.1688988" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32911393" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32764506" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -394,7 +434,11 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3449367" />
+=======
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3447099" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -402,9 +446,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/shop/InventoryItem.css">
@@ -439,6 +480,26 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hocs/ErrorDisplay.css" />
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
     <entry file="file://$PROJECT_DIR$/src/store/index.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -534,6 +595,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="21" column="65" lean-forward="true" selection-start-line="21" selection-start-column="65" selection-end-line="21" selection-end-column="65" />
+<<<<<<< HEAD
+=======
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         </state>
       </provider>
     </entry>
@@ -581,13 +648,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="506" column="16" selection-start-line="506" selection-start-column="16" selection-end-line="506" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/webstorm.jar!/resources/html5-schema/html5/web-forms.rnc" />
     <entry file="file://$PROJECT_DIR$/src/hocs/Button.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -639,6 +700,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="69">
@@ -650,19 +712,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/hocs/Button.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hocs/EmptyLayout.js">
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionDetails.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="210">
           <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+=======
+        <state relative-caret-position="1003">
+          <caret line="70" column="62" selection-start-line="70" selection-start-column="62" selection-end-line="70" selection-end-column="62" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/hocs/MainLayout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-46">
@@ -676,10 +753,19 @@
           <caret line="48" column="33" lean-forward="true" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionResultsVisualization.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="128" column="112" selection-start-line="128" selection-start-column="112" selection-end-line="128" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -687,53 +773,117 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/question/QuestionDetails.js">
+    <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="230">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="17">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="1472">
           <caret line="79" column="35" selection-start-line="79" selection-start-column="35" selection-end-line="79" selection-end-column="35" />
+=======
+        <state relative-caret-position="253">
+          <caret line="20" column="102" selection-start-line="20" selection-start-column="102" selection-end-line="20" selection-end-column="102" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/store/reducers/questions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/hocs/EmptyLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
           <folding>
             <element signature="e#0#145#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/hocs/MainLayout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions/questions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/hocs/MessageDisplay.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
           <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+=======
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-16">
+          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/question/QuestionResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="23" column="42" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+>>>>>>> 13ceb6a6728b3f7850fdd2a2d6642131af30fc48
         </state>
       </provider>
     </entry>
