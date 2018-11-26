@@ -2,11 +2,15 @@
     font-size:1.6rem;
 }
 
-
+.filter-options-wrapper Button{
+    font-size: 18px;
+    margin: 20px auto;
+}
 
 .filter-range-wrapper{
     padding:16px;
 }
+
 
 .filter-range-wrapper .rc-slider-mark .rc-slider-mark-text{
     font-size:10px;

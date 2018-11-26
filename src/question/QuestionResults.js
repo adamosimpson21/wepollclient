@@ -15,7 +15,6 @@ import MyLoader from "../hocs/Loader";
 class QuestionResults extends Component{
   componentDidMount(){
     if(this.props.questions.length < 1){
-      console.log("You are here")
       this.props.getAllQuestions();
     }
     this.props.loadOneQuestionAction(this.props.match.params.questionId)
@@ -25,7 +24,6 @@ class QuestionResults extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, results, createdAt, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId);
       const { isAuthenticated, user } = this.props.currentUser;
-      // TODO: test randomQuestion feature
       const hasNotAnswered = this.props.questions.filter(question => !user.questions.includes(question._id)).filter(question => question._id !== _id)
       const randomQuestion = hasNotAnswered.length > 0 ? hasNotAnswered[Math.floor((Math.random()*hasNotAnswered.length))] : false
       return(<div className='question-results'>
@@ -37,7 +35,6 @@ class QuestionResults extends Component{
         <HorizontalLine />
         {randomQuestion && <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>}
         <Link to='/question'><Button label='Questions Page'/></Link>
-        <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         {/* Founders and authors have access to editing and deleting */}
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (

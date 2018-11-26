@@ -20,7 +20,7 @@ class Button extends Component {
 
     return (
       <button
-        className={'buttonHOC ' + colorTheme(color)}
+        className={`buttonHOC ${colorTheme(color)} ${this.props.classes}`}
         {...this.props}>
         {label}
       </button>
