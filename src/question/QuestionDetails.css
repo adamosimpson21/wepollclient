@@ -1,6 +1,6 @@
 .question-answer-form{
-    font-size:1.2rem;
-    width:60vw;
+    font-size:1rem;
+    width:96vw;
 }
 
 .question-answer-form .question-content{
@@ -9,26 +9,24 @@
 }
 
 .question-answer-form .question-education{
-    width:60%;
+    width:100%;
     margin: 0 auto 24px auto;
 }
 
-.question-answer-form .answer-display button{
-     font-size:1.2rem;
-     width:40%;
-     padding: 2px;
-     margin: 4px auto;
-     background-color: #71cd77;
-     border: 2px solid #4f9e4f;
-     border-radius: 8px;
- }
+.question-answer-form .security-light-wrapper{
+    margin: 16px auto;
+    display:inline-flex;
+}
 
-.question-answer-form .answer-display button:focus{
+.question-answer-form .security-light{
+    width:80%;
+    height:100px;
+    margin:auto;
+}
+
+.question-answer-form .answer-display:focus{
     box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35,
                 5px 5px 10px #ffea81, -5px 5px 10px #ffea81, 5px -5px 10px #ffea81, -5px -5px 10px #ffea81;
-    opacity: 1;
-    background-color: #7def85;
-    border: 2px solid #72cb72;
     outline: 0;
     transition: all 0.3s ease-in-out;
 }
@@ -46,24 +44,18 @@
     border-radius: 8px;
 }
 
-@media screen and (max-width: 700px){
-    .question-answer-form .question-education{
-        width:100%;
-        margin: 0 auto 24px auto;
-    }
+.question-answer-form .answer-display{
+    font-size:1.2rem;
+    width:70%;
+}
 
+@media screen and (min-width: 700px){
     .question-answer-form{
-        font-size:1rem;
-        width:96vw;
+        font-size:1.2rem;
+        width:60vw;
     }
 
-    .question-answer-form .answer-display button{
-        font-size:1.2rem;
-        width:70%;
-        padding: 2px;
-        margin: 4px auto;
-        background-color: #71cd77;
-        border: 2px solid #4f9e4f;
-        border-radius: 8px;
+    .question-answer-form .question-education{
+        width:60%;
     }
 }

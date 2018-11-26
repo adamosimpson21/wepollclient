@@ -31,7 +31,7 @@ class Histogram extends Component {
             />
             <g className="axis axis--y">
               <g ref={node => d3.select(node).call(d3.axisLeft(y).ticks(5))} />
-              <text transform="rotate(-90)" y="-50" x={-height/3} dy="0.71em">
+              <text transform="rotate(-90)" y="-28" x={-height/3} dy="0.71em">
                 Count
               </text>
             </g>

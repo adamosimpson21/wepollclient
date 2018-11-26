@@ -14,7 +14,8 @@ import HorizontalLine from "../hocs/HorizontalLine";
 class QuestionDetails extends Component{
   state={
     heldAnswer: '',
-    answerSelected:false
+    answerSelected:false,
+    showSecurityInfo: false
   }
 
   componentDidMount(){
@@ -72,8 +73,7 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
-
-      const answerDisplays = answers.map(answer => <div className='answer-display' key={answer}><button onClick={this.handleAnswer} value={answer}>{answer}</button></div>)
+      const answerDisplays = answers.map(answer => <Button key={answer} color='green' value={answer} classes='answer-display' onClick={this.handleAnswer} label={answer} />)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
         <HorizontalLine />
@@ -82,9 +82,25 @@ class QuestionDetails extends Component{
         <div className='question-education'>{education}</div>
         <HorizontalLine />
         {answerDisplays}
+        <HorizontalLine />
         {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
-
-        { this.state.answerSelected && <Button label='Send your ballot' onClick={this.confirmAnswer}/> }
+        { this.state.answerSelected && <div>
+        <div className='security-light-wrapper'>
+          <Button color='red' label='Send secret Ballot' onClick={this.confirmAnswer} />
+          <Button color='yellow' label='Send private Ballot' onClick={this.confirmAnswer}/>
+          <Button color='green' label='Send public Ballot' onClick={this.confirmAnswer}/>
+        </div>
+          {this.state.showSecurityInfo ? <p className='security-light-info'>
+              <div>Secret - Top security level, no demographic data or information about the user retained</div>
+              <HorizontalLine/>
+              <div>Private - Secure poll response. Carries a link to demographic data that can be accessed later by analytical systems.</div>
+              <HorizontalLine/>
+              <div>Public - Secure poll response. Poll question and answer are displayed on a user's public profile page, and carries a link to demographic data that can be accessed later by analytical systems.</div>
+              <HorizontalLine/>
+              Ballot types not implemented yet
+            </p> :
+            <Button label='Learn about Ballot Types' onClick={() => this.setState({showSecurityInfo: true})} />}
+        </div>}
 
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience and 5 Opinion Points</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>

@@ -15,12 +15,6 @@
     box-shadow:none;
 }
 
-/*.pressed {*/
-    /*color: rgba( 221, 221, 221, 0.7);*/
-    /*box-shadow:none;*/
-    /*background: linear-gradient(to bottom right, #323269, #262d69);*/
-/*}*/
-
 /* Begin color schemes */
 .blue-button{
     background: linear-gradient(to bottom right, #6d99f8, #4b58f4);
