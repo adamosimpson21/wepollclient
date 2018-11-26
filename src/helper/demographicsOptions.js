@@ -5,3 +5,5 @@ export const locationOptions  = [ 'Not Specified', 'Non-USA' ,'AL', 'AK', 'AS', 
 export const ageRange         = [0, 100];
 export const incomeRange      = [0, 500000];
 export const familySizeRange  = [0, 8];
+
+export const defaultUserDemographics = { age: 0, race: 'Not Specified', income: 0, gender:'Not Specified', education:'Not Specified', location:'Not Specified', familySize: 0}

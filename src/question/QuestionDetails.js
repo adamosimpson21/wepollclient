@@ -15,6 +15,7 @@ class QuestionDetails extends Component{
   state={
     heldAnswer: '',
     answerSelected:false,
+    securityLevel: 'private',
     showSecurityInfo: false
   }
 
@@ -38,13 +39,13 @@ class QuestionDetails extends Component{
     this.setState({answerSelected:true, heldAnswer: event.target.value})
   }
 
-  confirmAnswer = event => {
+  confirmAnswer = (securityLevel, event) => {
     if(this.state.answerSelected){
       event.preventDefault();
       const {currentUser, answerQuestionAction, match, history, addError} = this.props
       const questionId = match.params.questionId
       if (currentUser.isAuthenticated && !currentUser.user.questions.includes(questionId)) {
-        answerQuestionAction(questionId, this.state.heldAnswer)
+        answerQuestionAction(questionId, this.state.heldAnswer, securityLevel)
         history.push(`/question/${questionId}/results`)
       } else if (currentUser.isAuthenticated) {
         addError("You've answered this question already")
@@ -86,16 +87,16 @@ class QuestionDetails extends Component{
         {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
         { this.state.answerSelected && <div>
         <div className='security-light-wrapper'>
-          <Button color='red' label='Send secret Ballot' onClick={this.confirmAnswer} />
-          <Button color='yellow' label='Send private Ballot' onClick={this.confirmAnswer}/>
-          <Button color='green' label='Send public Ballot' onClick={this.confirmAnswer}/>
+          <Button color='red' label='Send secret Ballot' onClick={this.confirmAnswer.bind(this, 'secret')} />
+          <Button color='yellow' label='Send private Ballot' onClick={this.confirmAnswer.bind(this, 'private')}/>
+          <Button color='green' label='Send public Ballot' onClick={this.confirmAnswer.bind(this, 'public')}/>
         </div>
-          {this.state.showSecurityInfo ? <p className='security-light-info'>
+          {this.state.showSecurityInfo ? <div className='security-light-info'>
               <div id='ballot-type-secret'>Secret - Top security level, no demographic data or information about the user retained</div>
               <div id='ballot-type-private'>Private - Secure poll response. Carries a link to demographic data that can be accessed later by analytical systems.</div>
               <div id='ballot-type-public'>Public - Secure poll response. Poll question and answer are displayed on a user's public profile page, and carries a link to demographic data that can be accessed later by analytical systems.</div>
               Ballot types not implemented yet
-            </p> :
+            </div> :
             <Button label='Learn about Ballot Types' onClick={() => this.setState({showSecurityInfo: true})} />}
         </div>}
 

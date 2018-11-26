@@ -3,7 +3,7 @@ import Button from "../hocs/Button";
 import PieChart from "../visualization/PieChart";
 import Histogram from "../visualization/Histogram";
 import './QuestionResultsVisualization.css'
-import {educationOptions, genderOptions, locationOptions, raceOptions, ageRange, incomeRange, familySizeRange} from "../helper/demographicsOptions";
+import {educationOptions, genderOptions, locationOptions, raceOptions, ageRange, incomeRange, familySizeRange, defaultUserDemographics} from "../helper/demographicsOptions";
 import { Range } from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import HorizontalLine from "../hocs/HorizontalLine";
@@ -109,6 +109,9 @@ class QuestionResultsVisualization extends Component{
   dataFilter = result => {
     // TODO: Can this be refactored for better readability? Should this use && conditionals or filter function?
     let includesDemographics = true;
+    if(result.securityLevel ==='secret'){
+      result.user = defaultUserDemographics;
+    }
     this.demographicTypes.forEach(demoType => this.state[demoType].includes(result.user[demoType]) ? null : includesDemographics=false);
     this.demographicRanges.forEach(demoRange => this.isBetween(result.user[demoRange], this.state[demoRange]) ? null : includesDemographics=false);
     return includesDemographics ? result : null
@@ -126,6 +129,7 @@ class QuestionResultsVisualization extends Component{
     const outerRadius = isMobile ? 100 : 200;
     const innerRadius = isMobile ? 6 : 12;
     const cornerRadius = isMobile ? 12 : 24;
+
     const visualizationData = this.countResults(answers, results.filter(resultsLoaded ? this.dataFilter : () => true))
     const filterMenu = this.demographicTypes.map(demographicType => (
       <div key={demographicType} className='filter-type-wrapper'>

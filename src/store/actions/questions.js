@@ -75,10 +75,10 @@ export const updateQuestionAction = question_id => (dispatch, getState) => {
     .catch(err => addError(err.message));
 }
 
-export const answerQuestionAction = (question_id, answer) => (dispatch, getState) => {
+export const answerQuestionAction = (question_id, answer, securityLevel) => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
-  return apiCall("post", `/api/questions/${id}/${question_id}`, {answer})
+  return apiCall("post", `/api/questions/${id}/${question_id}`, {answer, securityLevel})
     .then(res => {
       dispatch(answerQuestion(res))
       res.messages.forEach(message => {dispatch(addMessage(message))})
