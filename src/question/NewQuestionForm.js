@@ -12,6 +12,7 @@ class NewQuestionForm extends Component{
     title:'',
     description:'',
     education:'',
+    answerType:'',
     numAnswers:3
   }
 
@@ -26,11 +27,14 @@ class NewQuestionForm extends Component{
       // TODO: there has to be a better way to access answer1, answer2, answer3, etc.
       answers.push(this.state['answer' + (i+1)])
     }
-    const { questionContent, title, description, education } = this.state
-    this.props.postQuestion({questionContent, title, description, education, answers})
+    const { questionContent, title, description, education, answerType } = this.state
+    this.props.postQuestion({questionContent, title, description, education, answers, answerType})
     this.props.history.push('/question')
   }
 
+  handleRadio = event => {
+    this.setState({ answerType: event.target.value })
+  }
 
   render(){
     // TODO: refactor this? Currently works, but there's probably a better way to do it? reduce?
@@ -130,6 +134,41 @@ class NewQuestionForm extends Component{
             onChange = {handleChange.bind(this)}
             required
           />
+        </label>
+        <label> Answer Type:
+            <input
+              id='single'
+              type='radio'
+              name='answerType'
+              aria-label='single'
+              title='User can only select one answer'
+              value='single'
+              onChange = {this.handleRadio}
+              checked={this.state.answerType==='single'}
+            />
+          <label htmlFor='single' className='radio-label'> Single Answer </label>
+            <input
+              id='multiple'
+              type='radio'
+              name='answerType'
+              aria-label='multiple'
+              title='User can select multiple answers'
+              value='multiple'
+              onChange = {this.handleRadio}
+              checked={this.state.answerType==='multiple'}
+            />
+          <label  htmlFor='multiple' className='radio-label'> Multiple Answers </label>
+            <input
+              id='range'
+              type='radio'
+              name='answerType'
+              aria-label='range'
+              title='User can select a range of answers'
+              value='range'
+              onChange = {this.handleRadio}
+              checked={this.state.answerType==='range'}
+            />
+          <label  htmlFor='range' className='radio-label'> Range (Not Implemented) </label>
         </label>
         {answerInputs}
         <Button label='Create this Question' type="submit" />

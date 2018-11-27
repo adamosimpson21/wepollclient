@@ -11,17 +11,26 @@ import {loadOnePartyAction} from "../store/actions/party";
 import Link from "react-router-dom/es/Link";
 import UpdateDemographics from "./UpdateDemographics";
 import HorizontalLine from "../hocs/HorizontalLine";
+import {loadOneQuestionAction} from "../store/actions/questions";
+
 
 class Profile extends Component{
   state = {
       revealDemographics:false,
-      updateDemographics: false
+      updateDemographics: false,
+      expandAnswered:false
     }
 
   componentDidMount(){
-    this.props.fetchItems();
-    if(this.props.currentUser.user.party){
-      this.props.loadOnePartyAction(this.props.currentUser.user.party)
+    const { fetchItems, currentUser, loadOneQuestionAction, loadOnePartyAction} = this.props
+    fetchItems();
+    if(Object.keys(currentUser.user).length !== 0 && currentUser.user.questions.length > 0) {
+      currentUser.user.questions.forEach(question => {
+        loadOneQuestionAction(question)
+      })
+    }
+    if(currentUser.user.party){
+      loadOnePartyAction(this.props.currentUser.user.party)
     }
   }
 
@@ -36,9 +45,8 @@ class Profile extends Component{
   }
 
   render(){
-    const user = this.props.currentUser.user;
-    if(Object.keys(user).length > 0) {
-
+    const { user }= this.props.currentUser;
+    if(Object.keys(user).length !== 0) {
       let items = (<div>You don't have any items!</div>)
       if(user.inventory.length > 0 && this.props.items.length > 0){
         items = user.inventory.map((item, index) =>{
@@ -51,6 +59,8 @@ class Profile extends Component{
       if(user.party && this.props.parties.length === 1){
         party = this.props.parties[0]
       }
+
+      const usersAnsweredQuestions = user.questions.map(question => (<div>Question Here</div>))
 
       return (<div className='profile-body'>
         <div className='user-aside'>
@@ -73,8 +83,16 @@ class Profile extends Component{
               </tr>
               <tr>
                 <td>Questions Answered: </td>
-                <td>{user.questions.length}</td>
+                {/* Groundwork for displaying user's answered questions */}
+                {/*<td>{user.questions.length} <Button label='Expand' onClick={() => this.setState({expandAnswered:true})}/></td>*/}
+                <td>{user.questions.length} </td>
               </tr>
+              {this.state.expandAnswered && <tr>
+                <td colSpan={2}>
+                  {usersAnsweredQuestions}
+                </td>
+              </tr>}
+
               <tr>
                 <td>Questions Authored: </td>
                 <td>{user.authored.length}</td>
@@ -145,8 +163,9 @@ function mapStateToProps(state) {
   return {
     currentUser: state.currentUser,
     items: state.items,
-    parties: state.parties
+    parties: state.parties,
+    questions: state.questions
   };
 }
 
-export default connect(mapStateToProps, {fetchItems, removeFromInventory, loadOnePartyAction, updateDemographics})(withAuth(Profile));
+export default connect(mapStateToProps, {fetchItems,  removeFromInventory,  loadOnePartyAction,  updateDemographics,  loadOneQuestionAction})(withAuth(Profile));

@@ -9,7 +9,7 @@
     margin:auto auto;
 }
 
-.new-question-form label{
+.new-question-form > label{
     box-shadow: 0 10px 6px -6px #777;
     border-radius:16px;
     background: #ebebeb;
@@ -32,6 +32,24 @@
 .new-question-form input:focus{
     border: 1px solid rgba(81, 203, 238, 1);
     box-shadow: 0 0 15px rgba(81, 203, 238, 1);
+}
+
+.new-question-form input[type='radio']{
+    display:none;
+}
+
+.new-question-form .radio-label{
+    border-radius:8px;
+    display: inline-block;
+    padding: 4px 11px;
+    margin: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #777777, inset 0 0 1px #444444;
+}
+
+.new-question-form input[type='radio']:checked+.radio-label{
+    background-color:limegreen;
 }
 
 .new-question-form .new-question-form-field-description{

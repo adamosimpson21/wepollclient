@@ -95,7 +95,7 @@ class QuestionDetails extends Component{
               <div id='ballot-type-secret'>Secret - Top security level, no demographic data or information about the user retained</div>
               <div id='ballot-type-private'>Private - Secure poll response. Carries a link to demographic data that can be accessed later by analytical systems.</div>
               <div id='ballot-type-public'>Public - Secure poll response. Poll question and answer are displayed on a user's public profile page, and carries a link to demographic data that can be accessed later by analytical systems.</div>
-              Ballot types not implemented yet
+              Ballot types in Beta
             </div> :
             <Button label='Learn about Ballot Types' onClick={() => this.setState({showSecurityInfo: true})} />}
         </div>}
