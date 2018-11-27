@@ -7,9 +7,9 @@ import Link from 'react-router-dom/es/Link'
 import BackFrame from "../hocs/BackFrame";
 import moment from 'moment';
 import {addError} from "../store/actions/errors";
-import Loader from 'react-loader-spinner';
 import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
+import MyLoader from "../hocs/Loader";
 
 class QuestionDetails extends Component{
   state={
@@ -36,6 +36,7 @@ class QuestionDetails extends Component{
 
   handleAnswer = event => {
     event.preventDefault();
+
     this.setState({answerSelected:true, heldAnswer: event.target.value})
   }
 
@@ -72,7 +73,7 @@ class QuestionDetails extends Component{
 
   render(){
     if(this.props.questions.length >= 1){
-      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
+      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id, answerType } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
       const answerDisplays = answers.map(answer => <Button key={answer} color='green' value={answer} classes='answer-display' onClick={this.handleAnswer} label={answer} />)
       return(<div className='question-answer-form'>
@@ -110,12 +111,7 @@ class QuestionDetails extends Component{
         )}
       </div>)
     } else {
-      return(<Loader
-          type="Circles"
-          color="#00BFFF"
-          height={200}
-          width={100}
-        />)
+      return(<MyLoader/>)
     }
   }
 }
