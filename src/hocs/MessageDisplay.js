@@ -9,6 +9,12 @@ class MessageDisplay extends Component{
     showingMessage:true
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.location !== this.props.location) {
+      this.props.removeMessage();
+    }
+  }
+
   fadeMessage = () => {
     this.setState({showingMessage: false})
     setTimeout(this.props.removeMessage, 1500);
@@ -24,7 +30,7 @@ class MessageDisplay extends Component{
           {message.message}
         </div>
       ))
-      this.state.showingMessage && setTimeout(this.fadeMessage, 2000);
+      this.state.showingMessage && setTimeout(this.fadeMessage,5000);
       return(
         <div className={`message-display-wrapper ${this.state.showingMessage ? 'message-showing' : 'message-hidden'}`}>
           <button onClick={this.props.removeMessage} className='message-display-remove'><strong>X</strong></button>
@@ -43,4 +49,4 @@ function mapStateToProps(state){
   }
 }
 
-export default connect(mapStateToProps, {removeMessage})(withRouter(MessageDisplay))
+export default withRouter(connect(mapStateToProps, {removeMessage})(MessageDisplay))
