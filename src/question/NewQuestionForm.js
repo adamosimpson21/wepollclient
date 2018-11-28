@@ -12,21 +12,15 @@ class NewQuestionForm extends Component{
     title:'',
     description:'',
     education:'',
-    answerType:'',
+    answerType:'single',
     numAnswers:3
   }
 
   state = this.defaultState
 
-
   handleSubmit = event => {
     event.preventDefault()
-    // TODO: Can this be refactored to reduce or map?
-    let answers = []
-    for(let i = 0; i<this.state.numAnswers; i++){
-      // TODO: there has to be a better way to access answer1, answer2, answer3, etc.
-      answers.push(this.state['answer' + (i+1)])
-    }
+    const answers = new Array(parseInt(this.state.numAnswers, 10)).fill('').map((old, index) => this.state['answer' + (index+1)])
     const { questionContent, title, description, education, answerType } = this.state
     this.props.postQuestion({questionContent, title, description, education, answers, answerType})
     this.props.history.push('/question')
@@ -50,12 +44,13 @@ class NewQuestionForm extends Component{
           required
         />
       </label>))
-
-
     return(<div>
       <form onSubmit={this.handleSubmit} className='new-question-form'>
-        <h2>Fill out the form below to create a new question on WePoll.</h2>
-        <h4> After you successfully submit, it will appear at the bottom of the page (you may have to scroll down)</h4>
+        <label>
+          <h2>Create a new question on WePoll.</h2>
+          <h4> After you successfully submit, it will appear at the bottom of the page (you may have to scroll down)</h4>
+          <Button label='Reset Form' onClick={()=> this.setState(this.defaultState)} />
+        </label>
         <label> Question:
           <input
             type='text'
@@ -132,7 +127,7 @@ class NewQuestionForm extends Component{
             required
           />
         </label>
-        <label> Answer Type:
+        { process.env.REACT_APP_ENV_TYPE==='development' && <label> Answer Type:
             <input
               id='single'
               type='radio'
@@ -166,7 +161,7 @@ class NewQuestionForm extends Component{
               checked={this.state.answerType==='range'}
             />
           <label  htmlFor='range' className='radio-label'> Range (Not Implemented) </label>
-        </label>
+        </label> }
         {answerInputs}
         <Button label='Create this Question' type="submit" />
       </form>

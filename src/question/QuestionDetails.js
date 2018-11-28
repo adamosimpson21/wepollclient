@@ -66,6 +66,10 @@ class QuestionDetails extends Component{
     event.preventDefault();
   }
 
+  handleRadio = event => {
+    this.setState({ heldAnswer: event.target.value })
+  }
+
   handleDelete = event => {
     event.preventDefault();
     this.props.removeQuestionAction(this.props.match.params.questionId)
@@ -76,17 +80,14 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id, answerType } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
-      const answerDisplays = answers.map(answer => <input
-                                                      type={'checkbox'}>
-                                                      <Button
+      const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
                                                         value={answer}
                                                         classes='answer-display'
                                                         onClick={this.handleAnswer}
                                                         checked={this.state.heldAnswer === answer}
-                                                        label={answer} />
-      </input>)
+                                                        label={answer} />)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
         <HorizontalLine />
