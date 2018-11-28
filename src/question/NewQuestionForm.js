@@ -37,10 +37,8 @@ class NewQuestionForm extends Component{
   }
 
   render(){
-    // TODO: refactor this? Currently works, but there's probably a better way to do it? reduce?
-    let answerInputs = [];
-    for(let index = 0; index<this.state.numAnswers; index++){
-      answerInputs.push(<label key={index}> Answer {index+1}:
+    const answerInputs = new Array(parseInt(this.state.numAnswers, 10)).fill('').map((old, index) => (
+      <label key={index}> Answer {index+1}:
         <input
           type='text'
           name={`answer${index+1}`}
@@ -51,8 +49,7 @@ class NewQuestionForm extends Component{
           maxLength='50'
           required
         />
-      </label>)
-    }
+      </label>))
 
 
     return(<div>

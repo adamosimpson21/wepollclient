@@ -10,6 +10,7 @@ import {addError} from "../store/actions/errors";
 import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
+import {multiAnswer} from "../helper/constants";
 
 class QuestionDetails extends Component{
   state={
@@ -75,7 +76,17 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id, answerType } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
-      const answerDisplays = answers.map(answer => <Button key={answer} color='green' value={answer} classes='answer-display' onClick={this.handleAnswer} label={answer} />)
+      const answerDisplays = answers.map(answer => <input
+                                                      type={'checkbox'}>
+                                                      <Button
+                                                        key={answer}
+                                                        color='green'
+                                                        value={answer}
+                                                        classes='answer-display'
+                                                        onClick={this.handleAnswer}
+                                                        checked={this.state.heldAnswer === answer}
+                                                        label={answer} />
+      </input>)
       return(<div className='question-answer-form'>
         <div className='question-title'>{title}</div>
         <HorizontalLine />
