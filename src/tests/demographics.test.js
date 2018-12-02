@@ -1,5 +1,6 @@
 import {defaultUserDemographics, familySizeRange, incomeRange, raceOptions, genderOptions, educationOptions, locationOptions} from "../helper/demographicsOptions";
 import {ageRange} from "../helper/demographicsOptions";
+import {mockUser} from "./mockData";
 
 const isBetween = (value, range) => {
   return range[0] <= value && value <=range[1]
@@ -31,4 +32,15 @@ test("Default user education exist in options", () =>  {
 
 test("Default user location exist in options", () =>  {
   expect(locationOptions.includes(defaultUserDemographics.location)).toBe(true)
+})
+
+test("User's demographics included in ranges", () =>  {
+  const user = mockUser
+  expect(isBetween(user.age, ageRange) &&
+    isBetween(user.income, incomeRange) &&
+    isBetween(user.familySize, familySizeRange) &&
+    genderOptions.includes(user.gender) &&
+    locationOptions.includes(user.location) &&
+    educationOptions.includes(user.education) &&
+    raceOptions.includes(user.race)).toBe(true)
 })
