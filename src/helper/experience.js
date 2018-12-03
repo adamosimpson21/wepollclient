@@ -1,3 +1,5 @@
+export const MAX_LEVEL = 45
+
 //returns amount of total experience to reach a level
 export function xpToLevel(level){
   if(level<=1){
@@ -33,7 +35,6 @@ export function xpToLevel(level){
 
 //checks the User's level based on experience
 export function checkLevel(experience){
-  const MAX_LEVEL = 45
   for (let i=1; i<MAX_LEVEL; i++){
     //checks user's XP vs next level
     if(experience<xpToLevel(i)){
