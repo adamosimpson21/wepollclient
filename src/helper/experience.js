@@ -1,60 +1,45 @@
 export const MAX_LEVEL = 14
-export const MAX_EXPERIENCE = 40000;
+export const MAX_EXPERIENCE = 45000;
 
-//returns amount of total experience to reach a level
-export function xpToLevel(level){
-  if(level<=1){
-    return 0;
-  } else if (level<=2){
-    return 100;
-  } else if (level<=3){
-    return 500;
-  } else if (level<=4){
-    return 1000;
-  } else if (level<=5){
-    return 1500;
-  } else if (level<=6){
-    return 2000;
-  } else if (level<=7){
-    return 2500;
-  } else if (level<=8){
-    return 3500;
-  } else if (level<=9){
-    return 5000;
-  } else if (level<=10){
-    return 7500;
-  } else if (level<=11){
-    return 10000;
-  } else if (level<=12){
-    return 15000;
-  } else if (level<=13){
-    return 25000;
-  } else {
-    return 40000;
-  }
+// holds minimum experience to be a level
+export const experienceObj = {
+  '1':0,
+  '2':100,
+  '3':500,
+  '4':1000,
+  '5':1500,
+  '6':2000,
+  '7':2500,
+  '8':3500,
+  '9':5000,
+  '10':7500,
+  '11':10000,
+  '12':15000,
+  '13':25000,
+  //Max Level
+  '14':MAX_EXPERIENCE
 }
 
 //checks the User's level based on experience
 export function checkLevel(experience){
-  for (let i=1; i<MAX_LEVEL; i++){
-    //checks user's XP vs next level
-    if(experience<=xpToLevel(i)){
-      return i+1;
+  for(let i=1; i<=MAX_LEVEL; ++i){
+    if(experience<=experienceObj[i+1]){
+      return i;
     }
   }
-  return 1
+  return 0;
 }
 
-//returns the User's percent progress to the next level
+//returns the User's percent progress to the next level (0-100)
 export function levelProgress(experience){
-  const xpThisLevel = xpToLevel(checkLevel(experience))
-  console.log("xpThisLevel", xpThisLevel)
-  //progress this level
-  const progress = (experience-xpThisLevel)
-  //experience for next level
-  const nextLevel = (xpToLevel(checkLevel(experience) + 1)-(xpThisLevel))
-  //divide progress/next and return percentage
-  console.log("nextLevel", nextLevel)
-  console.log("progress", progress)
-  return ((progress/nextLevel)*100)
+  const currentLevel = checkLevel(experience)
+  if(currentLevel === MAX_LEVEL){
+    return 100;
+  } else {
+    const thisLevelXp = experienceObj[currentLevel]
+    const nextLevelXp = experienceObj[currentLevel+1]
+    const progressThisLevel = experience - thisLevelXp
+    const xpThisLevel = nextLevelXp - thisLevelXp
+    return ((progressThisLevel/xpThisLevel)*100)
+  }
 }
