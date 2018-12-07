@@ -1,13 +1,18 @@
-import {MAX_LEVEL, xpToLevel} from '../helper/experience'
+import {MAX_LEVEL, MAX_EXPERIENCE, xpToLevel, levelProgress, checkLevel} from '../helper/experience'
 
-const MAX_EXPERIENCE = 50000;
 
 test("experience function returns numbers", () => {
     for(let i = 0; i< MAX_LEVEL; ++i ){
-      expect(xpToLevel(i)).toBeLessThan(MAX_EXPERIENCE+1)
+      expect(xpToLevel(i)).toBeLessThanOrEqual(MAX_EXPERIENCE)
     }
 })
 
 test("experience to level to experience matches", () => {
   expect(true).toBe(true);
+})
+
+test("level progress returns percent", () => {
+  for(let i=0; i<MAX_EXPERIENCE; i+=5000){
+    expect(levelProgress(i)).toBeLessThanOrEqual(100)
+  }
 })

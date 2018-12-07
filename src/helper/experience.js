@@ -1,4 +1,5 @@
-export const MAX_LEVEL = 45
+export const MAX_LEVEL = 14
+export const MAX_EXPERIENCE = 40000;
 
 //returns amount of total experience to reach a level
 export function xpToLevel(level){
@@ -37,21 +38,23 @@ export function xpToLevel(level){
 export function checkLevel(experience){
   for (let i=1; i<MAX_LEVEL; i++){
     //checks user's XP vs next level
-    if(experience<xpToLevel(i)){
-      //returns level -1
-      return i-1;
+    if(experience<=xpToLevel(i)){
+      return i+1;
     }
   }
-  return 0
+  return 1
 }
 
 //returns the User's percent progress to the next level
 export function levelProgress(experience){
   const xpThisLevel = xpToLevel(checkLevel(experience))
+  console.log("xpThisLevel", xpThisLevel)
   //progress this level
   const progress = (experience-xpThisLevel)
   //experience for next level
   const nextLevel = (xpToLevel(checkLevel(experience) + 1)-(xpThisLevel))
   //divide progress/next and return percentage
+  console.log("nextLevel", nextLevel)
+  console.log("progress", progress)
   return ((progress/nextLevel)*100)
 }
