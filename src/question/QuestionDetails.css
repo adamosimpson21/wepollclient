@@ -13,6 +13,11 @@
     margin: 0 auto 24px auto;
 }
 
+.question-answer-form .question-education .education-embed{
+    width:100%;
+    height:300px;
+}
+
 .question-answer-form .security-light-wrapper{
     margin: 16px auto;
     display:inline-flex;

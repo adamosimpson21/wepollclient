@@ -11,6 +11,7 @@ import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
 import {multiAnswer} from "../helper/constants";
+import {isLink} from '../helper/regexes'
 
 class QuestionDetails extends Component{
   state={
@@ -80,6 +81,8 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id, answerType } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
+      const educationJSX = isLink(education) ?  (<embed className='education-embed' src={"https://en.wikipedia.org/wiki/Main_Page"} />) : (<span>{education}</span>)
+      console.log("isLink", isLink(education))
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
@@ -93,7 +96,7 @@ class QuestionDetails extends Component{
         <HorizontalLine />
         <div className='question-content'>{questionContent}</div>
         <HorizontalLine />
-        <div className='question-education'>{education}</div>
+        <div className='question-education'>{educationJSX}</div>
         <HorizontalLine />
         {answerDisplays}
         <HorizontalLine />
