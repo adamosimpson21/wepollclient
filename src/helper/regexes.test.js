@@ -34,3 +34,11 @@ test('formats url to embed url properly', () => {
 test('formats url to embed number', () => {
   expect(formatUrlToEmbed(151254)).toBe('URL could not be parsed as string')
 })
+
+test('formats url to embed youtube', () => {
+  expect(formatUrlToEmbed('https://www.youtube.com/watch?v=bNq_SpKih2I')).toBe('https://www.youtube.com/embed/bNq_SpKih2I')
+})
+
+test('formats url to embed wikipedia', () => {
+  expect(formatUrlToEmbed('https://en.wikipedia.org/wiki/New_Wave_(Against_Me!_album)')).toBe('https://en.wikipedia.org/wiki/New_Wave_(Against_Me!_album)')
+})
