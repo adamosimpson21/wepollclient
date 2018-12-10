@@ -10,7 +10,7 @@ import {addError} from "../store/actions/errors";
 import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
-import {multiAnswer} from "../helper/constants";
+// import {multiAnswer} from "../helper/constants";
 import {isLink, formatUrlToEmbed} from '../helper/regexes'
 
 class QuestionDetails extends Component{
@@ -79,7 +79,7 @@ class QuestionDetails extends Component{
 
   render(){
     if(this.props.questions.length >= 1){
-      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id, answerType } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
+      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
       const educationJSX = isLink(education) ?  (<embed className='education-embed' src={formatUrlToEmbed(education)} />) : (<span>{education}</span>)
       const answerDisplays = answers.map(answer =>  <Button

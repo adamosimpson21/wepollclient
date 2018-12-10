@@ -149,7 +149,7 @@ class NewQuestionForm extends Component{
               onChange = {this.handleRadio}
               checked={this.state.answerType==='multiple'}
             />
-          <label  htmlFor='multiple' className='radio-label'> Multiple Answers </label>
+          <label  htmlFor='multiple' className='radio-label'> Multiple Answers (Coming Soon)</label>
             <input
               id='range'
               type='radio'
@@ -160,7 +160,7 @@ class NewQuestionForm extends Component{
               onChange = {this.handleRadio}
               checked={this.state.answerType==='range'}
             />
-          <label  htmlFor='range' className='radio-label'> Range (Not Implemented) </label>
+          <label  htmlFor='range' className='radio-label'> Range (Coming Soon) </label>
         </label> }
         {answerInputs}
         <Button label='Create this Question' type="submit" />

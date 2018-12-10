@@ -6,6 +6,7 @@ export function isLink(string){
   if(typeof string !=='string'){
     return false
   }
+  // eslint-disable-next-line
   const linkRegex = /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm
   return !!string.match(linkRegex)
 }
