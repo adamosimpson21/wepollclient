@@ -11,7 +11,7 @@ export function isLink(string){
 }
 
 export function formatUrlToEmbed(url){
-  if(typeof url !=='string' && isLink(url)) {
+  if(typeof url ==='string' && !isLink(url)) {
     return 'Not a valid Link'
   } else if (typeof url !== 'string') {
     return 'URL could not be parsed as string'

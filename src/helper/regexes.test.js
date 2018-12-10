@@ -26,3 +26,11 @@ test('isLink(\'just a string\')', () => {
 test('isLink(\'Some random sentences. They have punctuation! And colons: like this one; and some slashes // comment here\')', () => {
   expect(isLink('Some random sentences. They have punctuation! And colons: like this one; and some slashes // comment here')).toBe(false);
 })
+
+test('formats url to embed url properly', () => {
+  expect(formatUrlToEmbed('just a string')).toBe('Not a valid Link')
+})
+
+test('formats url to embed number', () => {
+  expect(formatUrlToEmbed(151254)).toBe('URL could not be parsed as string')
+})
