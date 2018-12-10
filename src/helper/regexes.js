@@ -3,6 +3,9 @@ export function escapeRegExp(string){
 }
 
 export function isLink(string){
+  if(typeof string !=='string'){
+    return false
+  }
   const linkRegex = /(?:(?:https?|ftp|file):\/\/|www\.|ftp\.)(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[-A-Z0-9+&@#\/%=~_|$?!:,.])*(?:\([-A-Z0-9+&@#\/%=~_|$?!:,.]*\)|[A-Z0-9+&@#\/%=~_|$])/igm
   return !!string.match(linkRegex)
 }
@@ -10,6 +13,8 @@ export function isLink(string){
 export function formatUrlToEmbed(url){
   if(typeof url !=='string' && isLink(url)) {
     return 'Not a valid Link'
+  } else if (typeof url !== 'string') {
+    return 'URL could not be parsed as string'
   }
   if(url.includes('youtube.com/watch?v=')){
     return url.replace('watch?v=', 'embed/')
