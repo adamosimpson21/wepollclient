@@ -81,7 +81,8 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
-      const educationJSX = isLink(education) ?  (<embed className='education-embed' src={formatUrlToEmbed(education)} />) : (<span>{education}</span>)
+      const hasEmbed = isLink(education)
+      const educationJSX = hasEmbed ? (<embed className='education-embed' src={formatUrlToEmbed(education)} />) : (<span>{education}</span>)
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
@@ -95,7 +96,7 @@ class QuestionDetails extends Component{
         <HorizontalLine />
         <div className='question-content'>{questionContent}</div>
         <HorizontalLine />
-        <div className='question-education'>{educationJSX}</div>
+        <div className={'question-education' + (hasEmbed && ' hasEmbed')}>{educationJSX}</div>
         <HorizontalLine />
         {answerDisplays}
         <HorizontalLine />
@@ -119,8 +120,8 @@ class QuestionDetails extends Component{
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
         { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
           <div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
-            {process.env.REACT_APP_ENV_TYPE==='development' &&  <button onClick={this.handleEdit}>Edit this Question (Not Implemented)</button>}
-            <button className='question-delete' onClick={this.handleDelete}>Delete this Question</button>
+            {process.env.REACT_APP_ENV_TYPE==='development' &&  <Button color='yellow' onClick={this.handleEdit} label='Edit this Question (Coming Soon)'/>}
+            <Button color='red' onClick={this.handleDelete} label='Delete this Question'/>
           </div>
         )}
       </div>)
