@@ -38,7 +38,6 @@ class QuestionDetails extends Component{
 
   handleAnswer = event => {
     event.preventDefault();
-
     this.setState({answerSelected:true, heldAnswer: event.target.value})
   }
 
@@ -138,7 +137,5 @@ function mapStateToProps(state){
     errors: state.errors
   }
 }
-
-// TODO: write logic to redirect to results page if use has answered question
 
 export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addError, getAllQuestions})(BackFrame(QuestionDetails)));
