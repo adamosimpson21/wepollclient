@@ -12,6 +12,11 @@
     font-size:1.3rem;
 }
 
+.user-aside .progressBarContainer{
+    margin:auto;
+    width:95%;
+}
+
 .profile-main, .profile-demographics{
     display:block;
     background-color:#fff;

@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import './Profile.css'
 import withAuth from '../hocs/withAuth'
 import connect from 'react-redux/es/connect/connect'
-import { checkLevel } from '../helper/experience'
+import {checkLevel, experienceObj, levelProgress} from '../helper/experience'
 import Button from '../hocs/Button'
 import {fetchItems} from '../store/actions/items'
 import {removeFromInventory, updateDemographics} from "../store/actions/user";
@@ -30,9 +30,7 @@ class Profile extends Component{
         loadOneQuestionAction(question)
       })
     }
-    if(currentUser.user.party){
-      loadOnePartyAction(this.props.currentUser.user.party)
-    }
+    currentUser.user.party && loadOnePartyAction(this.props.currentUser.user.party)
   }
 
   revealDemographics = () => {
@@ -48,40 +46,42 @@ class Profile extends Component{
   render(){
     const { user }= this.props.currentUser;
     if(Object.keys(user).length !== 0) {
-      let items = (<div>You don't have any items!</div>)
-      if(user.inventory.length > 0 && this.props.items.length > 0){
-        items = user.inventory.map((item, index) =>{
-          let itemWithDetails = this.props.items.find(itemProp => itemProp._id===item)
-          return(<img className='profile-item-image' alt={itemWithDetails.name} title={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
-        })
-      }
+      const itemMapper = () => user.inventory.map((item, index) =>{
+        let itemWithDetails = this.props.items.find(itemProp => itemProp._id===item)
+        return(<img className='profile-item-image' alt={itemWithDetails.name} title={itemWithDetails.name} src={itemWithDetails.image} key={index}/>)
+      })
 
-      let party = null
-      if(user.party && this.props.parties.length === 1){
-        party = this.props.parties[0]
-      }
-
-      const usersAnsweredQuestions = user.questions.map(question => (<div>Question Here</div>))
       const userLevel = checkLevel(user.experience)
+      const party = (user.party && this.props.parties.length === 1) ? this.props.parties[0] : null
+      const partyJSX = (user.party && party) ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'
+      const items = (user.inventory.length > 0 && this.props.items.length > 0) ? itemMapper() : (<div>You don't have any items!</div>)
+      const usersAnsweredQuestions = user.questions.map(question => (<div>Question Here</div>))
 
       return (<div className='profile-body'>
         <div className='user-aside'>
-          {user.username}
           {user.avatar && <img className='avatar-image' alt='user avatar' src={user.avatar} /> }
           <br />
+          {user.username}
+          <br />
           Level {userLevel} <PresidentLink level={userLevel}/>
+          <div className='progressBarContainer'>
+            <div className="progress-bar xpProgressBar" role="progressbar" aria-valuenow={user.experience}
+                 aria-valuemin="0" aria-valuemax="100" style={{width: levelProgress(user.experience)+'%'}}>
+            </div>
+          </div>
+          Experience: {user.experience} / {experienceObj[userLevel+1]}
         </div>
         <HorizontalLine/>
         <div className='profile-main'>
           <table>
             <tbody>
-              <tr>
-                <td>Username: </td>
-                <td>{user.username}</td>
-              </tr>
+              {/*<tr>*/}
+                {/*<td>Username: </td>*/}
+                {/*<td>{user.username}</td>*/}
+              {/*</tr>*/}
               <tr>
                 <td>Party: </td>
-                <td>{(user.party && party) ? <Link to={`party/${party._id}`}>{party.name}</Link> : 'none'}</td>
+                <td>{partyJSX}</td>
               </tr>
               <tr>
                 <td>Questions Answered: </td>

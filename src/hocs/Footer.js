@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import './Footer.css'
 import connect from 'react-redux/es/connect/connect'
-import {levelProgress, checkLevel} from '../helper/experience'
+import {levelProgress, checkLevel, experienceObj} from '../helper/experience'
 import {presidentNameArray} from '../helper/constants'
 import withRouter from "react-router/es/withRouter";
 import PresidentLink from "./PresidentLink";
@@ -19,7 +19,7 @@ class Footer extends Component{
                        aria-valuemin="0" aria-valuemax="100" style={{width: levelProgress(currentUser.user.experience)+'%'}}>
                    </div>
                  </div>
-                 Level: {userLevel} <PresidentLink level={userLevel}/> Experience: {currentUser.user.experience}
+                 Level: {userLevel} <PresidentLink level={userLevel}/> Experience: {currentUser.user.experience} / {experienceObj[userLevel+1]}
                </div>
              </div>)
     } else {
