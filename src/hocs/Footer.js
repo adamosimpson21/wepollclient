@@ -19,7 +19,7 @@ class Footer extends Component{
                        aria-valuemin="0" aria-valuemax="100" style={{width: levelProgress(currentUser.user.experience)+'%'}}>
                    </div>
                  </div>
-                 Level: {userLevel} (<PresidentLink level={userLevel}/>) Experience: {currentUser.user.experience}
+                 Level: {userLevel} <PresidentLink level={userLevel}/> Experience: {currentUser.user.experience}
                </div>
              </div>)
     } else {

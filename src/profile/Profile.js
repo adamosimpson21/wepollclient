@@ -12,6 +12,7 @@ import Link from "react-router-dom/es/Link";
 import UpdateDemographics from "./UpdateDemographics";
 import HorizontalLine from "../hocs/HorizontalLine";
 import {loadOneQuestionAction} from "../store/actions/questions";
+import PresidentLink from "../hocs/PresidentLink";
 
 
 class Profile extends Component{
@@ -61,13 +62,14 @@ class Profile extends Component{
       }
 
       const usersAnsweredQuestions = user.questions.map(question => (<div>Question Here</div>))
+      const userLevel = checkLevel(user.experience)
 
       return (<div className='profile-body'>
         <div className='user-aside'>
           {user.username}
           {user.avatar && <img className='avatar-image' alt='user avatar' src={user.avatar} /> }
           <br />
-          Level {checkLevel(user.experience)}
+          Level {userLevel} <PresidentLink level={userLevel}/>
         </div>
         <HorizontalLine/>
         <div className='profile-main'>
