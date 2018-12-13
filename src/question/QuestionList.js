@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import './QuestionList.css'
 import Link from 'react-router-dom/es/Link'
 import Button from "../hocs/Button";
-import Loader from "react-loader-spinner";
 import Icon from '../hocs/Icon'
 import {handleChange} from "../helper/handleChange";
+import MyLoader from "../hocs/Loader";
+import withRouter from "react-router/es/withRouter";
 
 class QuestionList extends Component{
   state={
@@ -80,7 +81,7 @@ class QuestionList extends Component{
           </div>
         </div>)
       } else {
-        // Questions have loaded, but have been filtered out
+        // Questions have loaded, but all have been filtered out
         return(<div className='question-list-search-bar-wrapper'>
           {searchBar}
           <div className='question-list-empty-set'>
@@ -90,18 +91,11 @@ class QuestionList extends Component{
         </div>)
       }
     } else {
-      return(<div>
-          <Loader
-            type="Circles"
-            color="#00BFFF"
-            height={200}
-            width={100}
-          />
-      </div>)
+      return(<MyLoader />)
     }
   }
 }
 
 
 
-export default QuestionList;
+export default withRouter(QuestionList);

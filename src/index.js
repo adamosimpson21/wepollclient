@@ -8,6 +8,7 @@ import history from './history';
 import { Provider } from "react-redux";
 import { configureStore } from "./store";
 import { setAuthorizationToken, setCurrentUser, authUser } from "./store/actions/auth";
+import ScrollToTop from './hocs/ScrollToTop';
 import jwtDecode from "jwt-decode";
 
 const store = configureStore();
@@ -24,8 +25,10 @@ if (localStorage.jwtToken) {
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={history}>
-      <App />
+    <Router history={history} >
+      <ScrollToTop>
+        <App />
+      </ScrollToTop>
     </Router>
   </Provider>,
   document.getElementById('root'));

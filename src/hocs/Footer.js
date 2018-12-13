@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import './Footer.css'
 import connect from 'react-redux/es/connect/connect'
 import {levelProgress, checkLevel, experienceObj} from '../helper/experience'
-import {presidentNameArray} from '../helper/constants'
 import withRouter from "react-router/es/withRouter";
 import PresidentLink from "./PresidentLink";
 
