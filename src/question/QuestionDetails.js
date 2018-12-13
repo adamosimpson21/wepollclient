@@ -10,6 +10,7 @@ import {addError} from "../store/actions/errors";
 import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
+import scrollToComponent from 'react-scroll-to-component';
 // import {multiAnswer} from "../helper/constants";
 import {isLink, formatUrlToEmbed} from '../helper/regexes'
 
@@ -61,6 +62,7 @@ class QuestionDetails extends Component{
     }
 }
 
+
   // TODO: implement after specs
   handleEdit = event => {
     event.preventDefault();
@@ -81,7 +83,8 @@ class QuestionDetails extends Component{
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
       const hasEmbed = isLink(education)
-      const educationJSX = hasEmbed ? (<embed className='education-embed' src={formatUrlToEmbed(education)} />) : (<span>{education}</span>)
+      // const educationJSX = hasEmbed ? (<embed className='education-embed' src={formatUrlToEmbed(education)} />) : (<span>{education}</span>)
+      const educationJSX = (<span>{education}</span>)
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
@@ -90,7 +93,7 @@ class QuestionDetails extends Component{
                                                         onClick={this.handleAnswer}
                                                         checked={this.state.heldAnswer === answer}
                                                         label={answer} />)
-      return(<div className='question-answer-form'>
+      return(<div className='question-answer-form' >
         <div className='question-title'>{title}</div>
         <HorizontalLine />
         <div className='question-content'>{questionContent}</div>

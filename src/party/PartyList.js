@@ -3,7 +3,7 @@ import './PartyList.css'
 import PartyPlacard from "./PartyPlacard";
 import { deletePartyAction, joinPartyAction } from '../store/actions/party'
 import connect from 'react-redux/es/connect/connect'
-import Loader from "react-loader-spinner";
+import MyLoader from "../hocs/Loader";
 
 class PartyList extends Component{
   render(){
@@ -20,14 +20,7 @@ class PartyList extends Component{
       ))
       return(<div className='party-list'>{allParties}</div>)
     } else {
-      return(<div>
-        <Loader
-        type="Circles"
-        color="#00BFFF"
-        height={200}
-        width={100}
-        />
-      </div>)
+      return(<MyLoader />)
     }
   }
 }

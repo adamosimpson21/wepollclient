@@ -14,7 +14,6 @@ class Party extends Component{
     const { parties, currentUser } = this.props
     return(<div>
       {(currentUser.user.authLevel==='admin' || currentUser.user.authLevel==='founder') && <PartyForm />}
-      <div> Join these Parties! </div>
       <PartyList parties={parties}/>
     </div>)
   }
