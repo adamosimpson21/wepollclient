@@ -14,6 +14,7 @@ import NewQuestionForm from "../question/NewQuestionForm";
 import QuestionDetails from "../question/QuestionDetails";
 import QuestionResults from "../question/QuestionResults";
 import Switch from "react-router/es/Switch";
+import About from "../about/About";
 
 class MainLayout extends Component{
   render(){
@@ -22,9 +23,8 @@ class MainLayout extends Component{
       <div className='app-content'>
         <MessageDisplay />
         <Switch>
-          <Route exact path='/landing' component={Landing}/>
-          {/* TODO: make the about page more user friendly */}
-          <Route exact path='/about' component={() => window.location = 'https://www.dinnostudio.com/wepoll-deck'}/>
+          <Route exact path='/landing' component={Landing} />
+          <Route exact path='/about' component={About}/>
           <Route exact path='/party' component={Party}/>
           <Route exact path='/party/:partyId' component={PartyView}/>
           <Route exact path='/profile' component={Profile}/>
