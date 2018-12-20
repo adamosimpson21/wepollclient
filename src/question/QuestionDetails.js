@@ -90,6 +90,7 @@ class QuestionDetails extends Component{
                                                         classes='answer-display'
                                                         onClick={this.handleAnswer}
                                                         checked={this.state.heldAnswer === answer}
+                                                        pressed={(this.state.heldAnswer === answer) ? 1 : 0}
                                                         label={answer} />)
       return(<div className='question-answer-form' >
         <div className='question-title'>{title}</div>

@@ -1,18 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './About.css'
 import BackFrame from "../hocs/BackFrame";
+import Button from "../hocs/Button";
 
-function About(){
-  const [count, setCount] = useState(0);
+const About = () => {
   return (
     <div>
-      <h1>Something here</h1>
-      <h1>{count}</h1>
-      <button onClick={() => setCount(count + 1)}>Count Up To The Moon</button>
+      <h1>Learn more about WePoll and Democratic Innovation Studios</h1>
+      <a href='https://www.dinnostudio.com/wepoll-deck' target='_blank' rel="noopener noreferrer"><Button label='DInnoS Home Page' /></a>
     </div>
   );
 }
 
-export default About
-
-// () => window.location = 'https://www.dinnostudio.com/wepoll-deck'
+export default BackFrame(About);

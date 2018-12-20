@@ -3,7 +3,7 @@ import './Button.css'
 
 class Button extends Component {
   render (){
-    const {label, color} = this.props
+    const {label, color, classes, pressed} = this.props
     const colorTheme = color => {
       switch(color){
       case 'green':
@@ -20,7 +20,7 @@ class Button extends Component {
 
     return (
       <button
-        className={`buttonHOC ${colorTheme(color)} ${this.props.classes}`}
+        className={`buttonHOC ${colorTheme(color)} ${classes} ${pressed ? ' pressed' : null}`}
         {...this.props}>
         {label}
       </button>

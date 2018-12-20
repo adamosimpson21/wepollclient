@@ -50,11 +50,11 @@
     background-color: rgba(66, 238, 34, 0.3);
 }
 
-.question-answer-form .answer-display:focus{
-    box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35,
-                5px 5px 10px #ffea81, -5px 5px 10px #ffea81, 5px -5px 10px #ffea81, -5px -5px 10px #ffea81;
+.question-answer-form .answer-display.pressed{
+    box-shadow: 2px 2px 5px #bda733, -2px 2px 5px #bda733, 2px -2px 5px #bda733, -2px -2px 5px #bda733,
+                5px 5px 10px #ebe679, -5px 5px 10px #ebe679, 5px -5px 10px #ebe679, -5px -5px 10px #ebe679;
     outline: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 300ms ease-in-out;
 }
 
 .question-answer-form .question-xpReward{
@@ -71,6 +71,7 @@
 }
 
 .question-answer-form .answer-display{
+    margin: 8px 0;
     font-size:1.2rem;
     width:70%;
 }
