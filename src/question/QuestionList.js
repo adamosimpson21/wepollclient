@@ -178,25 +178,19 @@ class QuestionList extends Component{
                                     .sort(this.sortQuestions())
                                     .reduce(this.firstQuestionFirst, [])
                                     .map(this.questionPlacard)
-      if(allQuestions.length >= 1){
-        return(<div className='question-list-search-bar-wrapper'>
-          {this.searchBar.bind(this)()}
-          {this.state.sortBarVisible ? this.sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
-          <div className='question-list'>
-            {allQuestions}
-          </div>
-        </div>)
-      } else {
+      return(<div className='question-list-search-bar-wrapper'>
+        {this.searchBar.bind(this)()}
+        {this.state.sortBarVisible ? this.sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
+        {allQuestions.length >= 1 ?
+        (<div className='question-list'>
+          {allQuestions}
+        </div>) :
         // Questions have loaded, but all have been filtered out
-        return(<div className='question-list-search-bar-wrapper'>
-          {this.searchBar.bind(this)()}
-          {this.state.sortBarVisible ? this.sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
-          <div className='question-list-empty-set'>
-            <p>No polls matching that search</p>
-            <Link to="/newQuestionForm" className='question-new-form-link'><Button label={`Create a ${this.state.searchText} poll`}/></Link>
-          </div>
-        </div>)
-      }
+        (<div className='question-list-empty-set'>
+          <p>No polls matching that search</p>
+          <Link to="/newQuestionForm" className='question-new-form-link'><Button label={`Create a ${this.state.searchText} poll`}/></Link>
+        </div>)}
+      </div>)
     } else {
       return(<MyLoader />)
     }
