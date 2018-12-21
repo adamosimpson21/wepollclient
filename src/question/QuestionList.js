@@ -10,8 +10,10 @@ import withRouter from "react-router/es/withRouter";
 class QuestionList extends Component{
   state={
     searchText: '',
-    sortBarVisible: false,
-    sortType: 'popular',
+    sortBarVisible: true,
+    sortType: 'date',
+    showAnswered: true,
+    showUnAnswered: true,
     ascending: true
   }
 
@@ -46,6 +48,17 @@ class QuestionList extends Component{
       question.answers.includes(searchText);
   }
 
+  filterAnswered = question => {
+    let {showAnswered, showUnAnswered} = this.state
+    if(showAnswered && showUnAnswered) return true
+    const hasAnswered = (this.props.currentUser.isAuthenticated && this.props.currentUser.user.questions.includes(question._id))
+    if(showAnswered || showUnAnswered) {
+      return (hasAnswered && showAnswered) || (!hasAnswered && showUnAnswered)
+    } else {
+      return false
+    }
+  }
+
   firstQuestionFirst = (acc, element) => {
     if (element._id === '5bcd6e9fcef9fb37f8a72866' || element._id ==='5be3fbd45b0efc405424316c') {
       return [element, ...acc];
@@ -74,44 +87,101 @@ class QuestionList extends Component{
     )
   }
 
-  render(){
-    const { questions } = this.props
-    const searchBar = (<div className='question-search-bar'>
-      <Icon icon='search' viewBox='0 0 310.42 310.42'/>
+  handleRadio = event => {
+    this.setState({ sortType: event.target.value })
+  }
+
+  sortBar = (<div className='question-sort-bar'>
+    <label>Answered?
       <input
-        type='text'
-        name='searchText'
-        aria-label='Search for questions'
-        title='Search for questions'
-        value={this.state.searchText}
-        onChange = {handleChange.bind(this)}
+        name='showAnswered'
+        type='checkbox'
+        value={this.state.showAnswered}
+        onChange={handleChange.bind(this)}
+        defaultChecked={true}
       />
-    </div>)
-    const sortBar = (<div className='question-sort-bar'>
-      <label> Ascending?
-        <input
-          name='ascending'
-          type='checkbox'
-          value={this.state.ascending}
-          onChange={handleChange.bind(this)}
-          defaultChecked={true}
-        />
-      </label>
-      <label> Sort By
+    </label>
+    <label>UnAnswered?
+      <input
+        name='showUnAnswered'
+        type='checkbox'
+        value={this.state.showUnAnswered}
+        onChange={handleChange.bind(this)}
+        defaultChecked={true}
+      />
+    </label>
+    <label> Ascending?
+      <input
+        name='ascending'
+        type='checkbox'
+        value={this.state.ascending}
+        onChange={handleChange.bind(this)}
+        defaultChecked={true}
+      />
+    </label>
+    <label> Sort By
+      <label>Date
         <input
           type='radio'
+          name='sortBy'
+          value='date'
+          defaultChecked={true}
+          onChange = {this.handleRadio}
         />
       </label>
-    </div>)
+      <label>Popular
+        <input
+          type='radio'
+          name='sortBy'
+          value='popular'
+          onChange = {this.handleRadio}
+        />
+      </label>
+      <label>Rewards
+        <input
+          type='radio'
+          name='sortBy'
+          value='rewards'
+          onChange = {this.handleRadio}
+        />
+      </label>
+      <label>Rating
+        <input
+          type='radio'
+          name='sortBy'
+          value='rating'
+          onChange = {this.handleRadio}
+        />
+      </label>
+
+    </label>
+  </div>)
+
+  searchBar = () => {
+    return(<div className='question-search-bar'>
+    <Icon icon='search' viewBox='0 0 310.42 310.42'/>
+    <input
+      type='text'
+      name='searchText'
+      aria-label='Search for questions'
+      title='Search for questions'
+      value={this.state.searchText}
+      onChange = {handleChange.bind(this)}
+    />
+  </div>)}
+
+  render(){
+    const { questions } = this.props
     if(questions.length > 0){
       const allQuestions = questions.filter(this.filterQuestions)
-                                    .reduce(this.firstQuestionFirst, [])
+                                    .filter(this.filterAnswered)
                                     .sort(this.sortQuestions())
+                                    .reduce(this.firstQuestionFirst, [])
                                     .map(this.questionPlacard)
       if(allQuestions.length >= 1){
         return(<div className='question-list-search-bar-wrapper'>
-          {searchBar}
-          {this.state.sortBarVisible ? sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
+          {this.searchBar.bind(this)()}
+          {this.state.sortBarVisible ? this.sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
           <div className='question-list'>
             {allQuestions}
           </div>
@@ -119,7 +189,8 @@ class QuestionList extends Component{
       } else {
         // Questions have loaded, but all have been filtered out
         return(<div className='question-list-search-bar-wrapper'>
-          {searchBar}
+          {this.searchBar.bind(this)()}
+          {this.state.sortBarVisible ? this.sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
           <div className='question-list-empty-set'>
             <p>No polls matching that search</p>
             <Link to="/newQuestionForm" className='question-new-form-link'><Button label={`Create a ${this.state.searchText} poll`}/></Link>
