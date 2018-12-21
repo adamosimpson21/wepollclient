@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './BallotAnimation.css'
-import ballotBox from  '../images/ballot-box.png';
-import ballotBoxBottom from  '../images/ballot-box-bottom.png';
+import ballotBox from  './ballot-box.png';
+import ballotBoxBottom from  './ballot-box-bottom.png';
 
 class BallotAnimation extends Component{
   render(){
