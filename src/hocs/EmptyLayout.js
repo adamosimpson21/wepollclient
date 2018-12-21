@@ -5,6 +5,7 @@ import Register from "../register/Register";
 import Splash from "../splash/Splash";
 import MessageDisplay from "./MessageDisplay";
 import Switch from "react-router/es/Switch";
+import BallotAnimation from "../ballotAnimation/BallotAnimation";
 
 class EmptyLayout extends Component{
   render(){
@@ -14,6 +15,7 @@ class EmptyLayout extends Component{
         <Route path='/logIn' component={LogIn} />
         <Route path='/register' component={Register}/>
         <Route path='/splash' component={Splash}/>
+        <Route path='/ballotAnimation' component={BallotAnimation} />
         <Redirect from="/" to="/splash"/>
       </Switch>
     </div>)

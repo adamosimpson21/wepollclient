@@ -6,7 +6,7 @@ import EmptyLayout from './hocs/EmptyLayout'
 
 const App = () => {
   return(<Switch>
-    <Route exact path={['/logIn','/register','/splash','/']} component={EmptyLayout} />
+    <Route exact path={['/logIn','/register','/splash','/', '/ballotAnimation']} component={EmptyLayout} />
     <Route component={MainLayout} />
   </Switch>)
 }

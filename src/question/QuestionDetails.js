@@ -48,7 +48,8 @@ class QuestionDetails extends Component{
       const questionId = match.params.questionId
       if (currentUser.isAuthenticated && !currentUser.user.questions.includes(questionId)) {
         answerQuestionAction(questionId, this.state.heldAnswer, securityLevel)
-        history.push(`/question/${questionId}/results`)
+        history.push('/ballotAnimation')
+        setTimeout(() => history.push(`/question/${questionId}/results`), 5000)
       } else if (currentUser.isAuthenticated) {
         addError("You've answered this question already")
         history.push(`/question/${questionId}/results`)

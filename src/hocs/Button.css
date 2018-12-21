@@ -59,6 +59,17 @@
     background: linear-gradient(to bottom right, #8b1a1b, #5b1110);
 }
 
+.frame-button{
+    border: 1px solid white;
+    background: linear-gradient(to bottom right, #000000, #000000);
+    box-shadow: 0 4px 0 #000000;
+}
+
+.frame-button:active,
+.frame-button.pressed{
+    background: linear-gradient(to bottom right, #000000, #000000);
+}
+
 
 @media screen and (min-width: 700px) {
     .buttonHOC{

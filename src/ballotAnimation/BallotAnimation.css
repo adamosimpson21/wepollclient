@@ -1,0 +1,31 @@
+.ballot-animation .ballot{
+    animation: ballot-animation 5s;
+    margin:auto;
+    background-color:white;
+    height:100px;
+    width:100px;
+}
+
+.ballot-animation .ballot .writing-wrapper{
+    padding-top: 1px;
+}
+
+.ballot-animation .ballot .writing-line{
+    width: 80%;
+    margin: 18px auto;
+    height:2px;
+    background-color: darkgray;
+}
+
+
+
+@keyframes ballot-animation {
+    0% {
+        transform:translate(0, 50px);
+        /*opacity:0;*/
+    }
+    100%{
+        transform:translate(0, 500px);
+        /*opacity:1;*/
+    }
+}

@@ -14,6 +14,8 @@ class Button extends Component {
         return 'red-button';
       case 'yellow':
         return 'yellow-button';
+      case 'frame':
+          return 'frame-button';
       default:
         return 'blue-button';
     }}

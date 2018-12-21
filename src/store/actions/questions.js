@@ -81,7 +81,7 @@ export const answerQuestionAction = (question_id, answer, securityLevel) => (dis
   return apiCall("post", `/api/questions/${id}/${question_id}`, {answer, securityLevel})
     .then(res => {
       dispatch(answerQuestion(res))
-      res.messages.forEach(message => {dispatch(addMessage(message))})
+      res.messages.map(message => setTimeout(() => dispatch(addMessage(message)), 5000))
     })
     .catch(err => addError(err.message));
 }

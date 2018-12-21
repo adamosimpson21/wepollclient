@@ -14,8 +14,8 @@
 
 #landing-header h1 {
     color: #fff;
-    text-shadow: 2px 2px 8px #4b4b4b;
-    background: rgba(100,100,100,.5);
+    text-shadow: 3px 3px 16px #5e5e5e, 3px -3px 16px #5e5e5e, -3px 3px 16px #5e5e5e, -3px -3px 16px #5e5e5e;
+    /*background: rgba(100,100,100,.5);*/
     font-size:2.4rem;
     width:fit-content;
     padding:16px;
@@ -23,22 +23,25 @@
     border-radius:36px;
 }
 
-.splashButton{
+.splashPage Button{
     width:260px;
     height:50px;
-    background: linear-gradient(0deg, #008200, #00e900);
-    box-shadow: 0 6px 0 #005600;
     margin: 0 auto;
     border-radius:25px;
     font-size:22px;
 }
 
-.splashButton a{
-    color:#fff;
+.splashPage Button a{
     text-decoration: none;
     padding: 10px 16px;
     margin: auto auto;
     display:inline-block;
+}
+
+.splashPage Button.alt-entrance{
+    margin: 16px;
+    border: 2px solid #4af83f;
+    color: #4af83f;
 }
 
 .slideshow {
@@ -52,6 +55,16 @@
     margin: 0;
     padding: 0;
 }
+
+.slideshow.fading-slideshow{
+    opacity:0;
+    transition: all 3s ease;
+}
+
+/*.slideshow.fading-slideshow li{*/
+    /*opacity:.1;*/
+    /*transition: opacity 5s ease;*/
+/*}*/
 
 .slideshow li {
     width: 100%;
