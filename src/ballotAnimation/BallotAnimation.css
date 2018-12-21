@@ -1,9 +1,11 @@
 .ballot-animation .ballot{
-    animation: ballot-animation 5s;
+    animation: ballot-animation 4s;
     margin:auto;
+    position:relative;
     background-color:white;
     height:100px;
-    width:100px;
+    width:30vw;
+    z-index:3;
 }
 
 .ballot-animation .ballot .writing-wrapper{
@@ -17,15 +19,47 @@
     background-color: darkgray;
 }
 
+.ballot-animation .ballot-box-wrapper{
+    width:100%;
+    margin:auto;
+    position:relative;
+}
+
+#ballot-box{
+    z-index: 1;
+}
+
+#ballot-box-bottom{
+    z-index:5;
+}
+
+#ballot-box, #ballot-box-bottom{
+    margin:auto;
+    position:absolute;
+    bottom:-80vh;
+    left:0;
+    right:0;
+    width:100%;
+}
 
 
 @keyframes ballot-animation {
     0% {
-        transform:translate(0, 50px);
+        transform:translate(0, 5vh);
         /*opacity:0;*/
     }
     100%{
-        transform:translate(0, 500px);
+        transform:translate(0, 75vh);
         /*opacity:1;*/
     }
+}
+
+@media screen and (min-width: 700px) {
+    #ballot-box, #ballot-box-bottom{
+        width:40%;
+    }
+    .ballot-animation .ballot{
+        width:150px;
+    }
+
 }

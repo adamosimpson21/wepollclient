@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import './BallotAnimation.css'
+import ballotBox from  '../images/ballot-box.png';
+import ballotBoxBottom from  '../images/ballot-box-bottom.png';
 
 class BallotAnimation extends Component{
   render(){
@@ -12,8 +14,11 @@ class BallotAnimation extends Component{
         <div className='writing-line'></div>
         </div>
       </div>
-      <div className='ballot-box'>
-        
+      <div className='ballot-box-wrapper'>
+        <div className='ballot-box'>
+          <img id='ballot-box' src={ballotBox} alt='ballot-box'/>
+          <img id='ballot-box-bottom' src={ballotBoxBottom} alt='ballot-box-bottom' />
+        </div>
       </div>
     </div>)
   }

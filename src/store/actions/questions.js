@@ -2,6 +2,7 @@ import { apiCall } from "../../services/api";
 import { addError } from "./errors";
 import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION, ANSWER_QUESTION } from "../actionTypes";
 import {addMessage} from "./messages";
+import {ballotAnimationDelay} from "../../helper/constants";
 
 export const loadQuestions = questions => ({
   type: GET_QUESTIONS,
@@ -81,7 +82,7 @@ export const answerQuestionAction = (question_id, answer, securityLevel) => (dis
   return apiCall("post", `/api/questions/${id}/${question_id}`, {answer, securityLevel})
     .then(res => {
       dispatch(answerQuestion(res))
-      res.messages.map(message => setTimeout(() => dispatch(addMessage(message)), 5000))
+      res.messages.map(message => setTimeout(() => dispatch(addMessage(message)), ballotAnimationDelay))
     })
     .catch(err => addError(err.message));
 }
