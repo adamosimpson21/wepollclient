@@ -16,8 +16,8 @@ class BallotAnimation extends Component{
       </div>
       <div className='ballot-box-wrapper'>
         <div className='ballot-box'>
-          <img id='ballot-box' src={ballotBox} alt='ballot-box'/>
-          <img id='ballot-box-bottom' src={ballotBoxBottom} alt='ballot-box-bottom' />
+          <img id='ballot-box' src={require('./ballot-box.png')} alt='ballot-box'/>
+          <img id='ballot-box-bottom' src={require('./ballot-box-bottom.png')} alt='ballot-box-bottom' />
         </div>
       </div>
     </div>)
