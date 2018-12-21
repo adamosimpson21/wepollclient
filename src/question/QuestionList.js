@@ -6,11 +6,12 @@ import Icon from '../hocs/Icon'
 import {handleChange} from "../helper/handleChange";
 import MyLoader from "../hocs/Loader";
 import withRouter from "react-router/es/withRouter";
+import HorizontalLine from "../hocs/HorizontalLine";
 
 class QuestionList extends Component{
   state={
     searchText: '',
-    sortBarVisible: true,
+    sortBarVisible: false,
     sortType: 'date',
     showAnswered: true,
     showUnAnswered: true,
@@ -91,71 +92,94 @@ class QuestionList extends Component{
     this.setState({ sortType: event.target.value })
   }
 
-  sortBar = (<div className='question-sort-bar'>
-    <label>Answered?
-      <input
-        name='showAnswered'
-        type='checkbox'
-        value={this.state.showAnswered}
-        onChange={handleChange.bind(this)}
-        defaultChecked={true}
-      />
-    </label>
-    <label>UnAnswered?
-      <input
-        name='showUnAnswered'
-        type='checkbox'
-        value={this.state.showUnAnswered}
-        onChange={handleChange.bind(this)}
-        defaultChecked={true}
-      />
-    </label>
-    <label> Ascending?
-      <input
-        name='ascending'
-        type='checkbox'
-        value={this.state.ascending}
-        onChange={handleChange.bind(this)}
-        defaultChecked={true}
-      />
-    </label>
-    <label> Sort By
-      <label>Date
+  sortBar = () => {
+    return(<div className='question-sort-bar'>
+      <div className='sort-bar-top'>
+    <span className='sort-bar-wrapper'>Answered
+      <label className='sort-bar-label'>
         <input
+          className='sort-bar-checkbox'
+          name='showAnswered'
+          key='showAnswered'
+          type='checkbox'
+          value={this.state.showAnswered}
+          checked={this.state.showAnswered}
+          onChange={handleChange.bind(this)}
+        />
+        <span className="sort-bar-slider" />
+      </label>
+    </span>
+        <span className='sort-bar-wrapper'>UnAnswered
+      <label className='sort-bar-label'>
+        <input
+          className='sort-bar-checkbox'
+          name='showUnAnswered'
+          key='showUnAnswered'
+          type='checkbox'
+          value={this.state.showUnAnswered}
+          checked={this.state.showUnAnswered}
+          onChange={handleChange.bind(this)}
+        />
+        <span className="sort-bar-slider" />
+      </label>
+    </span>
+        <span className='sort-bar-wrapper'>Ascending
+      <label className='sort-bar-label'>
+        <input
+          className='sort-bar-checkbox'
+          name='ascending'
+          key='ascending'
+          type='checkbox'
+          value={this.state.ascending}
+          checked={this.state.ascending}
+          onChange={handleChange.bind(this)}
+        />
+        <span className="sort-bar-slider" />
+      </label>
+    </span>
+        <Button label='X' color='red' onClick={() =>  this.setState({sortBarVisible:false})} />
+      </div>
+      <HorizontalLine/>
+      <div className='sort-bar-bottom'>
+        <input
+          id='date'
           type='radio'
           name='sortBy'
           value='date'
-          defaultChecked={true}
+          checked={this.state.sortType==='date'}
           onChange = {this.handleRadio}
         />
-      </label>
-      <label>Popular
+        <label htmlFor='date' className='radio-label'>Date</label>
         <input
+          id='popular'
           type='radio'
           name='sortBy'
           value='popular'
+          checked={this.state.sortType==='popular'}
           onChange = {this.handleRadio}
         />
-      </label>
-      <label>Rewards
+        <label htmlFor='popular' className='radio-label'>Popular</label>
         <input
+          id='rewards'
           type='radio'
           name='sortBy'
           value='rewards'
+          checked={this.state.sortType==='rewards'}
           onChange = {this.handleRadio}
         />
-      </label>
-      <label>Rating
+        <label htmlFor='rewards' className='radio-label'>Rewards</label>
         <input
+          id='rating'
           type='radio'
           name='sortBy'
           value='rating'
+          checked={this.state.sortType==='rating'}
           onChange = {this.handleRadio}
         />
-      </label>
-
-    </label>
-  </div>)
+        <label htmlFor='rating' className='radio-label'>Rating</label>
+      </div>
+    </div>)
+  }
 
   searchBar = () => {
     return(<div className='question-search-bar'>
@@ -180,7 +204,7 @@ class QuestionList extends Component{
                                     .map(this.questionPlacard)
       return(<div className='question-list-search-bar-wrapper'>
         {this.searchBar.bind(this)()}
-        {this.state.sortBarVisible ? this.sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
+        {this.state.sortBarVisible ? this.sortBar.bind(this)() : <Button label='View Sort Options' classes='view-sort-menu-button' onClick={() => this.setState({sortBarVisible:true})}/>}
         {allQuestions.length >= 1 ?
         (<div className='question-list'>
           {allQuestions}

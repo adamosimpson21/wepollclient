@@ -1,6 +1,11 @@
 .question-title{
-    padding:16px;
+    margin:4px;
+    padding:8px;
     font-size:1.3rem;
+}
+
+.question-title .question-new-form-link{
+    margin:0;
 }
 
 @media screen and (max-width: 700px){

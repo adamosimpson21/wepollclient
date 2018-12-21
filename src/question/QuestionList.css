@@ -66,6 +66,102 @@
     display:grid;
 }
 
+.question-list-search-bar-wrapper .view-sort-menu-button{
+    width:fit-content;
+    margin: 0 auto 12px auto;
+}
+
+.sort-bar-wrapper{
+    display:inline-grid;
+    font-size:14px;
+    margin:4px;
+    max-width:120px;
+}
+
+.question-sort-bar{
+    background-color:white;
+    height:fit-content;
+    width:fit-content;
+    border-radius:8px;
+    margin: 8px auto;
+}
+
+/* The switch - the box around the slider */
+.sort-bar-label {
+    margin:auto;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.sort-bar-label input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Input slider */
+.sort-bar-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.sort-bar-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .sort-bar-slider {
+    background-color: #2196F3;
+}
+
+input:focus + .sort-bar-slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .sort-bar-slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+/* End input slider */
+
+/* Radio Buttons instead of dials */
+.sort-bar-bottom input[type='radio']{
+    display:none;
+}
+
+.sort-bar-bottom .radio-label{
+    border-radius:8px;
+    display: inline-block;
+    padding: 4px 11px;
+    margin: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    box-shadow: 2px 2px 2px #777777, inset 0 0 1px #444444;
+}
+
+.sort-bar-bottom input[type='radio']:checked+.radio-label{
+    background-color:limegreen;
+}
+
+
 
 @media screen and (min-width: 700px) {
     .question-thumbnail{
