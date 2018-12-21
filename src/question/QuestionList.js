@@ -9,10 +9,31 @@ import withRouter from "react-router/es/withRouter";
 
 class QuestionList extends Component{
   state={
-    searchText: ''
+    searchText: '',
+    sortBarVisible: false,
+    sortType: 'popular',
+    ascending: true
   }
 
-  sortByDate = (a,b) => new Date(a.createdAt) - new Date(b.createdAt);
+  sortByDate = (a,b) =>  (new Date(a.createdAt) - new Date(b.createdAt))*(this.state.ascending ? 1 : -1);
+  sortByRating = (a,b) => (b.rating - a.rating)*(this.state.ascending ? 1 : -1);
+  sortByPopular = (a,b) => (b.results.length - a.results.length)*(this.state.ascending ? 1 : -1);
+  sortByReward = (a,b) => (b.xpReward - a.xpReward)*(this.state.ascending ? 1 : -1);
+
+  sortQuestions = () => {
+    switch(this.state.sortType) {
+      case 'date':
+        return this.sortByDate;
+      case 'rating':
+        return this.sortByRating;
+      case 'popular':
+        return this.sortByPopular;
+      case 'reward':
+        return this.sortByReward;
+      default:
+        return this.sortByDate;
+    }
+  }
 
   filterQuestions = question => {
     // TODO: naive approach, refine later
@@ -24,7 +45,6 @@ class QuestionList extends Component{
       question.education.toLowerCase().includes(searchText) ||
       question.answers.includes(searchText);
   }
-
 
   firstQuestionFirst = (acc, element) => {
     if (element._id === '5bcd6e9fcef9fb37f8a72866' || element._id ==='5be3fbd45b0efc405424316c') {
@@ -54,10 +74,9 @@ class QuestionList extends Component{
     )
   }
 
-
   render(){
     const { questions } = this.props
-    const searchBar = (<div  className='question-search-bar'>
+    const searchBar = (<div className='question-search-bar'>
       <Icon icon='search' viewBox='0 0 310.42 310.42'/>
       <input
         type='text'
@@ -68,14 +87,31 @@ class QuestionList extends Component{
         onChange = {handleChange.bind(this)}
       />
     </div>)
+    const sortBar = (<div className='question-sort-bar'>
+      <label> Ascending?
+        <input
+          name='ascending'
+          type='checkbox'
+          value={this.state.ascending}
+          onChange={handleChange.bind(this)}
+          defaultChecked={true}
+        />
+      </label>
+      <label> Sort By
+        <input
+          type='radio'
+        />
+      </label>
+    </div>)
     if(questions.length > 0){
       const allQuestions = questions.filter(this.filterQuestions)
-                                    .sort(this.sortByDate)
                                     .reduce(this.firstQuestionFirst, [])
+                                    .sort(this.sortQuestions())
                                     .map(this.questionPlacard)
       if(allQuestions.length >= 1){
         return(<div className='question-list-search-bar-wrapper'>
           {searchBar}
+          {this.state.sortBarVisible ? sortBar : <Button label='View Sort Options' onClick={() => this.setState({sortBarVisible:true})}/>}
           <div className='question-list'>
             {allQuestions}
           </div>
