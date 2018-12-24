@@ -1,3 +1,24 @@
+#WePoll
+
+WePoll by Democratic Innovation Studios 2018 (DIS)
+
+##Introduction
+
+WePoll is a Progressive Web App that polls users about a variety of questions. Users can log-in, create polls, answer polls, buy items in the shop using in-game currency, level up, and many more features to come.
+
+This project folder is for the Front-End of the application. The Back-End can be found at [https://github.com/adamosimpson21/wepollapi] . To clone this repository, run
+
+`git clone https://github.com/adamosimpson21/wepollapi.git`
+
+`npm install`
+
+In the root directory, run `npm start`, and the site will open in your favorite browser. You will not be able to use most of the components without the API layer 
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
