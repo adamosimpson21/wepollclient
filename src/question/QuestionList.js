@@ -210,7 +210,7 @@ class QuestionList extends Component{
           {allQuestions}
         </div>) :
         // Questions have loaded, but all have been filtered out
-        (<div className='question-list-empty-set'>
+        (<div className='question-list question-list-empty-set'>
           <p>No polls matching that search</p>
           <Link to="/newQuestionForm" className='question-new-form-link'><Button label={`Create a ${this.state.searchText} poll`}/></Link>
         </div>)}

@@ -24,8 +24,7 @@
 }
 
 .question-thumbnail-wrapper{
-    width:50%;
-
+    width:50vw;
 }
 
 .question-thumbnail Button{
@@ -69,7 +68,7 @@
 
 .question-list-search-bar-wrapper .view-sort-menu-button{
     width:fit-content;
-    margin: 0 auto 12px autoquestion-sort-bar;
+    margin: 0 auto 12px auto;
 }
 
 .sort-bar-wrapper{
