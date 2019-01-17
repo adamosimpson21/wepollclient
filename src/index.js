@@ -22,6 +22,12 @@ if (localStorage.jwtToken) {
   }
 }
 
+// axe configuration
+if (process.env.REACT_APP_ENV_TYPE !== 'production') {
+  const axe = require('react-axe');
+  axe(React, ReactDOM, 1000);
+}
+
 
 ReactDOM.render(
   <Provider store={store}>

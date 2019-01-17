@@ -1,6 +1,6 @@
-# Use npm 6.5.0
-FROM node:6.5.0
-ENV LAST_UPDATED 20181010T000000
+# Use npm 8.11.3
+FROM node:8.11.3
+ENV LAST_UPDATED 20181228T000000
 
 # Copy source code
 COPY . /wepollclient
@@ -18,4 +18,4 @@ EXPOSE 8080
 ENV REACT_APP_ENV_TYPE development
 
 # Launch application
-CMD ["npm","start"]
+CMD ["npm start"]
