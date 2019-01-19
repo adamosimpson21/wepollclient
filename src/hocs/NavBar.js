@@ -7,6 +7,7 @@ import connect from 'react-redux/es/connect/connect';
 import withRouter from "react-router/es/withRouter";
 import WePollBrand from "./WePollBrand";
 import VerticalLine from "./VerticalLine";
+import SkipNavigationLink from "./SkipNavigationLink";
 
 class NavBar extends Component{
   logout = e => {
@@ -20,6 +21,7 @@ class NavBar extends Component{
     const iconSize = '24px';
     return(
         <header>
+          <SkipNavigationLink skipTo={'#app-content'}/>
             <NavLink to="/landing" className='wepoll-navbar-brand'><WePollBrand /></NavLink>
           <nav>
             <NavLink activeClassName="activeNavLink" to="/question"><li><Icon icon="questionMark" width={iconSize} height={iconSize}/><span className='navbar-text'>Questions</span></li></NavLink>

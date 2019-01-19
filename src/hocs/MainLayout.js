@@ -20,7 +20,7 @@ class MainLayout extends Component{
   render(){
     return(<div className='App'>
       <NavBar/>
-      <div className='app-content'>
+      <div className='app-content' id='#app-content' tabIndex={-1}>
         <MessageDisplay />
         <Switch>
           <Route exact path='/landing' component={Landing} />
