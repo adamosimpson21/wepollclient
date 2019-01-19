@@ -70,12 +70,20 @@
     width:fit-content;
     margin: 0 auto 12px auto;
 }
+/* End Search Bar*/
 
+/* Sort Bar */
 .sort-bar-wrapper{
     display:inline-grid;
     font-size:14px;
-    margin:4px;
+    margin:6px;
     max-width:120px;
+}
+
+.question-sort-bar .question-sort-bar-close{
+    height:18px;
+    width:24px;
+    min-width:24px;
 }
 
 .question-sort-bar{
@@ -86,6 +94,7 @@
     border-radius:8px;
     margin: 8px auto;
 }
+/* End Sort Bar */
 
 /* The switch - the box around the slider */
 .sort-bar-label {
@@ -143,7 +152,7 @@ input:checked + .sort-bar-slider:before {
 }
 /* End input slider */
 
-/* Radio Buttons instead of dials */
+/* Radio Buttons instead of dials on sort bar*/
 .sort-bar-bottom input[type='radio']{
     display:none;
 }
@@ -159,9 +168,9 @@ input:checked + .sort-bar-slider:before {
 }
 
 .sort-bar-bottom input[type='radio']:checked+.radio-label{
-    background-color:limegreen;
+    background-color: #6ed870;
 }
-
+/* End sort bar radio buttons */
 
 
 @media screen and (min-width: 700px) {

@@ -46,7 +46,7 @@ class QuestionList extends Component{
       question.description.toLowerCase().includes(searchText) ||
       question.questionContent.toLowerCase().includes(searchText) ||
       question.education.toLowerCase().includes(searchText) ||
-      question.answers.includes(searchText);
+      question.answers.toLowerCase().includes(searchText);
   }
 
   filterAnswered = question => {
@@ -137,7 +137,7 @@ class QuestionList extends Component{
         <span className="sort-bar-slider" />
       </label>
     </span>
-        <Button label='X' color='red' onClick={() =>  this.setState({sortBarVisible:false})} />
+        <Button label='X' color='red' classes='question-sort-bar-close' onClick={() =>  this.setState({sortBarVisible:false})} />
       </div>
       <HorizontalLine/>
       <div className='sort-bar-bottom'>
