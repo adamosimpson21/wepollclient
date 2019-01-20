@@ -168,7 +168,7 @@ input:checked + .sort-bar-slider:before {
 }
 
 .sort-bar-bottom input[type='radio']:checked+.radio-label{
-    background-color: #6ed870;
+    background-color: #6cd86e;
 }
 /* End sort bar radio buttons */
 
