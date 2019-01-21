@@ -47,8 +47,8 @@ class NewQuestionForm extends Component{
     return(<div>
       <form onSubmit={this.handleSubmit} className='new-question-form'>
         <label>
-          <h2>Create a new question on WePoll.</h2>
-          <h4> After you successfully submit, it will appear at the bottom of the page (you may have to scroll down)</h4>
+          <h2>Create your own Discussion</h2>
+          <h4>Discover what WePoll users think about a topic. Ask a question, get feedback, learn about public opinion</h4>
           <Button label='Reset Form' onClick={()=> this.setState(this.defaultState)} />
         </label>
         <label> Question:

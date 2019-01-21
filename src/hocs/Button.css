@@ -50,13 +50,13 @@
 }
 
 .red-button{
-    background: linear-gradient(to bottom right, #f82627, #8d120f);
-    box-shadow: 0 4px 0 #8c1214;
+    background: linear-gradient(to bottom right, #f85c61, #bd302f);
+    box-shadow: 0 4px 0 #b4454a;
 }
 
 .red-button:active,
 .red-button.pressed{
-    background: linear-gradient(to bottom right, #8b1a1b, #5b1110);
+    background: linear-gradient(to bottom right, #8b1a1b, #7f1817);
 }
 
 .frame-button{
