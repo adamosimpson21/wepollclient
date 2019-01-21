@@ -45,8 +45,7 @@ class QuestionList extends Component{
     return question.title.toLowerCase().includes(searchText) ||
       question.description.toLowerCase().includes(searchText) ||
       question.questionContent.toLowerCase().includes(searchText) ||
-      question.education.toLowerCase().includes(searchText) ||
-      question.answers.toLowerCase().includes(searchText);
+      question.education.toLowerCase().includes(searchText);
   }
 
   filterAnswered = question => {
@@ -204,11 +203,9 @@ class QuestionList extends Component{
                                     .map(this.questionPlacard)
       return(<div className='question-list-search-bar-wrapper'>
         {this.searchBar.bind(this)()}
-        {this.state.sortBarVisible ? this.sortBar.bind(this)() : <Button label='View Sort Options' classes='view-sort-menu-button' onClick={() => this.setState({sortBarVisible:true})}/>}
+        {this.state.sortBarVisible ? this.sortBar.bind(this)() : <Button label='Sort Options' classes='view-sort-menu-button' onClick={() => this.setState({sortBarVisible:true})}/>}
         {allQuestions.length >= 1 ?
-        (<div className='question-list'>
-          {allQuestions}
-        </div>) :
+        (<div className='question-list'>{allQuestions}</div>) :
         // Questions have loaded, but all have been filtered out
         (<div className='question-list question-list-empty-set'>
           <p>No polls matching that search</p>
@@ -216,6 +213,7 @@ class QuestionList extends Component{
         </div>)}
       </div>)
     } else {
+      // Questions haven't loaded
       return(<MyLoader />)
     }
   }
