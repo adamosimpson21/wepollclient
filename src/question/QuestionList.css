@@ -7,6 +7,14 @@
     padding:2px;
 }
 
+.question-thumbnail .question-thumbnail-title{
+    font-size:18px;
+}
+
+.question-thumbnail .question-thumbnail-description{
+    font-size:12px;
+}
+
 .first-question-thumbnail{
     box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35,
     5px 5px 10px #ffea81, -5px 5px 10px #ffea81, 5px -5px 10px #ffea81, -5px -5px 10px #ffea81;
