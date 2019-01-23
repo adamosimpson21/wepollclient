@@ -5,6 +5,8 @@ import connect from 'react-redux/es/connect/connect'
 import Button from "../hocs/Button";
 import withRouter from "react-router/es/withRouter";
 import {handleChange} from "../helper/handleChange";
+import {addError} from "../store/actions/errors";
+import {addMessage} from "../store/actions/messages";
 
 class NewQuestionForm extends Component{
   defaultState = {
@@ -21,9 +23,15 @@ class NewQuestionForm extends Component{
   handleSubmit = event => {
     event.preventDefault()
     const answers = new Array(parseInt(this.state.numAnswers, 10)).fill('').map((old, index) => this.state['answer' + (index+1)])
-    const { questionContent, title, description, education, answerType } = this.state
-    this.props.postQuestion({questionContent, title, description, education, answers, answerType})
-    this.props.history.push('/question')
+    // Check if Answers are the same string
+    const distinctAnswers = [...new Set(answers)];
+    if(answers.length !== distinctAnswers.length){
+      this.props.addError("Must have all unique Answers");
+    } else {
+      const { questionContent, title, description, education, answerType } = this.state
+      this.props.postQuestion({questionContent, title, description, education, answers, answerType})
+      this.props.history.push('/question')
+    }
   }
 
   handleRadio = event => {
@@ -169,4 +177,10 @@ class NewQuestionForm extends Component{
   }
 }
 
-export default withRouter(connect(null, {postQuestion})(NewQuestionForm));
+function mapStateToProps(state){
+  return {
+    messages: state.messages
+  }
+}
+
+export default withRouter(connect(mapStateToProps, {postQuestion, addError, addMessage})(NewQuestionForm));

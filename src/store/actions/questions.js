@@ -37,17 +37,14 @@ export const answerQuestion = response => ({
 export const getAllQuestions = () => dispatch => {
   return apiCall("get", "/api/questions")
     .then(res => dispatch(loadQuestions(res)))
-    .catch(err => {
-      console.log("err: ", err);
-      addError(err.message)
-    })
+    .catch(err => addError(err.message))
 }
 
 export const postQuestion = body => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
   return apiCall("post", `/api/questions/${id}`, body)
-    .then(res => dispatch(createQuestion(res)))
+    .then(res => dispatch(addMessage({message:res, degree:'success'})))
     .catch(err => addError(err.message));
 }
 

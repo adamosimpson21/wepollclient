@@ -3,7 +3,6 @@ import './Landing.css'
 import Link from "react-router-dom/es/Link";
 import connect from "react-redux/es/connect/connect";
 import WePollTwitterFeed from '../hocs/WePollTwitterFeed';
-import {addMessage} from "../store/actions/messages";
 import Button from "../hocs/Button";
 
 class Landing extends Component{
@@ -35,8 +34,7 @@ class Landing extends Component{
 function mapStateToProps(state){
   return{
     currentUser: state.currentUser,
-    messages: state.messages
   }
 }
 
-export default connect(mapStateToProps, {addMessage})(Landing);
+export default connect(mapStateToProps)(Landing);
