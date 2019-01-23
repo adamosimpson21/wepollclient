@@ -3,6 +3,7 @@ import { addError } from "./errors";
 import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION, ANSWER_QUESTION } from "../actionTypes";
 import {addMessage} from "./messages";
 import {ballotAnimationDelay} from "../../helper/constants";
+import {updateCurrentUser} from "./auth";
 
 export const loadQuestions = questions => ({
   type: GET_QUESTIONS,
@@ -14,9 +15,9 @@ export const removeQuestion = questionId => ({
   questionId
 });
 
-export const createQuestion = question => ({
+export const createQuestion = response => ({
   type: CREATE_QUESTION,
-  question
+  ...response
 })
 
 export const loadOneQuestion = question => ({
@@ -44,8 +45,8 @@ export const postQuestion = body => (dispatch, getState) => {
   let { currentUser } = getState();
   const id = currentUser.user._id;
   return apiCall("post", `/api/questions/${id}`, body)
-    .then(res => dispatch(addMessage({message:res, degree:'success'})))
-    .catch(err => addError(err.message));
+    .then(res => dispatch(createQuestion(res)))
+    .catch(err => addError(err.message))
 }
 
 export const removeQuestionAction = question_id => (dispatch, getState) => {
