@@ -3,7 +3,6 @@ import { addError } from "./errors";
 import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION, ANSWER_QUESTION } from "../actionTypes";
 import {addMessage} from "./messages";
 import {ballotAnimationDelay} from "../../helper/constants";
-import {updateCurrentUser} from "./auth";
 
 export const loadQuestions = questions => ({
   type: GET_QUESTIONS,

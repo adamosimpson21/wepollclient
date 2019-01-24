@@ -8,9 +8,8 @@
 }
 
 .filter-range-wrapper{
-    padding:16px;
+    padding: 12px 20px;
 }
-
 
 .filter-range-wrapper .rc-slider-mark .rc-slider-mark-text{
     font-size:10px;

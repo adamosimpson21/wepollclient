@@ -44,7 +44,7 @@ header nav .navbar-last-element{
 
 .activeNavLink li{
     border-radius:8px;
-    background-color: #2473ac;
+    background-color: #5370E4;
 }
 
 @media screen and (max-width: 700px) {

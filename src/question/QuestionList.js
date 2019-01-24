@@ -7,7 +7,6 @@ import {handleChange} from "../helper/handleChange";
 import MyLoader from "../hocs/Loader";
 import withRouter from "react-router/es/withRouter";
 import HorizontalLine from "../hocs/HorizontalLine";
-import moment from "moment";
 
 class QuestionList extends Component{
   state={
