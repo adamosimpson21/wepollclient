@@ -20,9 +20,9 @@ class QuestionPlacard extends Component{
           {hasAnswered && <div>Answered<Icon icon='success' viewBox='0 0 1028 1028' height='48px' width='48px'/></div>}
           <p
             className='question-thumbnail-title'>{question.title.length > 75 ? question.title.slice(0, 75).concat('...') : question.title}</p>
-          {isPopular && <div>Popular</div>}
-          {isHighlyRated && <div>Highly Rated</div>}
-          {isTrending && <div>Trending</div>}
+          {isPopular && <Icon icon="group" />}
+          {isHighlyRated && <Icon icon="highRating" />}
+          {isTrending && <Icon icon="fire" />}
           <HorizontalLine/>
           <p
             className='question-thumbnail-description'>{question.description.length > 75 ? question.description.slice(0, 75).concat('...') : question.description}</p>
