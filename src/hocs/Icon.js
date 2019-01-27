@@ -28,7 +28,9 @@ const color = {
   twitch: "#6441A4",
   hamburgerMenu: "#FFFFFF",
   close: "#FFFFFF",
-  success: "#56ae44"
+  success: "#56ae44",
+  fire: "red",
+  highRating: "gold"
 }
 
 const Icon = (props) => (
