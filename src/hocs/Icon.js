@@ -35,7 +35,7 @@ const color = {
 
 const Icon = (props) => (
   <svg width={props.width || "24"} height={props.height || "24"} viewBox={props.viewBox ||"0 0 512 512"}>
-    <path style={{fill: color[props.icon] || "#000000"}} d={icons[props.icon]} />
+    <path style={{fill: props.color || color[props.icon] || "#000000"}} d={icons[props.icon]} />
   </svg>
 );
 
