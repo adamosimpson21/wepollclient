@@ -14,7 +14,12 @@ class PartyView extends Component{
 
   handleJoin = event => {
     event.preventDefault()
+    console.log("Event: ", event, this.props.match.params)
     this.props.joinPartyAction(this.props.match.params.partyId)
+  }
+
+  partyNameToLink = partyName => {
+    return "https://www.dinnostudio.com/forum/" + partyName.replace(' ', '-').toLowerCase()
   }
 
   render(){
@@ -35,7 +40,7 @@ class PartyView extends Component{
         <HorizontalLine/>
         <div>This party is {party.joinType} to new members</div>
         {party.joinType==='open' ? isMyParty ? <div>You are in this party</div> : <Button label='Join this Party' onClick={this.handleJoin} /> : null}
-        {isMyParty && <Button label='Come chat with us! '/>}
+        {isMyParty && <a target="_blank" href={this.partyNameToLink(party.name)}><Button label='Come chat with us! ' /></a>}
         <div>Prestige: {party.prestige}</div>
       </div>)
     } else {
