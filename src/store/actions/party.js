@@ -77,6 +77,7 @@ export const joinPartyAction = partyId => (dispatch, getState) => {
   return apiCall("post", `/api/party/${id}/${partyId}`)
     .then(res => {
       dispatch(updateCurrentUser(res.user))
+      dispatch(updateParty(res.party))
       dispatch(addMessage({message:res.message, degree:"success"}))
     })
     .catch(err => dispatch(addError(err.message)));

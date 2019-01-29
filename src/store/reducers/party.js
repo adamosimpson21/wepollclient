@@ -9,7 +9,7 @@ export default (state = DEFAULT_STATE, action) => {
     case LOAD_PARTIES:
       return [...action.parties]
     case UPDATE_PARTY:
-      return [...action.parties]
+      return [...state.filter(party => party._id !== action.party._id).concat(action.party)]
     case LOAD_ONE_PARTY:
       return [action.party]
     case CREATE_PARTY:

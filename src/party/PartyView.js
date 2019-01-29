@@ -14,7 +14,6 @@ class PartyView extends Component{
 
   handleJoin = event => {
     event.preventDefault()
-    console.log("Event: ", event, this.props.match.params)
     this.props.joinPartyAction(this.props.match.params.partyId)
   }
 
