@@ -38,6 +38,20 @@ class NewQuestionForm extends Component{
     this.setState({ answerType: event.target.value })
   }
 
+  incrementNumAnswers = event => {
+    event.preventDefault();
+    if(this.state.numAnswers < 20){
+      this.setState({numAnswers: this.state.numAnswers+1})
+    }
+  }
+
+  decrementNumAnswers = event => {
+    event.preventDefault();
+    if(this.state.numAnswers > 2){
+      this.setState({numAnswers: this.state.numAnswers-1})
+    }
+  }
+
   render(){
     const answerInputs = new Array(parseInt(this.state.numAnswers, 10)).fill('').map((old, index) => (
       <label key={index}> Answer {index+1}:
@@ -131,9 +145,11 @@ class NewQuestionForm extends Component{
             min={2}
             max={20}
             value={this.state.numAnswers}
-            onChange = {handleChange.bind(this)}
+            readOnly
             required
           />
+          <Button classes="increment-num-answers" label="+" onClick={this.incrementNumAnswers}/>
+          <Button classes="decrement-num-answers" label="-" onClick={this.decrementNumAnswers}/>
         </label>
         { process.env.REACT_APP_ENV_TYPE==='development' && <label> Answer Type:
             <input
