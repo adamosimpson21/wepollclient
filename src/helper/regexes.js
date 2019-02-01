@@ -17,6 +17,9 @@ export function formatUrlToEmbed(url){
   } else if (typeof url !== 'string') {
     return 'URL could not be parsed as string'
   }
+  if(url[0]==='"'){
+    url = url.slice(1);
+  }
   if(url.includes('youtube.com/watch?v=')){
     return url.replace('watch?v=', 'embed/')
   } else if(url.includes('youtube.com/embed?v=')){
