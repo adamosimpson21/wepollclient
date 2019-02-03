@@ -157,7 +157,7 @@ class NewQuestionForm extends Component{
               type='radio'
               name='answerType'
               aria-label='single'
-              title='User can only select one answer'
+              title='User can only select 1 answer'
               value='single'
               onChange = {this.handleRadio}
               checked={this.state.answerType==='single'}
