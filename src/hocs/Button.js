@@ -22,7 +22,7 @@ class Button extends Component {
 
     return (
       <button
-        className={`buttonHOC ${colorTheme(color)} ${classes} ${pressed ? ' pressed' : null}`}
+        className={`buttonHOC ${colorTheme(color)} ${classes} ${pressed && ' pressed'}`}
         {...this.props}>
         {label}
       </button>

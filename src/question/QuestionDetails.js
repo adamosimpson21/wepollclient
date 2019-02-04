@@ -11,7 +11,6 @@ import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
 // import {multiAnswer} from "../helper/constants";
-import {isLink, formatUrlToEmbed} from '../helper/regexes';
 import {ballotAnimationDelay} from "../helper/constants";
 import EducationEmbed from "../hocs/EducationEmbed";
 
@@ -70,10 +69,6 @@ class QuestionDetails extends Component{
     event.preventDefault();
   }
 
-  handleRadio = event => {
-    this.setState({ heldAnswer: event.target.value })
-  }
-
   handleDelete = event => {
     event.preventDefault();
     this.props.removeQuestionAction(this.props.match.params.questionId)
@@ -84,8 +79,6 @@ class QuestionDetails extends Component{
     if(this.props.questions.length >= 1){
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
-      const hasEmbed = isLink(education)
-      const educationJSX = hasEmbed ? (<EducationEmbed education={education}/>) : (<span>{education}</span>)
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
@@ -100,7 +93,7 @@ class QuestionDetails extends Component{
         <HorizontalLine />
         <div className='question-content'>{questionContent}</div>
         <HorizontalLine />
-        <div className={'question-education' + (hasEmbed && ' hasEmbed')}>{educationJSX}</div>
+        <EducationEmbed education={education}/>
         <HorizontalLine />
         {answerDisplays}
         <HorizontalLine />
