@@ -11,8 +11,9 @@ import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
 // import {multiAnswer} from "../helper/constants";
-import {isLink, formatUrlToEmbed} from '../helper/regexes'
+import {isLink, formatUrlToEmbed} from '../helper/regexes';
 import {ballotAnimationDelay} from "../helper/constants";
+import EducationEmbed from "../hocs/EducationEmbed";
 
 class QuestionDetails extends Component{
   state={
@@ -84,7 +85,7 @@ class QuestionDetails extends Component{
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
       const { isAuthenticated, user } = this.props.currentUser
       const hasEmbed = isLink(education)
-      const educationJSX = hasEmbed ? (<embed className='education-embed' src={formatUrlToEmbed(education)} />) : (<span>{education}</span>)
+      const educationJSX = hasEmbed ? (<EducationEmbed education={education}/>) : (<span>{education}</span>)
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
