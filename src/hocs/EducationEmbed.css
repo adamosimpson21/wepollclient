@@ -13,13 +13,7 @@
 }
 
 @media screen and (min-width: 700px){
-    .question-answer-form .question-education.hasEmbed{
-        width:100%;
-        height:40vh;
-    }
-
     .question-answer-form .question-education .education-embed{
-        width:100%;
         height: 40vh;
     }
 }
