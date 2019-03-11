@@ -42,11 +42,13 @@ Re-usable Components in React,
 Redux State management, 
 API integration,
 Database Management,
+Poll Sorting options,
+Poll Searching options,
 and many more to come
 
 ## Support
 
-All Support and technical questions should be directed to BandsWithLegends (@BandsWithLegend on twitter). Other ways to contact BandsWithLegends can be found at [BandsWithLegends.com] or through the email adamosimpson21@gmail.com
+All Support and technical questions should be directed to BandsWithLegends (@BandsWithLegend on twitter). Other ways to contact BandsWithLegends can be found at [https://www.BandsWithLegends.com] or through the email adamosimpson21@gmail.com
 All business related inquiries should be directed to [https://www.dinnostudio.com/investment] 
 
 ## RoadMap
