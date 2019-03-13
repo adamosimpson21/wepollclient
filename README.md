@@ -62,6 +62,7 @@ The project is moving very quickly, and help is needed at all levels of developm
 
 ## Authors
 BandsWithLegends! @BandsWithLegend [BandsWithLegends.com] adamosimpson21@gmail.com
+Russell Simpson
 
 ##License 
 MIT License :
