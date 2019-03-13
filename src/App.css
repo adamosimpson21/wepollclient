@@ -27,8 +27,12 @@
     padding: 0;
   }
 
+  #at-share-dock.atss{
+    box-shadow: none;
+  }
+
   .app-content{
-    bottom:0;
+    bottom:48px;
   }
 
   .App{
