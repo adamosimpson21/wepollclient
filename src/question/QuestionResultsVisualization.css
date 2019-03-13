@@ -90,6 +90,7 @@ input:checked + .filter-option-slider:before {
 @media screen and (min-width:700px) {
     .question-results-visualization .results-button-wrapper{
         display:block;
+        padding: 12px 20px;
     }
 
     .question-results-visualization Button{
