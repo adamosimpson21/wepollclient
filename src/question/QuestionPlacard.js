@@ -9,7 +9,7 @@ import './QuestionPlacard.css'
 class QuestionPlacard extends Component{
   render() {
     const {currentUser, question} = this.props
-    const firstQId = process.env.REACT_APP_ENV_TYPE === 'development' ? '5be3fbd45b0efc405424316c' : '5bcd6e9fcef9fb37f8a72866'
+    const firstQId = process.env.REACT_APP_ENV_TYPE === 'development' ? '5be3fbd45b0efc405424316c' : '5c8824b1bc6da00004b8d746'
     const hasAnswered = currentUser.isAuthenticated && currentUser.user.questions.includes(question._id)
     const isPopular = question.results.length >= 10;
     const isHighlyRated = question.rating > 90;
