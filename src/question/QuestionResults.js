@@ -20,6 +20,12 @@ class QuestionResults extends Component{
     this.props.loadOneQuestionAction(this.props.match.params.questionId)
   }
 
+  handleDelete = event => {
+    event.preventDefault();
+    this.props.removeQuestionAction(this.props.match.params.questionId)
+    this.props.history.push("/question")
+  }
+
   render() {
     if(this.props.questions.length >= 1 && this.props.currentUser.isAuthenticated){
       const { questionContent, title, author, education, results, createdAt, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId);
