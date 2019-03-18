@@ -77,7 +77,12 @@ class QuestionDetails extends Component{
 
   render(){
     if(this.props.questions.length >= 1){
-      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId)
+      const foundQuestion = this.props.questions.find(question => question._id===this.props.match.params.questionId);
+      if(!foundQuestion){
+        this.props.addError("Sorry, couldn't find that question");
+        this.props.history.push(`/question`)
+      }
+      const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = foundQuestion;
       const { isAuthenticated, user } = this.props.currentUser
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}

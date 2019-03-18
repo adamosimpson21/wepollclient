@@ -26,7 +26,7 @@ class LogIn extends Component{
   render(){
     const { username, password } = this.state;
     return(<div className='login-page'>
-      <h1>Log In!</h1>
+      <h1>Use this form to Log in to WePoll</h1>
       <form onSubmit = {this.handleSubmit} className='login-form'>
         <label className='login-form-username'>Username:
           <input
