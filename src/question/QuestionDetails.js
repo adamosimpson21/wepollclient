@@ -10,10 +10,10 @@ import {addError} from "../store/actions/errors";
 import Button from "../hocs/Button";
 import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
-// import {multiAnswer} from "../helper/constants";
 import {ballotAnimationDelay} from "../helper/constants";
 import EducationEmbed from "./questionHocs/EducationEmbed";
 import EditQuestion from "./questionHocs/EditQuestion";
+// import {multiAnswer} from "../helper/constants";
 
 class QuestionDetails extends Component{
   state={

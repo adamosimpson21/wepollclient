@@ -9,7 +9,11 @@ export default (state = DEFAULT_STATE, action) => {
     case LOAD_PARTIES:
       return [...action.parties]
     case UPDATE_PARTY:
-      return [...state.filter(party => party._id !== action.party._id).concat(action.party)]
+      const index = state.findIndex(party => party._id ===action.party._id)
+      if(~index){
+        state[index] = action.party
+      }
+      return state;
     case LOAD_ONE_PARTY:
       return [action.party]
     case CREATE_PARTY:
