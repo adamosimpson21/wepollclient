@@ -1,15 +1,13 @@
 import React, {Component} from 'react'
 import './EducationEmbed.css';
-import {formatUrlToEmbed, isLink} from "../helper/regexes";
-import Button from "./Button";
+import {formatUrlToEmbed, isLink} from "../../helper/regexes";
+import Button from "../../hocs/Button";
 
 
 class EducationEmbed extends Component{
   state={
     isRevealed:false
   }
-
-
 
   render(){
     const {education} = this.props

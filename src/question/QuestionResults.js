@@ -11,7 +11,8 @@ import HorizontalLine from "../hocs/HorizontalLine";
 import Link from "react-router-dom/es/Link";
 import Button from "../hocs/Button";
 import MyLoader from "../hocs/Loader";
-import EducationEmbed from "../hocs/EducationEmbed";
+import EducationEmbed from "./questionHocs/EducationEmbed";
+import EditQuestion from "./questionHocs/EditQuestion";
 
 class QuestionResults extends Component{
   componentDidMount(){
@@ -30,7 +31,7 @@ class QuestionResults extends Component{
   render() {
     if(this.props.questions.length >= 1 && this.props.currentUser.isAuthenticated){
       const { questionContent, title, author, education, results, createdAt, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId);
-      const { isAuthenticated, user } = this.props.currentUser;
+      const { user } = this.props.currentUser;
       const hasNotAnswered = this.props.questions.filter(question => !user.questions.includes(question._id)).filter(question => question._id !== _id)
       const randomQuestion = hasNotAnswered.length > 0 ? hasNotAnswered[Math.floor((Math.random()*hasNotAnswered.length))] : false
       return(<div className='question-results'>
@@ -43,13 +44,7 @@ class QuestionResults extends Component{
         {randomQuestion && <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>}
         <Link to='/question'><Button label='Questions Page'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
-        {/* Founders and authors have access to editing and deleting */}
-        { isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (
-          <div className='question-results-edit'>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
-            {process.env.REACT_APP_ENV_TYPE==='development' &&  <Button onClick={this.handleEdit} color='yellow' label='Edit this Question (Not Implemented)' />}
-            <Button onClick={this.handleDelete} label='Delete this Poll' color='red'/>
-          </div>
-        )}
+        <EditQuestion author={author} />
         <QuestionResultsVisualization results={results} answers={answers}/>
       </div>)
     } else {

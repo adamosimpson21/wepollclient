@@ -1,26 +1,26 @@
 import React, {Component} from 'react'
 import './EditQuestion.css';
-import Button from "./Button";
 import withRouter from "react-router/es/withRouter";
 import connect from "react-redux/es/connect/connect";
-import {
-  answerQuestionAction,
-  getAllQuestions,
-  loadOneQuestionAction,
-  removeQuestionAction
-} from "../store/actions/questions";
-import {addError} from "../store/actions/errors";
-import BackFrame from "./BackFrame";
-
+import {addError} from "../../store/actions/errors";
+import {removeQuestionAction} from "../../store/actions/questions";
+import Button from "../../hocs/Button";
 
 class EditQuestion extends Component{
-  state={
-    isRevealed:false
+  // TODO: implement after specs
+  handleEdit = event => {
+    event.preventDefault();
   }
 
-
+  handleDelete = event => {
+    event.preventDefault();
+    this.props.removeQuestionAction(this.props.match.params.questionId)
+    this.props.history.push("/question")
+  }
 
   render(){
+    const { author } = this.props
+    const { isAuthenticated, user } = this.props.currentUser
     if(isAuthenticated && (user._id === author._id || user.authLevel === 'founder')) {
       return (
         <div>{user._id === author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
@@ -36,10 +36,9 @@ class EditQuestion extends Component{
 
 function mapStateToProps(state){
   return{
-    questions: state.questions,
     currentUser: state.currentUser,
     errors: state.errors
   }
 }
 
-export default withRouter(connect(mapStateToProps, {loadOneQuestionAction, removeQuestionAction, answerQuestionAction, addError, getAllQuestions})(EditQuestion));
+export default withRouter(connect(mapStateToProps, {addError, removeQuestionAction})(EditQuestion));

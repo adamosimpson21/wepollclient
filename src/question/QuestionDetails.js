@@ -12,8 +12,8 @@ import HorizontalLine from "../hocs/HorizontalLine";
 import MyLoader from "../hocs/Loader";
 // import {multiAnswer} from "../helper/constants";
 import {ballotAnimationDelay} from "../helper/constants";
-import EducationEmbed from "../hocs/EducationEmbed";
-import EditQuestion from "../hocs/EditQuestion";
+import EducationEmbed from "./questionHocs/EducationEmbed";
+import EditQuestion from "./questionHocs/EditQuestion";
 
 class QuestionDetails extends Component{
   state={
@@ -64,18 +64,6 @@ class QuestionDetails extends Component{
     }
 }
 
-
-  // TODO: implement after specs
-  handleEdit = event => {
-    event.preventDefault();
-  }
-
-  handleDelete = event => {
-    event.preventDefault();
-    this.props.removeQuestionAction(this.props.match.params.questionId)
-    this.props.history.push("/question")
-  }
-
   render(){
     if(this.props.questions.length >= 1){
       const foundQuestion = this.props.questions.find(question => question._id===this.props.match.params.questionId);
@@ -84,7 +72,6 @@ class QuestionDetails extends Component{
         this.props.history.push(`/question`)
       }
       const { questionContent, title, author, education, createdAt, xpReward, rating, answers, _id } = foundQuestion;
-      const { isAuthenticated, user } = this.props.currentUser
       const answerDisplays = answers.map(answer =>  <Button
                                                         key={answer}
                                                         color='green'
@@ -121,13 +108,7 @@ class QuestionDetails extends Component{
 
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience and 5 Opinion Points</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
-        <EditQuestion />
-        {/*{ isAuthenticated && (user._id===author._id || user.authLevel==='founder') && (*/}
-          {/*<div>{user._id===author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}*/}
-            {/*{process.env.REACT_APP_ENV_TYPE==='development' &&  <Button color='yellow' onClick={this.handleEdit} label='Edit this Question (Coming Soon)'/>}*/}
-            {/*<Button color='red' onClick={this.handleDelete} label='Delete this Question'/>*/}
-          {/*</div>*/}
-        {/*)}*/}
+        <EditQuestion author={author} />
       </div>)
     } else {
       return(<MyLoader/>)
