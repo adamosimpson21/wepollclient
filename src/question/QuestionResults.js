@@ -11,6 +11,7 @@ import HorizontalLine from "../hocs/HorizontalLine";
 import Link from "react-router-dom/es/Link";
 import Button from "../hocs/Button";
 import MyLoader from "../hocs/Loader";
+import EducationEmbed from "../hocs/EducationEmbed";
 
 class QuestionResults extends Component{
   componentDidMount(){
@@ -37,7 +38,7 @@ class QuestionResults extends Component{
         <HorizontalLine />
         <div className='question-content'>{questionContent}</div>
         <HorizontalLine />
-        <div className='question-education'>{education}</div>
+        <EducationEmbed education={education}/>
         <HorizontalLine />
         {randomQuestion && <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>}
         <Link to='/question'><Button label='Questions Page'/></Link>
