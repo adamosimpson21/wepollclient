@@ -93,9 +93,9 @@ class QuestionDetails extends Component{
         {process.env.REACT_APP_ENV_TYPE==='development' && <Link to={`/question/${_id}/results`}>Go to results page (for development)</Link>}
         { this.state.answerSelected && <div>
         <div className='security-light-wrapper'>
-          <Button color='red' label='Send secret Ballot' onClick={this.confirmAnswer.bind(this, 'secret')} />
-          <Button color='yellow' label='Send private Ballot' onClick={this.confirmAnswer.bind(this, 'private')}/>
-          <Button color='green' label='Send public Ballot' onClick={this.confirmAnswer.bind(this, 'public')}/>
+          <Button color='red' label='Send Secret Ballot' onClick={this.confirmAnswer.bind(this, 'secret')} />
+          <Button color='yellow' label='Send Private Ballot' onClick={this.confirmAnswer.bind(this, 'private')}/>
+          <Button color='green' label='Send Public Ballot' onClick={this.confirmAnswer.bind(this, 'public')}/>
         </div>
           {this.state.showSecurityInfo ? <div className='security-light-info'>
               <div id='ballot-type-secret'>Secret - Top security level, no demographic data or information about the user retained</div>
