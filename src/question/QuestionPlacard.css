@@ -16,22 +16,24 @@
 }
 
 .first-question-thumbnail{
-    /*box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35,*/
-    /*5px 5px 10px #ffea81, -5px 5px 10px #ffea81, 5px -5px 10px #ffea81, -5px -5px 10px #ffea81;*/
+    box-shadow:none;
     opacity: 1;
     background-color: #7def85;
-    border: 2px solid #72cb72;
     outline: 0;
-    animation: first-question-animation 2s linear infinite;
+    animation: first-question-animation 3s ease infinite;
 }
 
 @keyframes first-question-animation{
     0% {
-        box-shadow: none;
+        box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35;
     }
     50% {
         box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35,
+        inset 5px 5px 10px #ffea81, inset -5px 5px 10px #ffea81, inset 5px -5px 10px #ffea81, inset -5px -5px 10px #ffea81,
         5px 5px 10px #ffea81, -5px 5px 10px #ffea81, 5px -5px 10px #ffea81, -5px -5px 10px #ffea81;
+    }
+    100%{
+        box-shadow: 2px 2px 5px #ffdd35, -2px 2px 5px #ffdd35, 2px -2px 5px #ffdd35, -2px -2px 5px #ffdd35;
     }
 }
 
