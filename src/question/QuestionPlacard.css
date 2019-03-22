@@ -20,7 +20,7 @@
     opacity: 1;
     background-color: #7def85;
     outline: 0;
-    animation: first-question-animation 3s ease infinite;
+    animation: first-question-animation 3s linear infinite;
 }
 
 @keyframes first-question-animation{

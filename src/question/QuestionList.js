@@ -13,12 +13,13 @@ class QuestionList extends Component{
   state={
     searchText: '',
     sortBarVisible: false,
-    sortType: 'date',
+    sortType: 'priority',
     showAnswered: true,
     showUnAnswered: true,
     ascending: true
   }
 
+  sortByPriority = (a,b) => (b.priority - a.priority)*(this.state.ascending ? 1 : -1);
   sortByDate = (a,b) =>  (new Date(a.createdAt) - new Date(b.createdAt))*(this.state.ascending ? 1 : -1);
   sortByRating = (a,b) => (b.rating - a.rating)*(this.state.ascending ? 1 : -1);
   sortByPopular = (a,b) => (b.results.length - a.results.length)*(this.state.ascending ? 1 : -1);
@@ -26,6 +27,8 @@ class QuestionList extends Component{
 
   sortQuestions = () => {
     switch(this.state.sortType) {
+      case 'priority':
+        return this.sortByPriority;
       case 'date':
         return this.sortByDate;
       case 'rating':

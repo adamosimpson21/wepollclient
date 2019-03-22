@@ -4,7 +4,8 @@ import {
   GET_ONE_QUESTION,
   UPDATE_QUESTION,
   DELETE_QUESTION,
-  ANSWER_QUESTION
+  ANSWER_QUESTION,
+  CHANGE_PRIORITY
 } from "../actionTypes";
 
 export default (state = [], action) => {
@@ -18,6 +19,8 @@ export default (state = [], action) => {
     // not implemented yet
     case UPDATE_QUESTION:
       return [...state, action.question]
+    case CHANGE_PRIORITY:
+      return [...state.filter(question => question._id!==action.question._id).concat(action.question)]
     case DELETE_QUESTION:
       return [...state.filter(question => question._id !== action.id)]
     case ANSWER_QUESTION:

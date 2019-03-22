@@ -1,6 +1,6 @@
 import { apiCall } from "../../services/api";
 import { addError } from "./errors";
-import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION, ANSWER_QUESTION } from "../actionTypes";
+import { GET_QUESTIONS, CREATE_QUESTION, GET_ONE_QUESTION, UPDATE_QUESTION, DELETE_QUESTION, ANSWER_QUESTION, CHANGE_PRIORITY } from "../actionTypes";
 import {addMessage} from "./messages";
 import {ballotAnimationDelay} from "../../helper/constants";
 
@@ -31,6 +31,11 @@ export const updateQuestion = question => ({
 
 export const answerQuestion = response => ({
   type: ANSWER_QUESTION,
+  ...response
+})
+
+export const changePriority = response => ({
+  type: CHANGE_PRIORITY,
   ...response
 })
 
@@ -70,6 +75,14 @@ export const updateQuestionAction = question_id => (dispatch, getState) => {
   const id = currentUser.user._id;
   return apiCall("put", `/api/questions/${id}/${question_id}`)
     .then(res => dispatch(updateQuestion(res)))
+    .catch(err => addError(err.message));
+}
+
+export const changePriorityAction = (question_id, priority) => (dispatch, getState) => {
+  let { currentUser } = getState();
+  const id = currentUser.user._id;
+  return apiCall("put", `/api/questions/${id}/${question_id}`, {priority})
+    .then(res => dispatch(changePriority(res)))
     .catch(err => addError(err.message));
 }
 
