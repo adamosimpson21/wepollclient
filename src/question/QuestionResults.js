@@ -30,7 +30,8 @@ class QuestionResults extends Component{
 
   render() {
     if(this.props.questions.length >= 1 && this.props.currentUser.isAuthenticated){
-      const { questionContent, title, author, education, results, createdAt, rating, answers, _id } = this.props.questions.find(question => question._id===this.props.match.params.questionId);
+      const foundQuestion = this.props.questions.find(question => question._id===this.props.match.params.questionId)
+      const { questionContent, title, author, education, results, createdAt, rating, answers, _id } = foundQuestion;
       const { user } = this.props.currentUser;
       const hasNotAnswered = this.props.questions.filter(question => !user.questions.includes(question._id)).filter(question => question._id !== _id)
       const randomQuestion = hasNotAnswered.length > 0 ? hasNotAnswered[Math.floor((Math.random()*hasNotAnswered.length))] : false
@@ -44,7 +45,7 @@ class QuestionResults extends Component{
         {randomQuestion && <Link to={'/question/' + randomQuestion._id}><Button label='Next Question'/></Link>}
         <Link to='/question'><Button label='Questions Page'/></Link>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
-        <EditQuestion author={author} />
+        <EditQuestion question={foundQuestion} />
         <QuestionResultsVisualization results={results} answers={answers}/>
       </div>)
     } else {

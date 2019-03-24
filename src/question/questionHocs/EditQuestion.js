@@ -9,7 +9,11 @@ import Button from "../../hocs/Button";
 
 class EditQuestion extends Component{
   state={
-    priority:0
+    priority:undefined
+  }
+
+  componentDidMount(){
+    this.setState({priority:this.props.question.priority})
   }
 
   // TODO: implement after specs
@@ -44,7 +48,7 @@ class EditQuestion extends Component{
   }
 
   render(){
-    const { author } = this.props
+    const { author } = this.props.question;
     const { isAuthenticated, user } = this.props.currentUser
     if(isAuthenticated && (user._id === author._id || user.authLevel === 'founder')) {
       return (
@@ -82,4 +86,4 @@ function mapStateToProps(state){
   }
 }
 
-export default withRouter(connect(mapStateToProps, {addError, removeQuestionAction})(EditQuestion));
+export default withRouter(connect(mapStateToProps, {addError, removeQuestionAction, changePriorityAction})(EditQuestion));

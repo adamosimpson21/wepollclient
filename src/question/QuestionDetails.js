@@ -108,7 +108,7 @@ class QuestionDetails extends Component{
 
         <div className='question-xpReward'>Answer this Question to get {xpReward} experience and 5 Opinion Points</div>
         <div className='question-history'>This question has a {rating} rating and was created at {moment(createdAt).format("MMMM Do, YYYY")} by {author.username}</div>
-        <EditQuestion author={author} />
+        <EditQuestion question={foundQuestion} />
       </div>)
     } else {
       return(<MyLoader/>)
