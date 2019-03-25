@@ -1,0 +1,32 @@
+
+#question-change-priority{
+    margin:auto auto;
+    width:40%;
+}
+
+#question-change-priority input{
+    width:32px;
+    border-bottom:none;
+}
+
+#question-change-priority input:focus{
+    border:none;
+    box-shadow:none;
+}
+
+#question-change-priority .increment-priority{
+    width: 32px;
+    min-width:32px;
+    padding: 0;
+    margin-right:16px;
+}
+
+#question-change-priority .decrement-priority{
+    width: 32px;
+    min-width:32px;
+    padding: 0;
+}
+
+#question-change-priority .submit-change-priority{
+    width:fit-content;
+}
