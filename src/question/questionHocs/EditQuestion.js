@@ -53,8 +53,6 @@ class EditQuestion extends Component{
     if(isAuthenticated && (user._id === author._id || user.authLevel === 'founder')) {
       return (
         <div>{user._id === author._id ? <div>You wrote this!</div> : <div>You have founder privileges to do this</div>}
-          {process.env.REACT_APP_ENV_TYPE === 'development' &&
-          <Button color='yellow' onClick={this.handleEdit} label='Edit this Question (Coming Soon)'/>}
           { user.authLevel === 'founder' && <label id='question-change-priority'> Sort Priority:
             <input
               type='number'
@@ -71,6 +69,8 @@ class EditQuestion extends Component{
             <Button classes="decrement-priority" label="-" onClick={this.decrementPriority}/>
             <Button classes="submit-change-priority" label="Submit Priority" onClick={this.handleSubmitPriority} />
           </label>}
+          {process.env.REACT_APP_ENV_TYPE === 'development' &&
+          <Button color='yellow' onClick={this.handleEdit} label='Edit this Question (Coming Soon)'/>}
           <Button color='red' onClick={this.handleDelete} label='Delete this Question'/>
         </div>)
     } else {
